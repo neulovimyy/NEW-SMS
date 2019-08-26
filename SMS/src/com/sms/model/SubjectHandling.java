@@ -13,7 +13,7 @@ import org.directwebremoting.annotations.DataTransferObject;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "faculty")
+@Table(name = "subjects")
 @DataTransferObject
 public class SubjectHandling implements Serializable{
 	private Long facultyId;

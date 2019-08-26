@@ -29,10 +29,6 @@ public class Student implements Serializable {
 	private String civilStatus;
 	private Integer gender;
 	private String mobileNum;
-	private String campus;
-	private String status;
-	private int year;
-	
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
@@ -44,12 +40,12 @@ public class Student implements Serializable {
 		this.Id = id;
 	}
 	
-	@Column(name = "student_id", columnDefinition = "varchar(255)")
+	@Column(name = "student_id")
 	public String getStudentId() {
 		return studentId;
 	}
 	public void setStudentId(String studentId) {
-		this.studentId = year+"-"+studentId+"-"+campus+"-"+status;
+		this.studentId = studentId;
 	}
 	
 	@Column(name = "first_name")
@@ -58,14 +54,6 @@ public class Student implements Serializable {
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
-	}
-	
-	@Column (name = "year_attended", columnDefinition="year")
-	public int getYear() {
-		return year;
-	}
-	public void setYear(int year) {
-		this.year = year;
 	}
 	
 	@Column(name = "middle_name")
@@ -123,17 +111,6 @@ public class Student implements Serializable {
 	public void setMobileNum(String mobileNum) {
 		this.mobileNum = mobileNum;
 	}
-	public String getCampus() {
-		return campus;
-	}
-	public void setCampus(String campus) {
-		this.campus = campus;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	
 	
 }

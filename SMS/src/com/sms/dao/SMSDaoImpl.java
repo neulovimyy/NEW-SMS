@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sms.base.BaseDaoHibernate;
+import com.sms.model.ElemAndHS;
 import com.sms.model.Student;
 
 			
@@ -39,5 +40,32 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 	public void deleteStudent(Student student) {
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM student_college WHERE student_number = ?").setParameter(0, student.getStudentId()).executeUpdate();
 	}
+
+	@Override
+	public void addTransactions(ElemAndHS account) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().saveOrUpdate(account);
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ElemAndHS> listTransactions() {
+		// TODO Auto-generated method stub
+		return (List<ElemAndHS>) sessionFactory.getCurrentSession().createCriteria(ElemAndHS.class).list();
+	}
+
+	@Override
+	public ElemAndHS getTransactions(Long studentNumber) {
+		// TODO Auto-generated method stub
+		return (ElemAndHS) sessionFactory.getCurrentSession().get(ElemAndHS.class, studentNumber);
+	}
+
+	@Override
+	public void deleteTransactions(ElemAndHS account) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().createQuery("DELETE FROM student_college WHERE student_number = ?").setParameter(0, account.getStudentNumber()).executeUpdate();
+	}
+
 
 }

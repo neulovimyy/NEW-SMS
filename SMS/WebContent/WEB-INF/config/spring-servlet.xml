@@ -27,7 +27,7 @@
 	<!-- Configures the annotation-driven Spring MVC Controller programming model.
 	Note that, with Spring 3.0, this tag works in Servlet MVC only!  -->
 	<mvc:annotation-driven />
-	
+	<mvc:resources location="/public/" mapping="/public/**"/>
 	<mvc:resources location="/themes/" mapping="/themes/**"/>
 	<mvc:resources location="/js/" mapping="/js/**"/>
 	<mvc:default-servlet-handler/>
@@ -74,7 +74,9 @@
 	</bean>
 	
 	<!-- Tiles -->
-	
+	<bean id="tilesviewResolver" class="org.springframework.web.servlet.view.tiles2.TilesViewResolver">
+		<property name="order" value="0"/>
+	</bean>
 	
 	<bean id="tilesConfigurer"
 	    class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
@@ -118,4 +120,8 @@
 	<bean class="com.sms.util.Config">
 		<property name="properties" ref="allProperties" />
 	</bean>
+	
+	<!-- Tiles -->
+	
+	
 </beans>

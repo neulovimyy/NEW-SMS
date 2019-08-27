@@ -26,5 +26,20 @@
         <put-attribute name="title" value="Student List"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/studentList.jsp"></put-attribute>
     </definition>
- 
+ 	
+ 	<!-- Accounting -->
+ 	<definition name="index2" extends="xeone">
+        <put-attribute name="title" value="Student List"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/index2.jsp"></put-attribute>
+    </definition>
+ 	
+ 	<definition name="elemAndHS" extends="xeone">
+        <put-attribute name="title" value="Student List"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/elemAndHS.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="accountingTable" extends="xeone">
+        <put-attribute name="title" value="Accounting Table"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/elemAndHSAccountingTable.jsp"></put-attribute>
+    </definition>
 </tiles-definitions>

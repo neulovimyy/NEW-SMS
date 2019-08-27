@@ -28,14 +28,14 @@ public class AccountingController extends BaseController{
 	public String saveTransactions(@ModelAttribute("account") ElemAndHS account, ModelMap map) {
 		List<ElemAndHS> accounts =  (List<ElemAndHS>) studentService.getAll(ElemAndHS.class);
 		map.put("accounts", accounts);
-		studentService.addTransactions(account);
-		return "elemAndHSAccountingTable";
+		studentService.save(account);
+		return "accountingTable";
 	}
 	
 	@RequestMapping(value="transaction", method = RequestMethod.GET)
 	public String listTransactions(HttpServletRequest request, ModelMap model) {
 		model.put("accounts", studentService.getAll(ElemAndHS.class));
-		return "elemAndHSAccountingTable";
+		return "accountingTable";
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -58,7 +58,7 @@ public class AccountingController extends BaseController{
 
 		model.put("stud", null);
 		model.put("accounts",  studentService.getAll(ElemAndHS.class));
-		return "elemAndHSAccountingTable";
+		return "accountingTable";
 	}
 	
 	@RequestMapping(value = "edit", method = RequestMethod.GET)

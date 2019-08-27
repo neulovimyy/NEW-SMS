@@ -38,6 +38,8 @@
 						<form:label for="mode-ofPayment" path="modeOfPayment" >Mode of Payment:</form:label>
 			      		<form:input path="modeOfPayment" name="modeOfPayment" id="modeOfPayment" placeholder="0.00" onblur="return blank(\"modeOfPayment\")"/>
 			      		<input onclick="return validate()" id="save" type="submit" value="Submit" />
+	sa
+	
 	</form:form>
 	</body>
 	

@@ -20,7 +20,13 @@
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
-		<!-- <welcome-file>/account/index2.html</welcome-file> -->
+		<welcome-file>/account/index2.html</welcome-file>
 	</welcome-file-list>
+
+	<listener>
+		<listener-class>
+			com.sms.listeners.RequestListener
+		</listener-class>
+	</listener>
 
 </web-app>

@@ -2,6 +2,7 @@ package com.sms.controller;
 		
 import java.util.List;
 
+import javax.servlet.ServletContextListener;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +17,17 @@ import com.sms.base.BaseController;
 import com.sms.model.Student;
 import com.sms.service.StudentService;
 
-
 @Controller
 @RequestMapping("student")
-public class StudentController extends BaseController {
+public class StudentController extends BaseController{
 	
 	@Autowired
 	private StudentService studentService;
 	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "save", method = RequestMethod.POST)
-	public String saveEmployee(@ModelAttribute("command") Student cstudent, ModelMap map) {
+	public String saveEmployee(@ModelAttribute("command") 
+			Student cstudent, ModelMap map) {
 		List<Student> students =  (List<Student>) studentService.getAll(Student.class);
 		map.put("students", students);
 		studentService.addStudent(cstudent);

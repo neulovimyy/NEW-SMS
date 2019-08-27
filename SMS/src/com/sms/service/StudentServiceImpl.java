@@ -37,25 +37,21 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 		studentDao.deleteStudent(student);
 	}
 
-	@Override
 	public void addTransactions(ElemAndHS account) {
 		// TODO Auto-generated method stub
 		studentDao.addTransactions(account);
 	}
 
-	@Override
 	public List<ElemAndHS> listTransactions() {
 		// TODO Auto-generated method stub
 		return studentDao.listTransactions();
 	}
 
-	@Override
 	public ElemAndHS getTransactions(Long studentNumber) {
 		// TODO Auto-generated method stub
 		return studentDao.getTransactions(studentNumber);
 	}
 
-	@Override
 	public void deleteTransactions(ElemAndHS account) {
 		// TODO Auto-generated method stub
 		studentDao.deleteTransactions(account);

@@ -78,5 +78,6 @@
 		<div class="wrapper background-body">
 			<tiles:insertAttribute name="body" />
 		</div>
+		<tiles:insertAttribute name="footer"/>
 	</body>
 </html>

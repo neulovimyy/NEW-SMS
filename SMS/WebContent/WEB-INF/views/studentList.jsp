@@ -21,7 +21,7 @@
 							<td><c:out value="${student.id}"/></td>
 							<td><c:out value="${student.firstName}"/></td>
 							<td><c:out value="${student.lastName}"/></td>
-							<td><c:out value="${student.year }"/></td>
+							
 							<td align="center"><a href="edit.html?id=${student.id}">Edit</a> | <a href="delete.html?id=${student.id}">Delete</a></td>
 						</tr>
 					</c:forEach>

@@ -6,8 +6,9 @@
 <tiles-definitions>
 	<!-- Main Template -->
     <definition name="xeone" template="/WEB-INF/views/common/xeone.jsp">
-        <put-attribute name="title" value="Main" /> 
+        <put-attribute name="title" value="Main"/> 
         <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"></put-attribute>
     </definition>
  
  	<definition name="index" extends="xeone">

@@ -3,8 +3,7 @@
 	<div class="content-wrapper">
 		<section class="content">
 			<h2>Add Student Data</h2>
-			<form:form id="save-student" method="POST" commandName="command" action="/SMS/save.html">
-				<form:hidden path="year" id="year"/>
+			<form:form id="save-student" method="POST" commandName="command" action="/SMS/student/save.html">
 			   	<div class="redcolor">
 			   		<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 						<label class="control-label">First Name </label>

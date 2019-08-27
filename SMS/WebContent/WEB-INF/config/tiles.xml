@@ -13,18 +13,18 @@
  
  	<definition name="index" extends="xeone">
  		<put-attribute name="title" value="Home"></put-attribute>
- 		<put-attribute name="body" value="/WEB-INF/views/index.jsp"></put-attribute>
+ 		<put-attribute name="body" value="/WEB-INF/views/student/index.jsp"></put-attribute>
  	</definition>
  
  	<!-- General Pages -->
     <definition name="addStudent" extends="xeone">
         <put-attribute name="title" value="Employee Data Form" />
-        <put-attribute name="body" value="/WEB-INF/views/addStudent.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/student/addStudent.jsp" />
     </definition>
     
     <definition name="studentList" extends="xeone">
         <put-attribute name="title" value="Student List"></put-attribute>
-        <put-attribute name="body" value="/WEB-INF/views/studentList.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/student/studentList.jsp"></put-attribute>
     </definition>
  	
  	<!-- Accounting -->

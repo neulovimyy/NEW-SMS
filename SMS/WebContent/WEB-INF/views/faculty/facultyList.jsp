@@ -1,4 +1,4 @@
-<%@include file="taglibs.jsp" %>
+<%@include file="../common/taglibs.jsp" %>
 		<h1 align="center">Student Database</h1>
 		
 		<h3 align="center"><a href="add.html">Add Student</a></h3>
@@ -8,19 +8,17 @@
 				<table class="table table-hover" align="center" border="1">
 					<thead>
 						<tr class="active">
-							<th>Student Number</th>
-							<th>First Name</th>
-							<th>Last Name</th>
+							<th>Faculty #</th>
+							<th>Faculty Name</th>
 							<th colspan="2"	>Options</th>
 						</tr>
 					</thead>
 			
-					<c:forEach items="${students}" var="student">
+					<c:forEach items="${faculty}" var="faculty">
 						
 						<tr class="info">
-							<td><c:out value="${student.id}"/></td>
-							<td><c:out value="${student.firstName}"/></td>
-							<td><c:out value="${student.lastName}"/></td>
+							<td><c:out value="${faculty.id}"/></td>
+							<td><c:out value="${faculty.}"/></td>
 							
 							<td align="center"><a href="edit.html?id=${student.id}">Edit</a> | <a href="delete.html?id=${student.id}">Delete</a></td>
 						</tr>

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@include file="common/taglibs.jsp" %>
+<%@include file="../common/taglibs.jsp" %>
 	<div class="content-wrapper">
 		<section class="content">
 			<h2>Add Student Data</h2>

@@ -13,7 +13,7 @@ import org.directwebremoting.annotations.DataTransferObject;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "elemHs_accountingTable")
+@Table(name = "elemhs_account")
 @DataTransferObject
 
 public class ElemAndHS implements Serializable {

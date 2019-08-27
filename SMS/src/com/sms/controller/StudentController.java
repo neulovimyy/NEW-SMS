@@ -2,7 +2,6 @@ package com.sms.controller;
 		
 import java.util.List;
 
-import javax.servlet.ServletContextListener;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.sms.base.BaseController;
 import com.sms.model.Student;
 import com.sms.service.StudentService;
-
+	
 @Controller
 @RequestMapping("student")
 public class StudentController extends BaseController{

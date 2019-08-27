@@ -1,4 +1,4 @@
-<%@include file="common/taglibs.jsp" %>
+<%@include file="../common/taglibs.jsp" %>
 
 <div class="container">
 	  	<h1 align="center">

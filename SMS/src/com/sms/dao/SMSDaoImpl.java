@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.sms.base.BaseDaoHibernate;
 import com.sms.model.ElemAndHS;
+import com.sms.model.Faculty;
 import com.sms.model.Student;
 
 			
@@ -59,7 +60,25 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 
 	public void deleteTransactions(ElemAndHS account) {
 		// TODO Auto-generated method stub
-		sessionFactory.getCurrentSession().createQuery("DELETE FROM elemhs_accountingtable WHERE student_number = ?").setParameter(0, account.getStudentNumber()).executeUpdate();
+		sessionFactory.getCurrentSession().createQuery("DELETE FROM elemhs_account WHERE student_number = ?").setParameter(0, account.getStudentNumber()).executeUpdate();
+	}
+
+	public void addFaculty(Faculty faculty) {
+		sessionFactory.getCurrentSession().saveOrUpdate(faculty);
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Faculty> listFaculty() {
+		return (List<Faculty>) sessionFactory.getCurrentSession().createCriteria(Faculty.class).list();
+	}
+
+	public Faculty getFaculty(Long id) {
+		return (Faculty) sessionFactory.getCurrentSession().get(Faculty.class, id);
+	}
+
+	public void deleteFaculty(Faculty faculty) {
+		sessionFactory.getCurrentSession().createQuery("DELETE FROM faculty WHERE faculty_id = ?").setParameter(0, faculty.getFacultyId()).executeUpdate();
 	}
 
 

@@ -56,7 +56,7 @@ public class AccountingController extends BaseController{
 	public String deleteTransactions(@ModelAttribute("account") ElemAndHS account, ModelMap model) {
 		studentService.delete(account);
 
-		model.put("stud", null);
+		model.put("account", null);
 		model.put("accounts",  studentService.getAll(ElemAndHS.class));
 		return "accountingTable";
 	}

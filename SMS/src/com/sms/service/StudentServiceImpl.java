@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.sms.base.BaseServiceImpl;
 import com.sms.dao.SMSDao;
 import com.sms.model.ElemAndHS;
+import com.sms.model.Faculty;
 import com.sms.model.Student;
 import com.sms.service.StudentService;
 
@@ -55,6 +56,22 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 	public void deleteTransactions(ElemAndHS account) {
 		// TODO Auto-generated method stub
 		studentDao.deleteTransactions(account);
+	}
+
+	public void addFaculty(Faculty faculty) {
+		studentDao.addFaculty(faculty);
+	}
+
+	public List<Faculty> listFaculty() {
+		return studentDao.listFaculty();
+	}
+
+	public Faculty getFaculty(Long id) {
+		return studentDao.getFaculty(id);
+	}
+
+	public void deleteFaculty(Faculty faculty) {
+		studentDao.deleteFaculty(faculty);
 	}
 
 }

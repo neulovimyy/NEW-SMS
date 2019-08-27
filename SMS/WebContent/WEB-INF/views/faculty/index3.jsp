@@ -1,9 +1,9 @@
-<%@include file="common/taglibs.jsp" %>
+<%@include file="../common/taglibs.jsp" %>
 
 <div class="container">
 	  	<h1 align="center">
 			<font face="Palatino Linotype" color="#34495E">
-			Welcome to the Student Database
+			Welcome to the Faculty Database
 			</font>
 		</h1>
 	</div>
@@ -18,7 +18,7 @@
 	</div>
 
 	<div class="jumbotron">
-	    <h2 align="center"><a class="btn btn-default btn-lg btn-block" href="transaction.html">Show accounts</a></h2>
+	    <h2 align="center"><a class="btn btn-default btn-lg btn-block" href="faculties.html">Show faculties</a></h2>
 	    <h2 align="center"><a class="btn btn-default btn-lg btn-block" href="add.html">Add Students</a></h2>
 	</div>
 	 

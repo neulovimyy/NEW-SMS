@@ -11,12 +11,18 @@
 		<link href="<c:url value="/themes/images/favicon.png"/>" rel="icon">
 		<link rel="stylesheet" href="<c:url value="/css/xeone/css/plugins.css"/>">
 		<link rel="stylesheet" href="<c:url value="/css/xeone/css/bootstrap.min.css"/>">
-		<link rel="stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
+
+		<%-- <link rel="stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
 		<link rel="stylesheet" href="<c:url value="/themes/css/custom.css"/>">
-		<link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>">
+		<link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>">--%>
+		
+		
+		<%-- <link rel - "stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
+		<link rel="stylesheet" href="<c:url value="/themes/css/custom.css"/>">
+		link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>"> --%>
+		
 		<!-- Form Validation -->
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/form-validation/formValidation.css"/>">
-		
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="<c:url value="/js/xeone/js/jquery-3.1.1.min.js"/>"></script>
 		<!--Bootstrap Core-->

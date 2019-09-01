@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@include file="taglibs.jsp"%>
-<h2>
-	ALL RIGHTS RESERVED. 2012 ©
-</h2>
+<h4 align="center">
+	ALL RIGHTS RESERVED. 2019 ©
+</h4>

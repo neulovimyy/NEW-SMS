@@ -1,9 +1,9 @@
 package com.sms.enums;
 
-public enum IsApproved {
-	APPROVED(1,"Approved"), 
-	DECLINED(2, "Declined"), 
-	FOR_APPROVAL(3, "For Approval");
+public enum SemestralTerm {
+	FIRST_TERM(1,"First Term"),
+	SECOND_TERM(2, "Second Term"),
+	SUMMER_TERM(3, "Summer Term");
 	
 	private Integer id;
 	private String description;
@@ -24,13 +24,13 @@ public enum IsApproved {
 		this.description = description;
 	}
 
-	private IsApproved(Integer id, String description) {
+	private SemestralTerm(Integer id, String description) {
 		this.id=id;
 		this.description=description;
 	}
 	
-	public static IsApproved getInstance(Integer id) {
-		for (IsApproved value: IsApproved.values()) {
+	public static SemestralTerm getInstance(Integer id) {
+		for (SemestralTerm value: SemestralTerm.values()) {
 			if(value.getId().equals(id)) {
 				return value;
 			}

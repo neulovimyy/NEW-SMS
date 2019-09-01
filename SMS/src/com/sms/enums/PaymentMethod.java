@@ -1,9 +1,9 @@
 package com.sms.enums;
 
-public enum IsApproved {
-	APPROVED(1,"Approved"), 
-	DECLINED(2, "Declined"), 
-	FOR_APPROVAL(3, "For Approval");
+public enum PaymentMethod {
+	FULL_PAYMENT(1,"Full Payment"),
+	HALF_PAYMENT(2,"Half Payment"),
+	NOT_PAYED(3,"NOT PAYED");
 	
 	private Integer id;
 	private String description;
@@ -24,13 +24,13 @@ public enum IsApproved {
 		this.description = description;
 	}
 
-	private IsApproved(Integer id, String description) {
+	private PaymentMethod(Integer id, String description) {
 		this.id=id;
 		this.description=description;
 	}
 	
-	public static IsApproved getInstance(Integer id) {
-		for (IsApproved value: IsApproved.values()) {
+	public static PaymentMethod getInstance(Integer id) {
+		for (PaymentMethod value: PaymentMethod.values()) {
 			if(value.getId().equals(id)) {
 				return value;
 			}

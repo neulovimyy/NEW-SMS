@@ -1,9 +1,8 @@
 package com.sms.enums;
 
-public enum IsApproved {
-	APPROVED(1,"Approved"), 
-	DECLINED(2, "Declined"), 
-	FOR_APPROVAL(3, "For Approval");
+public enum Roles {
+	GUEST(1,"Guest"),
+	ADMIN(2,"Administrator");
 	
 	private Integer id;
 	private String description;
@@ -24,13 +23,13 @@ public enum IsApproved {
 		this.description = description;
 	}
 
-	private IsApproved(Integer id, String description) {
+	private Roles(Integer id, String description) {
 		this.id=id;
 		this.description=description;
 	}
 	
-	public static IsApproved getInstance(Integer id) {
-		for (IsApproved value: IsApproved.values()) {
+	public static Roles getInstance(Integer id) {
+		for (Roles value: Roles.values()) {
 			if(value.getId().equals(id)) {
 				return value;
 			}

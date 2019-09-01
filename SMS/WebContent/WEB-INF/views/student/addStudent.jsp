@@ -2,7 +2,7 @@
 <%@include file="../common/taglibs.jsp"%>
 
 <div class="content-wrapper">
-	<section class="content"> <form:form id="save-student" method="POST" commandName="command" action="/SMS/student/save.html">
+	<section class="content"> <form:form id="save-student" method="POST" commandName="command" action="${pageContext.request.contextPath}/student/save">
 		<div class="col-md-12">
 			<div class="page-header">
 				<div class="container-fluid"></div>
@@ -12,6 +12,12 @@
 					<h1>Add Student Data</h1>
 				</div>
 				<div class="panel-body">
+					<c:choose>
+						<c:when test="${not empty command.id}">
+							<form:hidden path="id" />
+							
+						</c:when>
+					</c:choose>
 					<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 						<label class="control-label">First Name </label>
 						<form:input id="firstname" path="firstName" cssClass="form-control" placeholder="Enter first name..." />
@@ -55,10 +61,7 @@
 						<form:select path="bloodtype" items="${bloodtypeList}" cssClass="form-control" />
 					</div>
 
-					<div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12 dropdown-input">
-						<label class="control-label">Religion</label>
-						<form:select path="religion" items="${religionList}" cssClass="form-control" />
-					</div>
+					
 
 					<div class="clearfix"></div>
 					<div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">

@@ -20,7 +20,7 @@ public class Subject implements Serializable{
 	private String subjectName;
 	private String subjectCode;
 	private int subjectUnit;
-	private String subOfferingPeriod;
+	
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
@@ -56,11 +56,5 @@ public class Subject implements Serializable{
 		this.subjectUnit = subjectUnit;
 	}
 	
-	@Column(name = "offering_period")
-	public String getSubOfferingPeriod() {
-		return subOfferingPeriod;
-	}
-	public void setSubOfferingPeriod(String subOfferingPeriod) {
-		this.subOfferingPeriod = subOfferingPeriod;
-	}
+	
 }

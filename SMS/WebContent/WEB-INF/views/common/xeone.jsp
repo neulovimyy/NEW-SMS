@@ -12,10 +12,9 @@
 		<link rel="stylesheet" href="<c:url value="/css/xeone/css/plugins.css"/>">
 		<link rel="stylesheet" href="<c:url value="/css/xeone/css/bootstrap.min.css"/>">
 
-		<%-- <link rel="stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
+		<link rel="stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
 		<link rel="stylesheet" href="<c:url value="/themes/css/custom.css"/>">
-		<link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>">--%>
-		
+		<link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>">
 		
 		<%-- <link rel - "stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
 		<link rel="stylesheet" href="<c:url value="/themes/css/custom.css"/>">

@@ -9,26 +9,26 @@
 		<title><tiles:insertAttribute name="title" ignore="true"/></title>
 		<%-- <link href="<c:url value="themes/xeone/images/favicon.png"/>" rel="icon"> --%>
 		<link href="<c:url value="/themes/images/favicon.png"/>" rel="icon">
-		<link rel="stylesheet" href="<c:url value="/css/xeone/css/plugins.css"/>">
-		<link rel="stylesheet" href="<c:url value="/css/xeone/css/bootstrap.min.css"/>">
 
-		<link rel="stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
+		<%-- <link rel="stylesheet" href="<c:url value="/css/xeone/css/plugins.css"/>"> --%>
+		<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
+		<%-- <link rel="stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
 		<link rel="stylesheet" href="<c:url value="/themes/css/custom.css"/>">
-		<link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>">
-		
-		<%-- <link rel - "stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
-		<link rel="stylesheet" href="<c:url value="/themes/css/custom.css"/>">
-		link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>"> --%>
-		
+		<link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>"> --%>
 		<!-- Form Validation -->
-		<link rel="stylesheet" type="text/css" href="<c:url value="/css/form-validation/formValidation.css"/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrapValidator.min.css"/>">
+		
+		<!-- datePicker -->
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/datepicker.min.css"/>">
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="<c:url value="/js/xeone/js/jquery-3.1.1.min.js"/>"></script>
 		<!--Bootstrap Core-->
 		<script src="<c:url value="/js/xeone/js/popper.min.js"/>"></script>
-		<script src="<c:url value="/js/xeone/js/bootstrap.min.js"/>"></script>
+		<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
 		<!-- Form Validation -->
-		<script type="text/javascript" src="<c:url value="/js/form-validation/formValidation.js"/>"></script>
+		
+		<script src="<c:url value="/js/bootstrap-datepicker.min.js"/>"></script>
+		<script type="text/javascript" src="<c:url value="/js/bootstrapValidator.min.js"/>"></script>
 	</head>	
 	
 	<!--to view items on reach-->

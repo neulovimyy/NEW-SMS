@@ -23,7 +23,7 @@ import com.sms.util.Config;
 import com.sms.util.DateUtility;
 
 @Controller
-public class BaseController extends BasePDFGenUtil {
+public class BaseController {
 	
 	Logger logger = Logger.getLogger(BaseController.class);
 	protected SimpleDateFormat excelFmtMMddyyyy = new SimpleDateFormat("MM/dd/yyyy");

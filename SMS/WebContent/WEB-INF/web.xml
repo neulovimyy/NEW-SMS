@@ -25,10 +25,10 @@
 		
 	</welcome-file-list>
 
-	<listener>
+	<!-- <listener>
 		<listener-class>
 			com.sms.listeners.RequestListener
 		</listener-class>
-	</listener>
+	</listener> -->
 
 </web-app>

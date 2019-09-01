@@ -50,7 +50,7 @@ public class AcademicController extends BaseController
 	
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String transact() {
-		return "index";
+		return "index3";
 	}
 	
 	@RequestMapping(value="show", method = RequestMethod.GET)

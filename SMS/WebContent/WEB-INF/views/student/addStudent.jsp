@@ -2,18 +2,22 @@
 <%@include file="../common/taglibs.jsp" %>
 	<div class="content-wrapper">
 		<section class="content">
-			<h2>Add Student Data</h2>
+			
+			<h2 class="text-center">Student Application Form</h2>
+			
+			<img src = "<c:url value="/images/hello.png"/>" alt="hello">
+			
 			<form:form id="save-student" method="POST" commandName="command" action="/SMS/student/save.html">
 			   	<div class="redcolor">
 			   		<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 						<label class="control-label">First Name </label>
-						<form:input id="firstname" path="firstName" cssClass="form-control" placeholder="Enter first name..." />
+						<form:input id="firstname" path="firstName" cssClass="form-control col-lg-8" placeholder="Enter first name..." />
 					</div>
 			    </div>
-	      		<div class="">
+	      		<div class="clearfix">
 		       		<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 						<label class="control-label">Middle Name </label>
-						<form:input id="middleName" path="middleName" cssClass="form-control" placeholder="Enter first name..." />
+						<form:input id="middleName" path="middleName" cssClass="form-control col-lg-8" placeholder="Enter middle name..." />
 					</div>
 	       		</div>
 	       		<div class="clearfix"></div>

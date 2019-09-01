@@ -29,6 +29,7 @@
 	<mvc:annotation-driven />
 	<mvc:resources location="/public/" mapping="/public/**"/>
 	<mvc:resources location="/themes/" mapping="/themes/**"/>
+	<mvc:resources location="/images" mapping="/images/**"/>
 	<mvc:resources location="/js/" mapping="/js/**"/>
 	<mvc:default-servlet-handler/>
 	

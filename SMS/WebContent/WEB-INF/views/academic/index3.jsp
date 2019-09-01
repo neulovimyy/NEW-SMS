@@ -1,5 +1,5 @@
 <%@include file="../common/taglibs.jsp" %>
-	
+	<section>
 	<div class = "jumbotron" style = "margin-bottom: 0 px;">
 		  <h1 align="center">
 				<a class = "header-brand"><img src = "WebContent/theme/xeone/images/logo.png"></a>
@@ -50,3 +50,4 @@
 				</ul>
 			</div>
 		</nav>
+	</section>

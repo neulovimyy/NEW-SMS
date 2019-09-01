@@ -81,6 +81,7 @@
 	<script src="<c:url value="/js/xeone/js/functions.js"/>"></script>
 	<script src="<c:url value="/js/adminlte/plugins/pagination/jquery.simplePagination.js"/>"></script>
 	<body>
+		<tiles:insertAttribute name="header"/>
 		<div class="wrapper background-body">
 			<tiles:insertAttribute name="body" />
 		</div>

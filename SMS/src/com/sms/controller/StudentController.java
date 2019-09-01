@@ -38,6 +38,7 @@ public class StudentController extends BaseController{
 		model.put("students", studentService.getAll(Student.class));
 		return "studentList";
 	}
+	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public String addEmployee(@ModelAttribute("command")  Student cstudent, ModelMap model) {

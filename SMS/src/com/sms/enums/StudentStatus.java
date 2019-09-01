@@ -1,10 +1,11 @@
 package com.sms.enums;
 
-public enum IsEnrolled {
-	ENROLLED(1,"Enrolled"),
-	NOT_ENROLLED(2,"Not Enrolled"),
-	BANNED(3,"Banned");
-	
+public enum StudentStatus {
+	CONTINUING(1,"Regular"),
+	IRREGULAR(2,"Irregular"),
+	SUSPENDED(3,"Suspended"),
+	PROVISIONARY(4,"Provisionary"),
+	DROPPED_OUT(5,"Dropped Out");
 	
 	private Integer id;
 	private String description;
@@ -25,17 +26,19 @@ public enum IsEnrolled {
 		this.description = description;
 	}
 
-	private IsEnrolled(Integer id, String description) {
+	private StudentStatus(Integer id, String description) {
 		this.id=id;
 		this.description=description;
 	}
 	
-	public static IsEnrolled getInstance(Integer id) {
-		for (IsEnrolled value: IsEnrolled.values()) {
+	public static StudentStatus getInstance(Integer id) {
+		for (StudentStatus value: StudentStatus.values()) {
 			if(value.getId().equals(id)) {
 				return value;
 			}
 		}
 		return null;
 	}
+	
+	
 }

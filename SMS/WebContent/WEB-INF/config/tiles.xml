@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<!-- Main Template -->
+    <definition name="xeone" template="/WEB-INF/views/common/xeone.jsp">
+    	<put-attribute name="header" value="/WEB-INF/views/academic/footer.jsp"></put-attribute>
+        <put-attribute name="title" value="Main"/> 
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"></put-attribute>
+    </definition>
+ 
+ 	<definition name="index" extends="xeone">
+ 		<put-attribute name="title" value="Home"></put-attribute>
+ 		<put-attribute name="body" value="/WEB-INF/views/student/index.jsp"></put-attribute>
+ 	</definition>
+ 
+ 	<!-- General Pages -->
+    <definition name="addStudent" extends="xeone">
+        <put-attribute name="title" value="Student Data Form" />
+        <put-attribute name="body" value="/WEB-INF/views/student/addStudent.jsp" />
+    </definition>
+    
+    <definition name="studentList" extends="xeone">
+        <put-attribute name="title" value="Student List"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/student/studentList.jsp"></put-attribute>
+    </definition>
+ 	
+ 	<!-- Accounting -->
+ 	<definition name="index2" extends="xeone">
+        <put-attribute name="title" value="Accounting"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/index2.jsp"></put-attribute>
+    </definition>
+ 	
+ 	<definition name="elemAndHS" extends="xeone">
+        <put-attribute name="title" value="Student List"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/elemAndHS.jsp"></put-attribute>
+	</definition>
+    <definition name="accountingTable" extends="xeone">
+        <put-attribute name="title" value="Accounting Table"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/elemAndHSAccountingTable.jsp"></put-attribute>
+    </definition>
+    
+    <!-- Academic -->
+    
+     <definition name="gradeTable" extends="xeone">
+        <put-attribute name="title" value="Grade Table"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/academic/gradesGradeTable.jsp"></put-attribute>
+	 </definition>
+	 
+	 <definition name="index3" extends="xeone">
+	 	<put-attribute name="title" value="Academic"/>
+	 	<put-attribute name="body" value="/WEB-INF/views/academic/index3.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="encode" extends="xeone">
+        <put-attribute name="title" value="Encode Grades"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/academic/encode.jsp"></put-attribute>
+   	 </definition>
+   	 
+ 	 
+</tiles-definitions>

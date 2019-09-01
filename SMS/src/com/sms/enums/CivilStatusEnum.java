@@ -1,12 +1,12 @@
 package com.sms.enums;
 
-public enum Gender {
-	MALE(1,"Male"), 
-	FEMALE(2,"Female"), 
-	LESBIAN(3,"Lesbian"), 
-	GAY(4,"Gay");
+public enum CivilStatusEnum {
+	SINGLE(1,"Single"), 
+	MARRIED(2,"Married"), 
+	LEGALLY_SEPARATED(3,"Legally Separated"), 
+	WIDOW(4,"Widow");
 	
-	private Gender(Integer id, String description) {
+	private CivilStatusEnum(Integer id, String description) {
 		this.id = id;
 		this.description = description;
 	}
@@ -30,8 +30,8 @@ public enum Gender {
 		this.description = description;
 	}
 	
-	public static Gender getInstance(Integer id) {
-		for(Gender value :  Gender.values())
+	public static CivilStatusEnum getInstance(Integer id) {
+		for(CivilStatusEnum value :  CivilStatusEnum.values())
 			if(value.getId().equals(id)) return value;
 		return null;
 	}

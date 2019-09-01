@@ -36,10 +36,14 @@ $(document).ready(function(){
                 }
         	},
         	
-        	birhtDate: {
+        	birthDate: {
                 validators: {
                     notEmpty: {
                         message: 'Please fill out this field'
+                    },
+                    date: {
+                        format: 'MM/DD/YYYY',
+                        message: 'Invalid Date '
                     }
                 }
         	},
@@ -61,6 +65,22 @@ $(document).ready(function(){
         	},
         	
         	mobileNum: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	
+        	presentAddress: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	
+        	permanenttAddress: {
                 validators: {
                     notEmpty: {
                         message: 'Please fill out this field'

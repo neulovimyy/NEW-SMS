@@ -23,13 +23,18 @@ public class Student implements Serializable {
 	private String studentId;
 	private String firstName;
 	private String middleName;
+	
 	private String lastName;
 	private Date birthDate;
 	private String studentAddress;
 	private String civilStatus;
-	private Integer gender;
 	private String mobileNum;
-	
+	private Integer gender;
+	private Integer religion;
+	private Integer bloodtype;
+	private String presentAddress;
+	private String permanentAddress;
+
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	@Column(name = "id")
@@ -112,5 +117,34 @@ public class Student implements Serializable {
 		this.mobileNum = mobileNum;
 	}
 	
+	@Column(name = "blood_type")
+	public Integer getBloodtype() {
+		return bloodtype;
+	}
+	public void setBloodtype(Integer bloodtype) {
+		this.bloodtype = bloodtype;
+	}
+	@Column(name = "present_Address", columnDefinition = "mediumtext")
+	public String getPresentAddress() {
+		return presentAddress;
+	}
+	public void setPresentAddress(String presentAddress) {
+		this.presentAddress = presentAddress;
+	}
+	@Column(name = "permanent_Address", columnDefinition = "mediumtext")
+	public String getPermanentAddress() {
+		return permanentAddress;
+	}
+	public void setPermanentAddress(String permanentAddress) {
+		this.permanentAddress = permanentAddress;
+	}
+
+	@Column(name = "religion")
+	public Integer getReligion() {
+		return religion;
+	}
+	public void setReligion(Integer religion) {
+		this.religion = religion;
+	}
 	
 }

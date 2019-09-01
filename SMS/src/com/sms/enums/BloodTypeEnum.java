@@ -1,12 +1,20 @@
 package com.sms.enums;
 
-public enum Gender {
-	MALE(1,"Male"), 
-	FEMALE(2,"Female"), 
-	LESBIAN(3,"Lesbian"), 
-	GAY(4,"Gay");
+public enum BloodTypeEnum {
+	Aplus(1,"A+"), 
+	Aminus(2,"A-"), 
+	Bplus(3,"B+"), 
+	Bminus(4,"B-"), 
+	Oplus(5,"O+"), 
+	Ominus(6,"O-"), 
+	ABplus(7,"AB+"), 
+	ABminus(8,"AB-");
 	
-	private Gender(Integer id, String description) {
+
+
+	
+	
+	private BloodTypeEnum(Integer id, String description) {
 		this.id = id;
 		this.description = description;
 	}
@@ -30,8 +38,8 @@ public enum Gender {
 		this.description = description;
 	}
 	
-	public static Gender getInstance(Integer id) {
-		for(Gender value :  Gender.values())
+	public static BloodTypeEnum getInstance(Integer id) {
+		for(BloodTypeEnum value :  BloodTypeEnum.values())
 			if(value.getId().equals(id)) return value;
 		return null;
 	}

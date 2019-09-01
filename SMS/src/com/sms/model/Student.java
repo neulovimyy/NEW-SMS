@@ -26,7 +26,6 @@ public class Student implements Serializable {
 	
 	private String lastName;
 	private Date birthDate;
-	private String studentAddress;
 	private String civilStatus;
 	private String mobileNum;
 	private Integer gender;
@@ -83,14 +82,6 @@ public class Student implements Serializable {
 	}
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
-	}
-	
-	@Column(name = "address")
-	public String getStudentAddress() {
-		return studentAddress;
-	}
-	public void setStudentAddress(String studentAddress) {
-		this.studentAddress = studentAddress;
 	}
 	
 	@Column(name = "civil_status")

@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sms.base.BaseController;
 import com.sms.enums.BloodTypeEnum;
+import com.sms.enums.Religion;
 import com.sms.enums.Gender;
 import com.sms.model.Student;
+import com.sms.model.Subject;
 import com.sms.service.StudentService;
 	
 @Controller
@@ -29,6 +31,7 @@ public class StudentController extends BaseController{
 	
 	private Map<Integer, String> genderList;
 	private Map<Integer, String> bloodtypeList;
+	private Map<Integer, String> religionList;
 	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "save", method = RequestMethod.POST)
@@ -80,12 +83,48 @@ public class StudentController extends BaseController{
 		return "addStudent";
 	}
 	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "savesubject", method = RequestMethod.POST)
+	public String saveSubject(@ModelAttribute("command") 
+			Subject subject, ModelMap map) {
+		List<Subject> subjects =  (List<Subject>) studentService.getAll(Subject.class);
+		map.put("students", subjects);
+		studentService.addSubject(subject);
+		return "subjectList";
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "addsubject", method = RequestMethod.GET)
+	public String addSubject(@ModelAttribute("command")  Subject subject, ModelMap model) {
+		List<Subject> subjects =  (List<Subject>) studentService.getAll(Subject.class);
+		
+		model.put("subjects", subjects);
+		return "addSubject";
+	}
+	
+	@RequestMapping(value="subjects", method = RequestMethod.GET)
+	public String listSubject(HttpServletRequest request, ModelMap model) {
+		model.put("subjects", studentService.getAll(Subject.class));
+		return "subjectList";
+	}
+	
+	@RequestMapping(value = "editsubject", method = RequestMethod.GET)
+	public String editSubject(@ModelAttribute("command")  Subject subject, 
+			BindingResult result, ModelMap model) {
+		Subject obj = studentService.get(Subject.class, subject.getSubjectId());
+		model.addAttribute("subjects", studentService.get(Subject.class,subject.getSubjectId()));
+		model.addAttribute("subjects",  studentService.getAll(Subject.class));
+		model.addAttribute("command",obj);
+		
+		return "addSubject";
+	}
+	
 	private void initModel(ModelMap model) {
 		model.addAttribute("genderList", getGenderList()); 
 		model.addAttribute("bloodtypeList", getBloodTypeList()); 
-		
+		model.addAttribute("religionList", getReligionList());
 	}
-	
+
 	public Map<Integer, String> getGenderList() {
 		if (com.sms.util.InventoryUtility.isNull(genderList)) {
 			genderList = new HashMap<Integer, String>();
@@ -104,8 +143,17 @@ public class StudentController extends BaseController{
 				bloodtypeList.put(value.getId(), value.getDescription());
 			}
 		}
-
 		return bloodtypeList;
+	}
+	
+	public Map<Integer, String> getReligionList() {
+		if (com.sms.util.InventoryUtility.isNull(religionList)) {
+			religionList = new HashMap<Integer, String>();
+			for (Religion value : Religion.values()) {
+				religionList.put(value.getId(), value.getDescription());
+			}
+		}
+		return religionList;
 	}
 	
 }

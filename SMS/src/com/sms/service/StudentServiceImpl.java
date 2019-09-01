@@ -12,6 +12,7 @@ import com.sms.dao.SMSDao;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
 import com.sms.model.Student;
+import com.sms.model.Subject;
 import com.sms.service.StudentService;
 
 @Service("studentService")
@@ -72,6 +73,22 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 
 	public void deleteFaculty(Faculty faculty) {
 		studentDao.deleteFaculty(faculty);
+	}
+
+	public List<Subject> listSubject() {
+		return studentDao.listSubject();
+	}
+
+	public void addSubject(Subject subject) {
+		studentDao.addSubject(subject);
+	}
+
+	public Subject getSubject(Long id) {
+		return studentDao.getSubject(id);
+	}
+
+	public void deleteSubject(Subject subject) {
+		studentDao.deleteSubject(subject);
 	}
 
 }

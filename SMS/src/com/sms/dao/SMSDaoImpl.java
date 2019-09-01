@@ -10,6 +10,7 @@ import com.sms.base.BaseDaoHibernate;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
 import com.sms.model.Student;
+import com.sms.model.Subject;
 
 			
 @Repository("studentDao")
@@ -65,7 +66,6 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 
 	public void addFaculty(Faculty faculty) {
 		sessionFactory.getCurrentSession().saveOrUpdate(faculty);
-		
 	}
 
 	@SuppressWarnings("unchecked")
@@ -79,6 +79,24 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 
 	public void deleteFaculty(Faculty faculty) {
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM faculty WHERE faculty_id = ?").setParameter(0, faculty.getFacultyId()).executeUpdate();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Subject> listSubject() {
+		return (List<Subject>) sessionFactory.getCurrentSession().createCriteria(Subject.class).list();
+	}
+
+	public void addSubject(Subject subject) {
+		sessionFactory.getCurrentSession().saveOrUpdate(subject);
+	}
+
+	public Subject getSubject(Long id) {
+		return (Subject) sessionFactory.getCurrentSession().get(Subject.class, id);
+	}
+
+	@Override
+	public void deleteSubject(Subject subject) {
+		sessionFactory.getCurrentSession().createQuery("DELETE FROM subject WHERE subject_id = ?").setParameter(0, subject.getSubjectId()).executeUpdate();
 	}
 
 

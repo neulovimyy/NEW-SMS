@@ -10,10 +10,6 @@ public enum BloodTypeEnum {
 	ABplus(7,"AB+"), 
 	ABminus(8,"AB-");
 	
-
-
-	
-	
 	private BloodTypeEnum(Integer id, String description) {
 		this.id = id;
 		this.description = description;

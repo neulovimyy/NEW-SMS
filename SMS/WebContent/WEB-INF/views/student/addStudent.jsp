@@ -55,7 +55,10 @@
 						<form:select path="bloodtype" items="${bloodtypeList}" cssClass="form-control" />
 					</div>
 
-					
+					<div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12 dropdown-input">
+						<label class="control-label">Religion</label>
+						<form:select path="religion" items="${religionList}" cssClass="form-control" />
+					</div>
 
 					<div class="clearfix"></div>
 					<div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">

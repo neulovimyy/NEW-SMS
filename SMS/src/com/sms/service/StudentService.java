@@ -6,6 +6,7 @@ import com.sms.base.BaseService;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
 import com.sms.model.Student;
+import com.sms.model.Subject;
 
 
 public interface StudentService extends BaseService {
@@ -24,5 +25,10 @@ public interface StudentService extends BaseService {
 	public List<Faculty> listFaculty();
 	public Faculty getFaculty(Long id);
 	public void deleteFaculty(Faculty faculty);
+	
+	public List<Subject> listSubject();
+	public void addSubject(Subject subject);
+	public Subject getSubject(Long id);
+	public void deleteSubject(Subject subject);
 	
 }

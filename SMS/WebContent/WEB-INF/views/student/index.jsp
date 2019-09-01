@@ -7,19 +7,10 @@
 			</font>
 		</h1>
 	</div>
-	
-	<div class="container">
-		<div class="row">
-	        <div id="menu" class="col-md-6 col-md-offset-1" style="position: fixed;">
-	            <button id="showBut" type="submit" class="btn btn-lg btn-success glyphicon glyphicon-cloud" accesskey="s" ><br><u>S</u>how Database</button>
-	            <button id="addBut" type="submit" class="btn btn-lg btn-success glyphicon glyphicon-user" accesskey="c" ><br><u>A</u>dd Data</button>
-	        </div>
-		</div>
-	</div>
 
 	<div class="jumbotron">
-	    <h2 align="center"><a class="btn btn-default btn-lg btn-block" href="students.html">Show Students</a></h2>
-	    <h2 align="center"><a class="btn btn-default btn-lg btn-block" href="add.html">Add Students</a></h2>
+	    <h2 align="center"><a class="btn btn-lg btn-success glyphicon glyphicon-cloud" href="students.html">Show Students</a></h2>
+	    <h2 align="center"><a class="btn btn-lg btn-success glyphicon glyphicon-cloud" href="add.html">Add Students</a></h2>
 	</div>
 	 
 	<!-- <form method="post" action="students.html">

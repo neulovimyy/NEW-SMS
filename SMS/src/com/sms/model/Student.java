@@ -23,12 +23,16 @@ public class Student implements Serializable {
 	private String studentId;
 	private String firstName;
 	private String middleName;
+	
 	private String lastName;
 	private Date birthDate;
 	private String studentAddress;
 	private String civilStatus;
 	private Integer gender;
 	private String mobileNum;
+	private String permanentAddress;
+	private String religion;
+	
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
@@ -110,6 +114,22 @@ public class Student implements Serializable {
 	}
 	public void setMobileNum(String mobileNum) {
 		this.mobileNum = mobileNum;
+	}
+	
+	@Column(name = "permanent_address")
+	public String getPermanentAddress() {
+		return permanentAddress;
+	}
+	public void setPermanentAddress(String permanentAddress) {
+		this.permanentAddress = permanentAddress;
+	}
+	
+	@Column(name = "religion")
+	public String getReligion() {
+		return religion;
+	}
+	public void setReligion(String religion) {
+		this.religion = religion;
 	}
 	
 	

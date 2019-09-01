@@ -1,7 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@include file="../common/taglibs.jsp" %>
+<%@include file="common/taglibs.jsp" %>
 	<div class="content-wrapper">
 		<section class="content">
+			
 			<form:form id="save-student" method="POST" commandName="command" action="/SMS/student/save.html">
 				<div class="col-md-12">
 				<div class="page-header">

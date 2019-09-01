@@ -2,6 +2,7 @@ package com.sms.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,10 +63,12 @@ public class AccountingController extends BaseController{
 	}
 	
 	@RequestMapping(value = "edit", method = RequestMethod.GET)
-	public String editTransactions(@ModelAttribute("account")  ElemAndHS account, 
-			BindingResult result, ModelMap model) {
-		ElemAndHS obj = studentService.get(ElemAndHS.class, account.getStudentNumber());
-		model.addAttribute("accounts", studentService.get(ElemAndHS.class,account.getStudentNumber()));
+	public String editTransactions(@ModelAttribute("account") ElemAndHS account, 
+			BindingResult result, ModelMap model, HttpServletRequest request) {
+		
+		Long id = Long.parseLong(request.getParameter("id"));
+		ElemAndHS obj = studentService.get(ElemAndHS.class, id);
+		model.addAttribute("accounts", studentService.get(ElemAndHS.class,id));
 		model.addAttribute("accounts",  studentService.getAll(ElemAndHS.class));
 		model.addAttribute("account",obj);
 		return "elemAndHS";

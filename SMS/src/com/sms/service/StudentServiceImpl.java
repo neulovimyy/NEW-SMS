@@ -11,6 +11,7 @@ import com.sms.base.BaseServiceImpl;
 import com.sms.dao.SMSDao;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
+import com.sms.model.Report;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 import com.sms.service.StudentService;
@@ -89,6 +90,25 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 
 	public void deleteSubject(Subject subject) {
 		studentDao.deleteSubject(subject);
+	}
+	
+	public List<Report> listsSubjects() {
+		return studentDao.reportList();
+	}
+	public Report getReport(Long subjectId) {
+		return studentDao.getReportInfo(subjectId);
+	}
+
+	@Override
+	public List<Report> listReportss() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Report getReport(String subjectId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

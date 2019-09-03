@@ -5,6 +5,7 @@ import java.util.List;
 import com.sms.base.BaseDao;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
+import com.sms.model.Report;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 
@@ -33,5 +34,10 @@ public interface SMSDao extends BaseDao {
 	public void addSubject(Subject subject);
 	public Subject getSubject(Long id);
 	public void deleteSubject(Subject subject);
+	
+	
+	//report
+	public List<Report> reportList();
+	public Report getReportInfo(Long subjectId);
 	
 }

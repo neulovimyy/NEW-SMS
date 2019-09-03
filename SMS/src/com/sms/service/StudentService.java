@@ -5,6 +5,7 @@ import java.util.List;
 import com.sms.base.BaseService;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
+import com.sms.model.Report;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 
@@ -31,4 +32,7 @@ public interface StudentService extends BaseService {
 	public Subject getSubject(Long id);
 	public void deleteSubject(Subject subject);
 	
+	//report
+	public List<Report> listReportss();
+	public Report getReport(String subjectId);
 }

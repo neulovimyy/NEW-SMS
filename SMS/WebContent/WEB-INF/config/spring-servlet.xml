@@ -31,6 +31,7 @@
 	<mvc:resources location="/themes/" mapping="/themes/**"/>
 	<mvc:resources location="/images" mapping="/images/**"/>
 	<mvc:resources location="/js/" mapping="/js/**"/>
+	<mvc:resources location="/css/" mapping="/css/**"/>
 	<mvc:default-servlet-handler/>
 	
 	<tx:annotation-driven transaction-manager="hibernateTransactionManager"/>

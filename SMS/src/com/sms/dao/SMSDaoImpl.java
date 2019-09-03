@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.sms.base.BaseDaoHibernate;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
+import com.sms.model.Report;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 
@@ -93,7 +94,13 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 	public Subject getSubject(Long id) {
 		return (Subject) sessionFactory.getCurrentSession().get(Subject.class, id);
 	}
-
+	@SuppressWarnings("unchecked")
+	public List<Report> reportList() {
+		return (List<Report>) sessionFactory.getCurrentSession().createCriteria(Report.class).list();
+	}
+	public Report getReportInfo(Long subjectId) {
+		return (Report) sessionFactory.getCurrentSession().get(Report.class, subjectId);
+	}
 	@Override
 	public void deleteSubject(Subject subject) {
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM subject WHERE subject_id = ?").setParameter(0, subject.getSubjectId()).executeUpdate();

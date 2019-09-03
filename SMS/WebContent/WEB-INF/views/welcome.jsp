@@ -18,5 +18,10 @@
 				<a class="btn btn-lg btn-success glyphicon glyphicon-cloud whitecolor" href="academic/home.html">Academic</a>
 			</h3>
 		</div>
+		<div class="clearfix">
+			<h3>
+				<a class="btn btn-lg btn-success glyphicon glyphicon-cloud whitecolor" href="records/home.html">Report</a>
+			</h3>
+		</div>
 	</div>
 </div>

@@ -17,7 +17,6 @@
 		<link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>"> --%>
 		<!-- Form Validation -->
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrapValidator.min.css"/>">
-		
 		<!-- datePicker -->
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/datepicker.min.css"/>">
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

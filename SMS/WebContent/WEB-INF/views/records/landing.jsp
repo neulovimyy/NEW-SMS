@@ -6,11 +6,8 @@
 
 <html>
 	<head>
-		
-		<spring:url value="/resources/css/res.css" var="resCss" />
-		<spring:url value="/resources/js/res.js" var="resJs" />
-		<spring:url value="/css/landing.css" var="landingCss" />	
-		<link href="${pageContext.request.contextPath}/theme1/themecss/res.css" rel="stylesheet" >
+		<spring:url value="/resources/js/res.js" var="resJs" /> 
+		<spring:url value="/css/RecordAndReport/landing.css" var="landingCss" />	
 		<link href="${pageContext.request.contextPath}/theme1/themejs/res.js" rel="stylesheet" >
 		<link href="${landingCss}" rel="stylesheet" >
 	</head>
@@ -20,13 +17,10 @@
     <div class="header">
       <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-           
             <b> &nbsp; Records and Reports Module </b>
             <button class="hamburger" style ="margin-top: 50 px; margin-left: -130 px; margin-right: 100px;"> ☰ </button>
           </div>
       </div>
-    </div>
-
   <div class="content">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12">
@@ -49,7 +43,7 @@
         </button>
       </div>
       <div class="col-sm-1 s col-md-2 col-lg-2"></div>
-      <div class="col-sm-1 s col-md-2 col-lg-2"></div>
+      <div class="col-sm-1 s col-md-2 col-lg-2"> </div>
       <div class="col-sm-5 sm col-md-4 col-lg-4">
         <button class="button" style="width: 200px; height: 100px; background-color: #003B46; cursor: pointer; border: none; color: white; font-size:14px; border-radius: 5px;">
             <p> Senior Highschool Students: <br>
@@ -69,7 +63,7 @@
   </div>
 
 </div>
-
+</div>
 
 
     <div class="content">

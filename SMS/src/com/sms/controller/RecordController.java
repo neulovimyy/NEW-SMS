@@ -34,5 +34,9 @@ public class RecordController extends BaseController{
 		return "landing";
 	}
 	
+	@RequestMapping(value = "generate", method = RequestMethod.GET)
+	public String generate() {
+		return "generate";
+	}
 	
 }

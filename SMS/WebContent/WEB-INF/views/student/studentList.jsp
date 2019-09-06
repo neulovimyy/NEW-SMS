@@ -13,8 +13,7 @@
 							<th>Last Name</th>
 							<th colspan="2"	>Options</th>
 						</tr>
-					</thead>
-			
+					</thead>			
 					<c:forEach items="${students}" var="student">
 						
 						<tr class="info">

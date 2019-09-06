@@ -18,12 +18,12 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<welcome-file-list>
+	<!-- <welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>/account/index2.html</welcome-file>
 		<welcome-file>/grades/index.html</welcome-file>
 		
-	</welcome-file-list>
+	</welcome-file-list>  -->
 
 	<!-- <listener>
 		<listener-class>

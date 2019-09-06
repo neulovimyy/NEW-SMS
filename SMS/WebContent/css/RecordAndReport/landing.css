@@ -120,8 +120,7 @@ img{
 
 
 
-
-OOP LANDING PAGE
+/*OOP LANDING PAGE */
 .container-fluid{
     padding: 0px;
 }
@@ -147,19 +146,7 @@ OOP LANDING PAGE
             height: 125px;
         }
 
-        .hamburger{
-            float: right;
-            cursor: pointer;
-            outline: none;
-            font-size: 1.2em;
-            border: 2px solid black;
-            border-radius: 15px;
-            padding: 5px 10px 5px 10px; // t r b l
-            margin-top: 35px;
-            background-color: white;
-            color: black;
-        }
-    }
+
 }
 .content{
     text-align: center;
@@ -174,6 +161,19 @@ OOP LANDING PAGE
         margin: 0px;
 }
 
+   }
+    .hamburger{
+       float: right;
+       cursor: pointer;
+       outline: none;
+       font-size: 1.2em;
+       border: 2px solid black;
+       border-radius: 15px;
+       padding: 5px 10px 5px 10px; // t r b l
+       margin-top: 35px;
+       background-color: white;
+       color: black;
+}
 .button{
     outline: none;
     border: none;

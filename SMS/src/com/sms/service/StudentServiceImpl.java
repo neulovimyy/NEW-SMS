@@ -98,8 +98,7 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 	public Report getReport(Long subjectId) {
 		return studentDao.getReportInfo(subjectId);
 	}
-
-	@Override
+	
 	public List<Report> listReportss() {
 		// TODO Auto-generated method stub
 		return null;

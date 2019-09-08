@@ -65,6 +65,8 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM elemhs_account WHERE student_number = ?").setParameter(0, account.getStudentNumber()).executeUpdate();
 	}
 
+	//faculties
+	
 	public void addFaculty(Faculty faculty) {
 		sessionFactory.getCurrentSession().saveOrUpdate(faculty);
 	}
@@ -82,18 +84,27 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM faculty WHERE faculty_id = ?").setParameter(0, faculty.getFacultyId()).executeUpdate();
 	}
 
+	//subjects
+	
+	public void addSubject(Subject subject) {
+		sessionFactory.getCurrentSession().saveOrUpdate(subject);
+	}
+
 	@SuppressWarnings("unchecked")
 	public List<Subject> listSubject() {
 		return (List<Subject>) sessionFactory.getCurrentSession().createCriteria(Subject.class).list();
 	}
 
-	public void addSubject(Subject subject) {
-		sessionFactory.getCurrentSession().saveOrUpdate(subject);
-	}
-
 	public Subject getSubject(Long id) {
 		return (Subject) sessionFactory.getCurrentSession().get(Subject.class, id);
 	}
+
+	public void deleteSubject(Subject subject) {
+		sessionFactory.getCurrentSession().createQuery("DELETE FROM subject WHERE subject_id = ?").setParameter(0, subject.getSubjectId()).executeUpdate();
+	}
+
+	//reports
+	
 	@SuppressWarnings("unchecked")
 	public List<Report> reportList() {
 		return (List<Report>) sessionFactory.getCurrentSession().createCriteria(Report.class).list();
@@ -101,10 +112,6 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 	public Report getReportInfo(Long subjectId) {
 		return (Report) sessionFactory.getCurrentSession().get(Report.class, subjectId);
 	}
-	@Override
-	public void deleteSubject(Subject subject) {
-		sessionFactory.getCurrentSession().createQuery("DELETE FROM subject WHERE subject_id = ?").setParameter(0, subject.getSubjectId()).executeUpdate();
-	}
-
 
 }
+

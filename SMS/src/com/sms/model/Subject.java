@@ -21,7 +21,6 @@ public class Subject implements Serializable{
 	private String subjectCode;
 	private int subjectUnit;
 	
-	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	@Column(name = "subject_id")

@@ -43,7 +43,7 @@
         </button>
       </div>
       <div class="col-sm-1 s col-md-2 col-lg-2"></div>
-      <div class="col-sm-1 s col-md-2 col-lg-2"> </div>
+
       <div class="col-sm-5 sm col-md-4 col-lg-4">
         <button class="button" style="width: 200px; height: 100px; background-color: #003B46; cursor: pointer; border: none; color: white; font-size:14px; border-radius: 5px;">
             <p> Senior Highschool Students: <br>

@@ -29,6 +29,7 @@ public class RecordController extends BaseController{
 		return "index4";
 	}
 	
+
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String welcome() {
 		return "landing";
@@ -38,5 +39,4 @@ public class RecordController extends BaseController{
 	public String generate() {
 		return "generate";
 	}
-	
 }

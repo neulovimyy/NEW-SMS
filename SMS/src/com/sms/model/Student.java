@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.directwebremoting.annotations.DataTransferObject;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 @SuppressWarnings("serial")
 @Entity
@@ -27,13 +28,17 @@ public class Student implements Serializable {
 	private String lastName;
 	private Date birthDate;
 	private String civilStatus;
+	
 	private String mobileNum;
+	private String emailAddress;
+	
 	private Integer gender;
 	private Integer religion;
 	private Integer bloodtype;
 	private String presentAddress;
 	private String permanentAddress;
-
+	private CommonsMultipartFile studentPicture; 
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	@Column(name = "id")
@@ -136,6 +141,22 @@ public class Student implements Serializable {
 	}
 	public void setReligion(Integer religion) {
 		this.religion = religion;
+	}
+	
+	@Column(name = "student_picture")
+	public CommonsMultipartFile getStudentPicture() {
+		return studentPicture;
+	}
+	public void setStudentPicture(CommonsMultipartFile studentPicture) {
+		this.studentPicture = studentPicture;
+	}
+	
+	@Column(name = "email_address")
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 	
 }

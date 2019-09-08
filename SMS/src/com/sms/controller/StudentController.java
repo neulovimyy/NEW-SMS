@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sms.base.BaseController;
 import com.sms.enums.BloodTypeEnum;
+import com.sms.enums.CivilStatusEnum;
 import com.sms.enums.Religion;
 import com.sms.enums.Gender;
 import com.sms.model.Student;
@@ -32,6 +33,7 @@ public class StudentController extends BaseController{
 	private Map<Integer, String> genderList;
 	private Map<Integer, String> bloodtypeList;
 	private Map<Integer, String> religionList;
+	private Map<Integer, String> civilStatusList;
 	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "save", method = RequestMethod.POST)
@@ -51,10 +53,8 @@ public class StudentController extends BaseController{
 	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "add", method = RequestMethod.GET)
-	public String addEmployee(@ModelAttribute("command")  Student cstudent, ModelMap model) {
-		List<Student> students =  (List<Student>) studentService.getAll(Student.class);
+	public String addEmployee(HttpServletRequest request,@ModelAttribute("command")  Student cstudent, ModelMap model) {
 		
-		model.put("students", students);
 		initModel(model);
 		return "addStudent";
 	}
@@ -123,6 +123,7 @@ public class StudentController extends BaseController{
 		model.addAttribute("genderList", getGenderList()); 
 		model.addAttribute("bloodtypeList", getBloodTypeList()); 
 		model.addAttribute("religionList", getReligionList());
+		model.addAttribute("civilStatusList", getCivilStatusList());
 	}
 
 	public Map<Integer, String> getGenderList() {
@@ -156,4 +157,13 @@ public class StudentController extends BaseController{
 		return religionList;
 	}
 	
+	public Map<Integer, String> getCivilStatusList() {
+		if (com.sms.util.InventoryUtility.isNull(civilStatusList)) {
+			civilStatusList = new HashMap<Integer, String>();
+			for (CivilStatusEnum value : CivilStatusEnum.values()) {
+				civilStatusList.put(value.getId(), value.getDescription());
+			}
+		}
+		return civilStatusList;
+	}
 }

@@ -73,12 +73,12 @@
         <put-attribute name="title" value="Encode Grades"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/academic/encode.jsp"></put-attribute>
    	 </definition>
-   	 
+   	<!-- Records and report -->
    	  <definition name="landing" extends="xeone">
         <put-attribute name="title" value="Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/landing.jsp"></put-attribute>
    	 </definition>
-   	 
+
  	 <definition name="index4" extends="xeone">
         <put-attribute name="title" value="Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/index4.jsp"></put-attribute>

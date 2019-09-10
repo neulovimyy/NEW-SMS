@@ -32,6 +32,11 @@
         <put-attribute name="body" value="/WEB-INF/views/student/addSubject.jsp" />
     </definition>
     
+    <definition name="iapply" extends="xeone">
+        <put-attribute name="title" value="Student Data Form" />
+        <put-attribute name="body" value="/WEB-INF/views/student/iapply.jsp" />
+    </definition>
+    
     <definition name="studentList" extends="xeone">
         <put-attribute name="title" value="Student List"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/student/studentList.jsp"></put-attribute>

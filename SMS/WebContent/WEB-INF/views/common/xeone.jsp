@@ -9,7 +9,7 @@
 		<title><tiles:insertAttribute name="title" ignore="true"/></title>
 		<%-- <link href="<c:url value="themes/xeone/images/favicon.png"/>" rel="icon"> --%>
 		<link href="<c:url value="/themes/images/favicon.png"/>" rel="icon">
-
+		<link rel="icon" type="icon/ico "href="<c:url value="/image/image.ico"/>">
 		<%-- <link rel="stylesheet" href="<c:url value="/css/xeone/css/plugins.css"/>"> --%>
 		<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 		<%-- <link rel="stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">

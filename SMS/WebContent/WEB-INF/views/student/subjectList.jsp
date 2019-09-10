@@ -22,7 +22,7 @@
 							<td><c:out value="${subject.subjectCode}"/></td>
 							<td><c:out value="${subject.subjectUnit}"/></td>
 							
-							<td align="center"><a href="editsubject.html?subjectId=${subject.subjectId}">Edit</a> | <a href="delete.html?subjectId=${subject.subjectId}">Delete</a></td>
+							<td align="center"><a href="editsubject.html?subjectId=${subject.subjectId}">Edit</a> | <a href="deletesubject.html?subjectId=${subject.subjectId}">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</table>

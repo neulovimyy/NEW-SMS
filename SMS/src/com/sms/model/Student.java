@@ -38,6 +38,7 @@ public class Student implements Serializable {
 	private String presentAddress;
 	private String permanentAddress;
 	private CommonsMultipartFile studentPicture; 
+	private String acad;
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
@@ -159,4 +160,11 @@ public class Student implements Serializable {
 		this.emailAddress = emailAddress;
 	}
 	
+	@Column(name = "acad")
+	public String getAcad() {
+		return acad;
+	}
+	public void setAcad(String acad) {
+		this.acad = acad;
+	}
 }

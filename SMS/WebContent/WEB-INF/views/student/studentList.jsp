@@ -7,7 +7,7 @@
 	
 	<section class="content">
 	<h3 align="center">
-		<a href="${pageContext.request.contextPath}/student/add">Add Student</a>
+		<a href="${pageContext.request.contextPath}/student/apply">Apply</a>
 	</h3>
 
 	<div class="col-md-12">

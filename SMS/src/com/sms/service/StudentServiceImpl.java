@@ -92,6 +92,7 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 		studentDao.deleteSubject(subject);
 	}
 	
+	
 	public List<Report> listsSubjects() {
 		return studentDao.reportList();
 	}
@@ -99,11 +100,17 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 		return studentDao.getReportInfo(subjectId);
 	}
 	
+	
 	public List<Report> listReportss() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	public void addReport(Report subject) {
+		studentDao.addReport(subject);
+	}
+	public void deleteReport(Report subject) {
+		studentDao.deleteReport(subject);
+	}
 	@Override
 	public Report getReport(String subjectId) {
 		// TODO Auto-generated method stub

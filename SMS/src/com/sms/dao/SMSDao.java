@@ -39,5 +39,7 @@ public interface SMSDao extends BaseDao {
 	//report
 	public List<Report> reportList();
 	public Report getReportInfo(Long subjectId);
+	public void deleteReport(Report subject);
+	public void addReport(Report subject);
 	
 }

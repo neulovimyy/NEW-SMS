@@ -35,4 +35,6 @@ public interface StudentService extends BaseService {
 	//report
 	public List<Report> listReportss();
 	public Report getReport(String subjectId);
+	public void deleteReport(Report subject);
+	public void addReport(Report subject);
 }

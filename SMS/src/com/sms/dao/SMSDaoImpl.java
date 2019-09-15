@@ -104,13 +104,18 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 	}
 
 	//reports
-	
+	public void addReport(Report subject) {
+		sessionFactory.getCurrentSession().saveOrUpdate(subject);
+	}
 	@SuppressWarnings("unchecked")
 	public List<Report> reportList() {
 		return (List<Report>) sessionFactory.getCurrentSession().createCriteria(Report.class).list();
 	}
 	public Report getReportInfo(Long subjectId) {
 		return (Report) sessionFactory.getCurrentSession().get(Report.class, subjectId);
+	}
+	public void deleteReport(Report subject) {
+		sessionFactory.getCurrentSession().createQuery("DELETE FROM subject WHERE subject_id = ?").setParameter(0, subject.getSubjectId()).executeUpdate();
 	}
 
 }

@@ -10,6 +10,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sms.model.Student;
 import com.sms.util.Config;
 
 @Service
@@ -85,6 +86,11 @@ public class BaseServiceImpl
     return this.baseDao.getAll(clazz, status);
   }
   
+  public List<?> getByStudentID(Class<?> paramClass, String string) {
+  	// TODO Auto-generated method stub
+  	return this.baseDao.getByStudentId(paramClass, string);
+  }
+  
   public List<?> getAll(Class<?> clazz, List<Integer> status)
   {
     return this.baseDao.getAll(clazz, status);
@@ -132,4 +138,6 @@ public class BaseServiceImpl
   {
     this.baseDao.bulkUpdate(entityClass, map, conditionClause);
   }
+
+
 }

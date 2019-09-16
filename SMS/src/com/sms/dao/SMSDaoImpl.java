@@ -100,7 +100,7 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 	}
 
 	public void deleteSubject(Subject subject) {
-		sessionFactory.getCurrentSession().createQuery("DELETE FROM subject WHERE subject_id = ?").setParameter(0, subject.getSubjectId()).executeUpdate();
+		sessionFactory.getCurrentSession().createQuery("DELETE FROM Subject WHERE subjectId = ?").setParameter(0, subject.getSubjectId()).executeUpdate();
 	}
 
 	//reports
@@ -112,6 +112,5 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 	public Report getReportInfo(Long subjectId) {
 		return (Report) sessionFactory.getCurrentSession().get(Report.class, subjectId);
 	}
-
 }
 

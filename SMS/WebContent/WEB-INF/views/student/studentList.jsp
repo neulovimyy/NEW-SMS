@@ -10,6 +10,7 @@
 	</h3>
 
 	<div class="col-md-12">
+		<form:form id="view_students" action="${pageContext.request.contextPath}/student/students" method="post" commandName="studentCommand">
 		<div class="page-header">
 			<div class="container-fluid"></div>
 		</div>
@@ -20,6 +21,19 @@
 			
 			<div class="panel-body">
 				<div class="col-md-12">
+					<div class="row">
+								<div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+									<div class="input-group">
+										<form:input class="form-control" path="search" placeholder="Search..." autocomplete="off"/>
+										<span class="input-group-btn">
+											<button class="btn btn-danger" type="submit">
+												<i class="fa fa-search fa-fw"></i> Search
+											</button> 
+											 </span>
+									</div>
+								</div>
+								
+							</div>
 					<div class="row">
 						<div class="table-responsive">
 							<table class="table grid-view table-hover table-responsive">
@@ -59,6 +73,7 @@
 				</div>
 			</div>
 		</div>
+		</form:form>
 	</div>
 	</section>
 

@@ -42,49 +42,39 @@ public class StudentController extends BaseController{
 	private Map<Integer, String> civilStatusList;
 	private Map<Integer, String> educAttainment;
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "save", method = RequestMethod.GET)
-	public void saveEmployee(@ModelAttribute("command") 
-			Student cstudent, ModelMap map,
-			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Student> students =  (List<Student>) studentService.getAll(Student.class);
-		map.put("students", students);
+	public void saveEmployee(@ModelAttribute("command") Student cstudent, HttpServletResponse response) throws ServletException, IOException {
+		cstudent.setId(studentService.generateStudentNumber() + 1);
 		cstudent.setStudentId(cstudent.getStudentNumberFull());
-		studentService.addStudent(cstudent);
+		studentService.save(cstudent);
 		response.sendRedirect("students");
 	}
 
-	@RequestMapping(value="students", method = RequestMethod.GET)
-	public String listEmployees(HttpServletRequest request, ModelMap model) {
-		model.put("students", studentService.getAll(Student.class));
+	@RequestMapping(value="students")
+	public String listEmployees(HttpServletRequest request, ModelMap model, @ModelAttribute("studentCommand") Student student) {
+		model.addAttribute("students", studentService.viewStudents(student));
 		return "studentList";
 	}
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public String addEmployee(HttpServletRequest request,@ModelAttribute("command")  Student cstudent, ModelMap model) {
 		
 		initModel(model);
 		return "addStudent";
 	}
-	/*
-	@RequestMapping(value = "sss", method = RequestMethod.POST) 
-	public String sss (ModelMap model) {
-		return "sss";
-	}
-	*/
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "add", method = RequestMethod.POST)
-	public String addNewEmployee(HttpServletRequest request,@ModelAttribute("command")  Student cstudent, ModelMap model) {
+	public String addNewEmployee(HttpServletRequest request,@ModelAttribute("command")  Student cstudent, BindingResult result, ModelMap model) {
 		String acad = request.getParameter("acad");
+		cstudent.setAcad(acad);
 		model.addAttribute("acad", acad);
+		
 		initModel(model);
 		return "addStudent";
 	}
 	
 	@RequestMapping(value = "apply", method = RequestMethod.GET)
-	public String apply (HttpServletRequest request,@ModelAttribute("command") ModelMap model, BindingResult result) {
+	public String apply (HttpServletRequest request,ModelMap model, @ModelAttribute("command") Student student , BindingResult result) {
 		model.addAttribute("acadAttainment", getAcadAttainment());
 		return "iapply";
 	}
@@ -95,7 +85,7 @@ public class StudentController extends BaseController{
 		for (AcademicAttainment value : AcademicAttainment.values()) {
 			educAttainment.put(value.getId(), value.getDescription());
 		}
-	}
+	}		
 		return educAttainment;
 	}
 	

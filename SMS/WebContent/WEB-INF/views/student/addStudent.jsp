@@ -8,7 +8,6 @@
 				<div class="page-header">
 					<div class="container-fluid"></div>
 				</div>
-				<input type="hidden" name="acad" value="${acad }">
 				<div class="panel panel-default">
 					<div class="panel-heading text-center">
 						<h2>Add Student Data</h2>
@@ -24,6 +23,10 @@
 								<form:hidden path="id" />
 							</c:when>
 						</c:choose>
+						<c:if test="${not empty acad }">
+							<form:hidden path="acad" value="${acad}"/>		
+						</c:if>
+
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">First Name </label>
 							<form:input id="firstname" path="firstName" cssClass="form-control" placeholder="Enter first name..." />

@@ -16,6 +16,8 @@ public interface StudentService extends BaseService {
 	public List<Student> listStudentss();
 	public Student getStudent(Long Id);
 	public void deleteStudent(Student employee);
+	public List<Student> viewStudents(Student student);
+	public Long generateStudentNumber();
 	//accounting
 	public void addTransactions(ElemAndHS account);
 	public List<ElemAndHS> listTransactions();

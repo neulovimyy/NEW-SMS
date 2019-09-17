@@ -1,7 +1,10 @@
 package com.sms.dao;
 
+import java.math.BigInteger;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -112,5 +115,54 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 	public Report getReportInfo(Long subjectId) {
 		return (Report) sessionFactory.getCurrentSession().get(Report.class, subjectId);
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Student> viewStudents(Student student) {
+		//Zid
+		StringBuffer hqlQuery = new StringBuffer("from Student e where 1=1 ");
+		
+		StringBuffer dynamicSql = new StringBuffer();
+		if(StringUtils.isNotEmpty(student.getSearch())) {
+			dynamicSql.append("and (  ");
+			dynamicSql.append(" lower(e.firstName) like lower(:search) ");
+			dynamicSql.append("or lower(e.middleName) like lower(:search) ");
+			dynamicSql.append("or lower(e.lastName) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.firstName,' ', e.lastName, ' ', e.middleName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.firstName,' ', e.middleName, ' ', e.lastName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.lastName,' ', e.firstName, ' ', e.middleName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.lastName,' ', e.middleName, ' ', e.firstName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.middleName,' ', e.lastName, ' ', e.firstName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.middleName,' ', e.firstName, ' ', e.lastName)) like lower(:search) ");
+			dynamicSql.append("or lower(e.studentId) like lower(:search) ");
+			dynamicSql.append("or lower(e.emailAddress) like lower(:search)) ");
+			
+		}
+		
+		final String sql =  hqlQuery.append(dynamicSql).toString();
+		Query query = getSession().createQuery(sql);
+		
+		if(StringUtils.isNotEmpty(student.getSearch())) {
+			query.setParameter("search","%" + student.getSearch() + "%");
+			
+		}
+		
+		List<Student> result = query.list();
+		
+		return result;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Long generateStudentNumber()
+	  {
+	    StringBuffer sql = new StringBuffer();
+	    sql.append("SELECT MAX(id) ");
+	    sql.append("FROM student_master ");
+	    
+	    List<BigInteger> results = getSession().createSQLQuery(sql.toString()).list();
+	    
+	    return results.get(0).longValue();
+	  }
 }
 

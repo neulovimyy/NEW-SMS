@@ -21,6 +21,7 @@
 						<c:choose>
 							<c:when test="${not empty command.id}">
 								<form:hidden path="id" />
+								<form:hidden path="studentId" />
 							</c:when>
 						</c:choose>
 						<c:if test="${not empty acad }">

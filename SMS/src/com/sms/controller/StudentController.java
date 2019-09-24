@@ -28,6 +28,7 @@ import com.sms.enums.Gender;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 import com.sms.service.StudentService;
+import com.sms.util.InventoryUtility;
 	
 @Controller
 @RequestMapping("student")
@@ -44,8 +45,10 @@ public class StudentController extends BaseController{
 	
 	@RequestMapping(value = "save", method = RequestMethod.GET)
 	public void saveEmployee(@ModelAttribute("command") Student cstudent, HttpServletResponse response) throws ServletException, IOException {
-		cstudent.setId(studentService.generateStudentNumber() + 1);
-		cstudent.setStudentId(cstudent.getStudentNumberFull());
+		if(InventoryUtility.isNull(cstudent.getId())){
+			cstudent.setId(studentService.generateStudentNumber() + 1);
+			cstudent.setStudentId(cstudent.getStudentNumberFull());
+		}
 		studentService.save(cstudent);
 		response.sendRedirect("students");
 	}

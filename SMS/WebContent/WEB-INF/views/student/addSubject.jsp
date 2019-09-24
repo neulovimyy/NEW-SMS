@@ -11,6 +11,11 @@
 				<div class="panel-heading">
 					<h1>Add Subject</h1>
 				</div>
+				<c:choose>
+					<c:when test="${not empty command.subjectId}">
+						<form:hidden path="subjectId" />
+					</c:when>
+				</c:choose>
 				<div class="panel-body">
 					<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 						<label class="control-label">Subject Name</label>

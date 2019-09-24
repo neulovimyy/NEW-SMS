@@ -96,6 +96,11 @@ public class BaseDaoHibernate extends HibernateDaoSupport implements BaseDao {
 		return getHibernateTemplate().find("from " + entityClass.getSimpleName() + " where status = ? order by id", status);
 	}
 
+	public List<?> getByStudentId(Class<?> paramClass, String studentNumber) {
+		List<?> result = (List<?>) ((Session) getHibernateTemplate()).createQuery("from " + paramClass.getSimpleName() + " where student_number LIKE '%"+studentNumber+"' order by student_id");
+		return result;
+	}
+	
 	public List<?> getAll(Class<?> entityClass, List<Integer> status) {
 		List<?> results = getSession().createQuery("from " + entityClass.getSimpleName() + " where status in (:status) order by id").setParameterList("status", status).list();
 		return results;
@@ -423,4 +428,7 @@ public class BaseDaoHibernate extends HibernateDaoSupport implements BaseDao {
 
 		query.executeUpdate();
 	}
+
+	
+	
 }

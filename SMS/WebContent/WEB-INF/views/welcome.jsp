@@ -20,6 +20,7 @@
 		<div class="clearfix">
 			<h3>
 				<a class="btn btn-lg btn-success glyphicon glyphicon-cloud whitecolor" href="records/home.html">Report</a>
+				<a class="btn btn-lg btn-success glyphicon glyphicon-cloud whitecolor" href="${pageContext.request.contextPath}/student/home">Student</a>
 			</h3>
 		</div>
 	</div>

@@ -1,24 +1,33 @@
 package com.sms.model;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.directwebremoting.annotations.DataTransferObject;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
+import com.sms.base.BaseModel;
+import com.sms.util.InventoryUtility;
 
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "student_master")
 @DataTransferObject
 
-public class Student implements Serializable {
+public class Student extends BaseModel implements Serializable{
 	
 	private Long Id;
 	private String studentId;
@@ -40,6 +49,8 @@ public class Student implements Serializable {
 	private CommonsMultipartFile studentPicture; 
 	private String acad;
 	
+	//private List<EducBg> educBg;
+
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	@Column(name = "id")
@@ -166,5 +177,20 @@ public class Student implements Serializable {
 	}
 	public void setAcad(String acad) {
 		this.acad = acad;
+	}
+	/*
+	@OneToMany(fetch = FetchType.EAGER, targetEntity = EducBg.class, mappedBy = "stud", cascade = CascadeType.ALL)
+	public List<EducBg> getEducBg() {
+		return educBg;
+	}
+	public void setEducBg(List<EducBg> educBg) {
+		this.educBg = educBg;
+	}*/
+	
+	@Transient
+	public String getStudentNumberFull() {
+		int yearLevel = Calendar.getInstance().get(Calendar.YEAR);
+		String p = yearLevel+"-"+InventoryUtility.convertToFourDigit(this.getId())+"-"+acad;
+		return p;
 	}
 }

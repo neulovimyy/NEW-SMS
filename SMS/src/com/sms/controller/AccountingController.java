@@ -1,9 +1,11 @@
 package com.sms.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,11 +28,12 @@ public class AccountingController extends BaseController{
 	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "save", method = RequestMethod.POST)
-	public String saveTransactions(@ModelAttribute("account") ElemAndHS account, ModelMap map) {
+	public void saveTransactions(@ModelAttribute("account") ElemAndHS account, ModelMap map,
+			HttpServletResponse response) throws IOException {
 		List<ElemAndHS> accounts =  (List<ElemAndHS>) studentService.getAll(ElemAndHS.class);
 		map.put("accounts", accounts);
 		studentService.save(account);
-		return "accountingTable";
+		response.sendRedirect("transaction");
 	}
 	
 	@RequestMapping(value="transaction", method = RequestMethod.GET)

@@ -117,4 +117,20 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<?> getByStudentID(Class<?> paramClass, String string) {
+		return (List<?>) studentDao.getByStudentId(paramClass, string);
+	}
+
+	@Override
+	public List<Student> viewStudents(Student student) {
+		
+		return studentDao.viewStudents(student);
+	}
+	
+	public Long generateStudentNumber(){
+		return studentDao.generateStudentNumber();
+	}
+
 }

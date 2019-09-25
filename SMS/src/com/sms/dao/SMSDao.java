@@ -17,8 +17,10 @@ public interface SMSDao extends BaseDao {
 	public List<Student> listStudent();
 	public Student getStudentInfo(Long id);
 	public void deleteStudent(Student stud);
+	public List<Student> viewStudents(Student student);
+	public Long generateStudentNumber();
 	
-	//accounting
+	//accountings
 	public void addTransactions(ElemAndHS stud);
 	public List<ElemAndHS> listTransactions();
 	public ElemAndHS getTransactions(Long id);

@@ -1,11 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@include file="../common/taglibs.jsp"%>
-	<form method="POST" action="../student/add">
-		<select name="acad">
-			<option value="elem">Elementary(Grade 1-6)</option> 
-			<option value="hs">High School(Grade 7 - 10)</option>
-			<option value="shs">Senior High/Junior High (Grade 11 - 12)</option>
-			<option value="college">College</option>
-		</select>
+	<form:form method="POST" action="../student/add" commandName="command">
+		<form:select path="acad" name="acad" class="text-center">
+			<option value="EL">Elementary</option> 
+			<option value="HS">High School</option>
+			<option value="JS">Junior High</option>
+			<option value="SH">Senior High</option>
+			<option value="CO">College</option>
+		</form:select>
 		<button type="submit"> Submit </button>
-	</form>
+	</form:form>

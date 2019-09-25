@@ -316,4 +316,30 @@ public class InventoryUtility {
         }    
         return list;        
     }
+	
+	public static String convertToFourDigit(Long i) {
+		StringBuilder sb = new StringBuilder();
+		if(i <= 9 && i > 0) {
+			sb.append("0000");
+			sb.append(i);
+			return sb.toString();
+		}
+		else if(i <= 99 && i >= 10) {
+			sb.append("000");
+			sb.append(i);
+			return sb.toString();
+		}else if(i <= 999 && i >= 100) {
+			sb.append("00");
+			sb.append(i);
+			return sb.toString();
+		}else if(i <= 9999 && i >= 1000) {
+			sb.append("0");
+			sb.append(i);
+			return sb.toString();
+		}else if(i <= 9999 && i >= 1000) {
+			sb.append(i);
+			return sb.toString();
+		}
+		return null;
+	}
 }

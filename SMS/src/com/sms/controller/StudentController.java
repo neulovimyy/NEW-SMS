@@ -1,6 +1,7 @@
 package com.sms.controller;
 		
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,62 +28,56 @@ import com.sms.enums.Gender;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 import com.sms.service.StudentService;
+import com.sms.util.InventoryUtility;
 	
 @Controller
 @RequestMapping("student")
 public class StudentController extends BaseController{
-	
+	static DecimalFormat dc = new DecimalFormat("#####");
 	@Autowired
 	private StudentService studentService;
-	
+			
 	private Map<Integer, String> genderList;
 	private Map<Integer, String> bloodtypeList;
 	private Map<Integer, String> religionList;
 	private Map<Integer, String> civilStatusList;
 	private Map<Integer, String> educAttainment;
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "save", method = RequestMethod.GET)
-	public void saveEmployee(@ModelAttribute("command") 
-			Student cstudent, ModelMap map,
-			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Student> students =  (List<Student>) studentService.getAll(Student.class);
-		map.put("students", students);
-		studentService.addStudent(cstudent);
+	public void saveEmployee(@ModelAttribute("command") Student cstudent, HttpServletResponse response) throws ServletException, IOException {
+		if(InventoryUtility.isNull(cstudent.getId())){
+			cstudent.setId(studentService.generateStudentNumber() + 1);
+			cstudent.setStudentId(cstudent.getStudentNumberFull());
+		}
+		studentService.save(cstudent);
 		response.sendRedirect("students");
 	}
 
-	@RequestMapping(value="students", method = RequestMethod.GET)
-	public String listEmployees(HttpServletRequest request, ModelMap model) {
-		model.put("students", studentService.getAll(Student.class));
+	@RequestMapping(value="students")
+	public String listEmployees(HttpServletRequest request, ModelMap model, @ModelAttribute("studentCommand") Student student) {
+		model.addAttribute("students", studentService.viewStudents(student));
 		return "studentList";
 	}
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public String addEmployee(HttpServletRequest request,@ModelAttribute("command")  Student cstudent, ModelMap model) {
 		
 		initModel(model);
 		return "addStudent";
 	}
-	/*
-	@RequestMapping(value = "sss", method = RequestMethod.POST) 
-	public String sss (ModelMap model) {
-		return "sss";
-	}
-	*/
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "add", method = RequestMethod.POST)
-	public String addNewEmployee(HttpServletRequest request,@ModelAttribute("command")  Student cstudent, ModelMap model) {
+	public String addNewEmployee(HttpServletRequest request,@ModelAttribute("command")  Student cstudent, BindingResult result, ModelMap model) {
 		String acad = request.getParameter("acad");
+		cstudent.setAcad(acad);
 		model.addAttribute("acad", acad);
+		
 		initModel(model);
 		return "addStudent";
 	}
 	
 	@RequestMapping(value = "apply", method = RequestMethod.GET)
-	public String apply (HttpServletRequest request,@ModelAttribute("command") ModelMap model, BindingResult result) {
+	public String apply (HttpServletRequest request,ModelMap model, @ModelAttribute("command") Student student , BindingResult result) {
 		model.addAttribute("acadAttainment", getAcadAttainment());
 		return "iapply";
 	}
@@ -93,7 +88,7 @@ public class StudentController extends BaseController{
 		for (AcademicAttainment value : AcademicAttainment.values()) {
 			educAttainment.put(value.getId(), value.getDescription());
 		}
-	}
+	}		
 		return educAttainment;
 	}
 	
@@ -127,11 +122,9 @@ public class StudentController extends BaseController{
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "savesubject", method = RequestMethod.POST)
 	public void saveSubject(@ModelAttribute("command") 
-			Subject subject, ModelMap map, HttpServletResponse response) throws IOException {
+			Subject subject, HttpServletResponse response) throws IOException {
 		
-		List<Subject> subjects =  (List<Subject>) studentService.getAll(Subject.class);
-		map.put("subjects", subjects);
-		studentService.addSubject(subject);
+		studentService.save(subject);
 		response.sendRedirect("subjects");
 	}
 	
@@ -141,7 +134,7 @@ public class StudentController extends BaseController{
 		List<Subject> subjects =  (List<Subject>) studentService.getAll(Subject.class);
 		
 		model.put("subjects", subjects);
-		return "addSubjects";
+		return "addSubject";
 	}
 	
 	@RequestMapping(value="subjects", method = RequestMethod.GET)
@@ -161,13 +154,28 @@ public class StudentController extends BaseController{
 		return "addSubject";
 	}
 	
+	
+	@RequestMapping(value= "search", method= RequestMethod.GET)
+	public String search() {
+		return "search";
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "searchresult", method = RequestMethod.GET)
+	public String searchResult(@ModelAttribute("command") Student student, HttpServletRequest request, ModelMap model) {
+		List<Student> students = (List<Student>) studentService.getByStudentID(Student.class,request.getParameter("search"));
+		model.put("student", students);
+		return "searchResult";
+	}
+	
 	@RequestMapping(value = "deletesubject", method = RequestMethod.GET)
 	public void deleteSubject(@ModelAttribute("command") Subject subject, ModelMap model,
 			HttpServletRequest request, HttpServletResponse response) throws IOException {
-		studentService.deleteSubject(subject);
-		model.put("sub", null);
-		model.put("subject",  studentService.getAll(Subject.class));
-		response.sendRedirect("students");
+		/* studentService.deleteSubject(subject); */
+		studentService.delete(subject);
+		model.put("subject", null);
+		model.put("subjects",  studentService.getAll(Subject.class));
+		response.sendRedirect("subjects");
 	}
 	
 	private void initModel(ModelMap model) {
@@ -198,6 +206,8 @@ public class StudentController extends BaseController{
 		return bloodtypeList;
 	}
 	
+	
+	
 	public Map<Integer, String> getReligionList() {
 		if (com.sms.util.InventoryUtility.isNull(religionList)) {
 			religionList = new HashMap<Integer, String>();
@@ -217,4 +227,9 @@ public class StudentController extends BaseController{
 		}
 		return civilStatusList;
 	}
+	
+	
+	
+	
+	
 }

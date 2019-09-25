@@ -8,7 +8,6 @@
 				<div class="page-header">
 					<div class="container-fluid"></div>
 				</div>
-				<input type="hidden" value="${acad }">
 				<div class="panel panel-default">
 					<div class="panel-heading text-center">
 						<h2>Add Student Data</h2>
@@ -22,8 +21,13 @@
 						<c:choose>
 							<c:when test="${not empty command.id}">
 								<form:hidden path="id" />
+								<form:hidden path="studentId" />
 							</c:when>
 						</c:choose>
+						<c:if test="${not empty acad }">
+							<form:hidden path="acad" value="${acad}"/>		
+						</c:if>
+
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">First Name </label>
 							<form:input id="firstname" path="firstName" cssClass="form-control" placeholder="Enter first name..." />
@@ -109,82 +113,40 @@
 								
 								
 								
-								
+								</table>
 						</div>
 						</div>
 						
 						<div class="panel panel-inverted">
-						<div class="panel-heading">
-							<h3 class="redcolor">III. Family Background</h3>
-							
-								
-								
-								
-								
-						</div>
+							<div class="panel-heading">
+								<h3 class="redcolor">III. Family Background</h3>			
+							</div>
 						</div>
 						
 						<div class="clearfix"></div>
-						<div class="form-group" style="text-align: right; padding-right: 15px;">
-							<button type="submit" class="btn btn-submit btn-primary text-center">
-								<i class="fa fa-save fa-fw"></i> SAVE
-							</button>
+							<div class="form-group" style="text-align: right; padding-right: 15px;">
+								<button type="submit" class="btn btn-submit btn-primary text-center">
+									<i class="fa fa-save fa-fw"></i> SAVE
+								</button>
+							</div>
+							<input type="text" id="demo" name="demo">
 						</div>
-
-					</div>
 				</div>
 			</div>
 		</form:form>
 	</section>
-	<script src=<c:url value="/js/student.js"/>></script>
-</div>
+</div>	
+	
+	
+	
+<script src=<c:url value="/js/student.js"/>></script>
+<script>
 
-
-
-<script src="<c:url value="/js/xeone/jquery-3.1.1.min.js"/>"></script>
-<div class="field_wrapper">
-    <div>
-        <input type="text" name="field_name[]" value=""/>
-        <input type="text" name="field_name1[]" value=""/>
-        <a href="javascript:void(0);" class="add_button" title="Add field"><img src="add-icon.png"/></a>
-    </div>
-</div>
-
-<script type="text/javascript">
 $(document).ready(function(){
-    var maxField = 10; //Input fields increment limitation
-    var addButton = $('.add_button'); //Add button selector
-    var wrapper = $('.field_wrapper'); //Input field wrapper
-    var fieldHTML = '<div><input type="text" name="field_name[]" value=""/>'+
-        				  '<input type="text" name="field_name1[]" value=""/><a href="javascript:void(0);" class="remove_button"><img src="remove-icon.png"/></a></div>'; //New input field html 
-    var x = 1; //Initial field counter is 1
-    
-    //Once add button is clicked
-    $(addButton).click(function(){
-        //Check maximum number of input fields
-        if(x < maxField){ 
-            x++; //Increment field counter
-            $(wrapper).append(fieldHTML); //Add field html
-        }
-    });
-    
-    //Once remove button is clicked
-    $(wrapper).on('click', '.remove_button', function(e){
-        e.preventDefault();
-        $(this).parent('div').remove(); //Remove field html
-        x--; //Decrement field counter
-    });
+	var today = new Date();
+	var year = today.getFullYear();
+	$('#demo').val(year);
+	
 });
 </script>
-
-
-
-
-
-
-
-
-
-
-
 

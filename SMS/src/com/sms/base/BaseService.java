@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.sms.model.Student;
+
 public abstract interface BaseService
 {
   public static final String KEY_COUNT = "count";
@@ -44,4 +46,6 @@ public abstract interface BaseService
   public abstract void bulkUpdate(Class<?> paramClass, Map<String, Object> paramMap1, Map<String, Object> paramMap2);
   
   public abstract <L> L getNative(Class<L> paramClass, Object paramObject);
+
+  public abstract List<?> getByStudentID(Class<?> paramClass, String string);
 }

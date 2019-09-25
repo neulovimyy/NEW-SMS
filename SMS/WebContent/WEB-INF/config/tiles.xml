@@ -38,11 +38,6 @@
         <put-attribute name="body" value="/WEB-INF/views/student/iapply.jsp" />
     </definition>
     
-    <definition name="search" extends="xeone">
-        <put-attribute name="title" value="Search" />
-        <put-attribute name="body" value="/WEB-INF/views/student/search.jsp" />
-    </definition>
-    
     <definition name="studentList" extends="xeone">
         <put-attribute name="title" value="Student List"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/student/studentList.jsp"></put-attribute>
@@ -58,6 +53,11 @@
         <put-attribute name="title" value="Accounting"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/accounting/index2.jsp"></put-attribute>
     </definition>
+    
+   <definition name="index3" extends="xeone">
+        <put-attribute name="title" value="Accounting"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/index3.jsp"></put-attribute>
+    </definition>
  	
  	<definition name="elemAndHS" extends="xeone">
         <put-attribute name="title" value="Student List"></put-attribute>
@@ -67,6 +67,42 @@
         <put-attribute name="title" value="Accounting Table"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/accounting/elemAndHSAccountingTable.jsp"></put-attribute>
     </definition>
+    
+    
+    <definition name="shsAndCollege" extends="xeone">
+        <put-attribute name="title" value="Student List"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/shsAndCollege.jsp"></put-attribute>
+	</definition>
+	
+    <definition name="accountingTable2" extends="xeone">
+        <put-attribute name="title" value="Accounting Table"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/shsCollegeAccntTable.jsp"></put-attribute>
+    </definition>
+    
+    <definition name="studRetrieveInfo" extends="xeone">
+        <put-attribute name="title" value="Student List"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/studRetrieveInfo.jsp"></put-attribute>
+	</definition>
+	
+    <definition name="accountingTable1" extends="xeone">
+        <put-attribute name="title" value="Accounting Table"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/studRetriveInfromation.jsp"></put-attribute>
+    </definition>
+    
+      <definition name="selectLevel" extends="xeone">
+        <put-attribute name="title" value="Level" />
+        <put-attribute name="body" value="/WEB-INF/views/accounting/selectLevel.jsp" />
+    </definition>
+    
+     <definition name="assessCollegeSHS" extends="xeone">
+        <put-attribute name="title" value="Assessment"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/assessCollegeSHS.jsp"></put-attribute>
+	</definition>
+	
+	 <definition name="assessElemHS" extends="xeone">
+        <put-attribute name="title" value="Assessment"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/accounting/assessElemHS.jsp"></put-attribute>
+	</definition>
     
     <!-- Academic -->
     

@@ -12,6 +12,7 @@ import com.sms.dao.SMSDao;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
 import com.sms.model.Report;
+import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 import com.sms.service.StudentService;
@@ -126,4 +127,11 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 		return studentDao.generateStudentNumber();
 	}
 
+	@Override
+	public List<Student> viewStudentsByStudentID(StudRetrieveInfo stud) {
+		// TODO Auto-generated method stub
+		return studentDao.viewStudentsByStudentID(stud);
+	}
+
+	
 }

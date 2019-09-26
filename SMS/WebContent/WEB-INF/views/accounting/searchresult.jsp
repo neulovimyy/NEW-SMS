@@ -11,29 +11,40 @@
 					<div class="row">
 						<div class="table-responsive">
 							<c:choose>
-									<c:when test="${!empty students}">
+									<c:when test="${!empty accounts}">
 							
 							<table class="table grid-view table-hover table-responsive">
 								<thead>
 									<tr class="active">
 										
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Student Number</th>
-										<th colspan="2">Options</th>
+										<tr class="active">
+							<th>Student Number</th>
+							<th>School Year</th>
+							<th>Semester</th>
+							<th>OR Number</th>
+							<th>Description</th>
+							<th>Assessment</th>
+							<th>Payments</th>
+							<th>Balance</th>
+							<th colspan="2"	>Options</th>
+						</tr>
 									</tr>
 								</thead>
 								
-										<c:forEach items="${students}" var="student" varStatus="index">
-
-											<tr class="">
-												<td><c:out value="${student.firstName}" /></td>
-												<td><c:out value="${student.lastName}" /></td>
-												<td><c:out value="${student.studentNumberFull}"/></td>
-												<td class="text-center"><a href="edit.html?id=${student.id}">Edit</a> | <a href="delete.html?id=${student.id}">Delete</a>
-												</td>
-											</tr>
-										</c:forEach>
+									<c:forEach items="${accounts}" var="account">
+						
+						<tr class="info">
+							<td><c:out value="${account.studentId}"/>
+							<td><c:out value="${account.schoolYear}"/></td>
+							<td><c:out value="${account.semester}"/></td>
+							<td><c:out value="${account.orNumber}"/></td>
+							<td><c:out value="${account.description}"/></td>
+							<td><c:out value="${account.assessment}"/></td>
+							<td><c:out value="${account.payments}"/></td>
+							<td><c:out value="${account.balance}"/></td>
+							<td align="center"><a href="edit1.html?id=${account.studentNumber}">Edit</a></td>
+						</tr>
+					</c:forEach>
 									
 									<c:otherwise>
 										<tr>

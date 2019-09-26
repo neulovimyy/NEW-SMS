@@ -25,6 +25,7 @@ import com.sms.enums.PaymentMethod;
 import com.sms.model.ElemAndHS;
 import com.sms.model.SHSAndCollege;
 import com.sms.model.StudRetrieveInfo;
+import com.sms.model.Student;
 import com.sms.model.Subject;
 import com.sms.service.StudentService;
 
@@ -146,8 +147,9 @@ public class AccountingController extends BaseController{
 		}
 	
 	@SuppressWarnings("unchecked")
+	@ModelAttribute("account")
 	@RequestMapping(value = "save1", method = RequestMethod.POST)
-	public void saveTransactions1(@ModelAttribute("account") StudRetrieveInfo account, ModelMap map, HttpServletResponse response) throws IOException {
+	public void saveTransactions1( StudRetrieveInfo account, ModelMap map, HttpServletResponse response) throws IOException {
 		List<StudRetrieveInfo> accounts =  (List<StudRetrieveInfo>) studentService.getAll(ElemAndHS.class);
 		map.put("accounts", accounts);
 		studentService.save(account);
@@ -155,15 +157,16 @@ public class AccountingController extends BaseController{
 	}
 	
 	@RequestMapping(value="transaction1", method = RequestMethod.GET)
-	public String listTransactions1GET(HttpServletRequest request, ModelMap model) {
-		model.put("accounts", studentService.getAll(StudRetrieveInfo.class));
-		return "accountingTable1";
+	public String listTransactions1GET(HttpServletRequest request, ModelMap model,@ModelAttribute("studentAccount") StudRetrieveInfo stud) {
+		model.addAttribute("accounts", studentService.viewStudentsByStudentID(stud));
+		return "studentList";
 	}
 	
+	
 	@RequestMapping(value="transaction1", method = RequestMethod.POST)
-	public String listTransactions1POST(HttpServletRequest request, ModelMap model) {
-		model.put("accounts", studentService.getAll(StudRetrieveInfo.class));
-		return "accountingTable1";
+	public String listTransactions1POST(HttpServletRequest request, ModelMap model,@ModelAttribute("studentAccount") StudRetrieveInfo stud) {
+		model.addAttribute("accounts", studentService.viewStudentsByStudentID(stud));
+		return "studentList";
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -294,10 +297,9 @@ public class AccountingController extends BaseController{
 	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "searchresult", method = RequestMethod.GET)
-	public String searchResult(@ModelAttribute("account") StudRetrieveInfo account, HttpServletRequest request, ModelMap model) {
-		List<StudRetrieveInfo> students = (List<StudRetrieveInfo>) studentService.getAll(StudRetrieveInfo.class,request.getParameter("search"));
-		model.put("student", students);
+	public String searchResult(@ModelAttribute("command") Student student, HttpServletRequest request, ModelMap model) {
+		List<StudRetrieveInfo> info = (List<StudRetrieveInfo>) studentService.getAccountStudentID(StudRetrieveInfo.class,request.getParameter("search"));
+		model.put("accounts", info);
 		return "searchResult";
 	}
- 
 }

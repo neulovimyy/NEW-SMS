@@ -10,7 +10,7 @@
 				       
 			    	</c:if>
 			   			<div class="pt-50 redcolor">
-			        	<form:label for="student-number" path="studentNumber" class="redcolor">Student Number:</form:label>
+			        	<form:label for="student-number" path="studentNumber" class="redcolor">Entry Number:</form:label>
 			       		<form:input path="studentNumber" name="studentNumber" id="studentNumber" placeholder="2015-0000-MN-0" onblur="return blank(\"studentNumber\")"/>
 			      		</div>
 			      		<br>
@@ -22,6 +22,11 @@
 				     	<form:label for="semester" path="semester" >Semester:</form:label>
 			        	<form:input path="semester" name="semester" id="semester" onblur="return blank(\"semester\")"/>
                    		<br>
+                   		
+                   		<form:label for="studentId" path="studentId" >Student Number:</form:label>
+			        	<form:input path="studentId" name="studentId" id="studentId" onblur="return blank(\"studentId\")"/>
+                   		<br>
+                   		
 			        	<form:label for="or-number" path="orNumber" >OR Number:</form:label>
 			        	<form:input path="orNumber" name="orNumber" id="orNumber" onblur="return blank(\"orNumber\")"/>
                    		<br>

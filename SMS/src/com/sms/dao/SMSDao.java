@@ -6,6 +6,7 @@ import com.sms.base.BaseDao;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
 import com.sms.model.Report;
+import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 
@@ -41,5 +42,6 @@ public interface SMSDao extends BaseDao {
 	//report
 	public List<Report> reportList();
 	public Report getReportInfo(Long subjectId);
+	public List<Student> viewStudentsByStudentID(StudRetrieveInfo stud);
 	
 }

@@ -6,39 +6,79 @@
 		<h1 align="center">Student Accounting Information Table</h1>
 		<h2 align="center">Payment Details</h2>
 		<h3 align="center"><a href="/SMS/account/add1.html">View Student Account Information</a></h3>
-								
-		
-		<div class="table-rover jumbotron">
-			<c:if test="${!empty accounts}">
-				<table class="table table-hover" align="center" border="1">
-					<thead>
-						<tr class="active">
-							
-							<th>School Year</th>
-							<th>Semester</th>
-							<th>OR Number</th>
-							<th>Description</th>
-							<th>Assessment</th>
-							<th>Payments</th>
-							<th>Balance</th>
-							<th colspan="2"	>Options</th>
-						</tr>
-					</thead>
-			
-					<c:forEach items="${accounts}" var="account">
-						
-						<tr class="info">
-							
-							<td><c:out value="${account.schoolYear}"/></td>
-							<td><c:out value="${account.semester}"/></td>
-							<td><c:out value="${account.orNumber}"/></td>
-							<td><c:out value="${account.description}"/></td>
-							<td><c:out value="${account.assessment}"/></td>
-							<td><c:out value="${account.payments}"/></td>
-							<td><c:out value="${account.balance}"/></td>
-							<td align="center"><a href="edit1.html?id=${account.studentNumber}">Edit</a></td>
-						</tr>
-					</c:forEach>
-				</table>
-			</c:if>
+				
+	<section class="content">
+
+	<div class="col-md-12">
+		<form:form id="view_students" action="${pageContext.request.contextPath}/account/transaction1" method="POST" commandName="studentCommand">
+		<div class="page-header">
+			<div class="container-fluid"></div>
 		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>Account</h3>
+			</div>
+			
+			<div class="panel-body">
+				<div class="col-md-12">
+					<div class="row">
+								<div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+									<div class="input-group">
+										<form:input class="form-control" path="search" placeholder="Search..." autocomplete="off"/>
+										<span class="input-group-btn">
+											<button class="btn btn-danger" type="submit">
+												<i class="fa fa-search fa-fw"></i> Search
+											</button> 
+											 </span>
+									</div>
+								</div>
+								
+							</div>
+					<div class="row">
+						<div class="table-responsive">
+							<table class="table grid-view table-hover table-responsive">
+								<thead>
+									<tr class="active">
+										
+										<th>First Name</th>
+										<th>Last Name</th>
+										<th>Student Number</th>
+										<th colspan="2">Options</th>
+									</tr>
+								</thead>
+								<c:choose>
+									<c:when test="${!empty accounts}">
+										<c:forEach items="${accounts}" var="student" varStatus="index">
+
+											<tr class="">
+												<td><c:out value="${account.firstName}" />
+												<td><c:out value="${account.lastName}" />
+												</td>
+												<td><c:out value="${account.studentId}"/>
+												</td>
+												<td align="center"><a href="edit.html?id=${account.studentNumber}">Edit</a> | <a href="delete.html?id=${account.studentNumber}">Delete</a>
+												</td>
+											</tr>
+										</c:forEach>
+									</c:when>
+									<c:otherwise>
+										<tr>
+											<td class="text-center" colspan="4">No records found</td>
+										</tr>
+									</c:otherwise>
+								</c:choose>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</form:form>
+	</div>
+	</section>
+		
+		
+		
+		
+		
+	

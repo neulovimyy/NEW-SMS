@@ -16,7 +16,7 @@
 				<h3>Students</h3>
 			</div>
 			
-			<form:form method="GET" commandName="command" action="${pageContext.request.contextPath}/student/searchresult">
+			<form:form method="GET" commandName="account" action="${pageContext.request.contextPath}/account/searchresult">
 				<input name="search" type="text">
 				<input type="submit">
 			</form:form>

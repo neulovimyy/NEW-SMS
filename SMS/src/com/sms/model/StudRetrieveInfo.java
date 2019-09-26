@@ -4,21 +4,26 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.directwebremoting.annotations.DataTransferObject;
+
+import com.sms.base.BaseModel;
 
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "retrieveinfo_account")
 @DataTransferObject
-
-public class StudRetrieveInfo implements Serializable {
+public class StudRetrieveInfo extends BaseModel implements Serializable {
 	
 	private Long studentNumber;
+	private String studentId;
 	private String schoolYear;
 	private String semester;
 	private Long orNumber;
@@ -35,6 +40,15 @@ public class StudRetrieveInfo implements Serializable {
 	}
 	public void setStudentNumber(Long studentNumber) {
 		this.studentNumber = studentNumber;
+	}
+	
+	@OneToOne(fetch = FetchType.EAGER, targetEntity = Student.class)
+	@JoinColumn(name = "student_id")
+	public String getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
 	}
 	
 	public String getSchoolYear() {

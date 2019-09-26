@@ -6,6 +6,7 @@ import com.sms.base.BaseService;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
 import com.sms.model.Report;
+import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 
@@ -37,5 +38,6 @@ public interface StudentService extends BaseService {
 	//report
 	public List<Report> listReportss();
 	public Report getReport(String subjectId);
+	List<Student> viewStudentsByStudentID(StudRetrieveInfo stud);
 	
 }

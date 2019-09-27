@@ -7,7 +7,7 @@ page import="java.io.*, com.itextpdf.text.*, com.itextpdf.text.pdf.*, java.sql.*
 <%
 	
     Document document=new Document(); 
-    PdfWriter.getInstance(document,new FileOutputStream("C:\\Users\\Micha\\Desktop\\ClassList.pdf"));
+    PdfWriter.getInstance(document,new FileOutputStream("C:\\Users\\cedrick sestoso\\Desktop\\ClassList.pdf"));
     document.open();
     document.add(new Paragraph("TAENAAAAAAAAAAAAAAAAAAAA GUMANA KAAAAAAAAAA"));
     document.add(new Paragraph("NAIISTRESS NAKO MAMI HELP"));
@@ -45,7 +45,7 @@ page import="java.io.*, com.itextpdf.text.*, com.itextpdf.text.pdf.*, java.sql.*
     
     try {
     Class.forName("com.mysql.jdbc.Driver").newInstance();
-    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smsdb", "root", "ROOT");
+    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smsdb", "root", "root");
     Statement stmt = conn.createStatement();
     /* Define the SQL query */
     ResultSet query_set = stmt.executeQuery("SELECT stud_id,fname,mname,lname,age,contact_num,civil_status,birthdate,gender FROM studentdb");    
@@ -83,11 +83,11 @@ page import="java.io.*, com.itextpdf.text.*, com.itextpdf.text.pdf.*, java.sql.*
 
     //for watermark
     
-    PdfReader Read_PDF_To_Watermark = new PdfReader("C:\\Users\\Micha\\Desktop\\ClassList.pdf");
+    PdfReader Read_PDF_To_Watermark = new PdfReader("C:\\Users\\cedrick sestoso\\Desktop\\ClassList.pdf");
     int number_of_pages = Read_PDF_To_Watermark.getNumberOfPages();
-    PdfStamper stamp = new PdfStamper(Read_PDF_To_Watermark, new FileOutputStream("C:\\Users\\Micha\\Desktop\\Watermark.pdf"));
+    PdfStamper stamp = new PdfStamper(Read_PDF_To_Watermark, new FileOutputStream("C:\\Users\\cedrick sestoso\\Desktop\\Watermark.pdf"));
     int i = 0;
-    Image watermark_image = Image.getInstance("C:\\Users\\Micha\\Desktop\\sms-logo.png");
+    Image watermark_image = Image.getInstance("C:\\Users\\cedrick sestoso\\Desktop\\sms-logo.png");
     //watermark_image.setAbsolutePosition(1, 1);
     
     PdfContentByte add_watermark;            

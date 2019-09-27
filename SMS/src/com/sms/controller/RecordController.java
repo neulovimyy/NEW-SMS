@@ -42,6 +42,22 @@ public class RecordController extends BaseController{
 		return "studentSubjects";
 	}
 	
+	@RequestMapping(value = "shsRec", method = RequestMethod.GET)
+	public String welcome2() {
+		return "shsRecords";
+	}
+	
+	@RequestMapping(value = "jhRec", method = RequestMethod.GET)
+	public String welcome3() {
+		return "jhRecords";
+	}
+	
+	@RequestMapping(value = "elemRec", method = RequestMethod.GET)
+	public String welcome4() {
+		return "elementaryRecords";
+	}
+	
+	
 	@RequestMapping(value = "generate", method = RequestMethod.GET)
 	public String generate() {
 		return "generate";

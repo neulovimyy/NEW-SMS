@@ -97,4 +97,8 @@
         <put-attribute name="title" value="Generate Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/generate.jsp"></put-attribute>
    	 </definition>
+   	   <definition name="studentSubjects" extends="xeone">
+        <put-attribute name="title" value="Student's Subjects Record and Report"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/studentRecord.jsp"></put-attribute>
+   	 </definition>
 </tiles-definitions>

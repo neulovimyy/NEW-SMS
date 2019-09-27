@@ -25,7 +25,7 @@ public class ElemAndHS implements Serializable {
 	private Integer registrationFee;
 	private Integer laboratoryFee;
 	private Integer totalTuitionFee;
-	private Integer modeOfPayment;
+	private String modeOfPayment;
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
@@ -88,10 +88,10 @@ public class ElemAndHS implements Serializable {
 	}
 	
 	@Column(name = "mode_of_payment")
-	public Integer getModeOfPayment() {
+	public String getModeOfPayment() {
 		return modeOfPayment;
 	}
-	public void setModeOfPayment(Integer modeOfPayment) {
+	public void setModeOfPayment(String modeOfPayment) {
 		this.modeOfPayment = modeOfPayment;
 	}
 	

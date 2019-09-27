@@ -101,6 +101,11 @@ public class BaseDaoHibernate extends HibernateDaoSupport implements BaseDao {
 		return result;
 	}
 	
+	public List<?> getAccountStudentID(Class<?> paramClass, String string) {
+		List<?> result = (List<?>) ((Session) getHibernateTemplate()).createQuery("from " + paramClass.getSimpleName() + " where student_id LIKE '%"+string+"' order by entry_number ASC");
+		return result;
+	}
+	
 	public List<?> getAll(Class<?> entityClass, List<Integer> status) {
 		List<?> results = getSession().createQuery("from " + entityClass.getSimpleName() + " where status in (:status) order by id").setParameterList("status", status).list();
 		return results;

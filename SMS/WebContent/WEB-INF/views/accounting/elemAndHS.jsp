@@ -34,7 +34,9 @@
 			        	<form:label for="total-TuitionFee" path="totalTuitionFee" >Total Tuition Fee:</form:label>
 			      		<form:input path="totalTuitionFee" name="totalTuitionFee" id="totalTuitionFee" placeholder="0.00" onblur="return blank(\"totalTuitionFee\")"/>
 						<br>
-						<form:label for="mode-ofPayment" path="modeOfPayment" >Mode of Payment:</form:label>
-			      		<form:input path="modeOfPayment" name="modeOfPayment" id="modeOfPayment" placeholder="0.00" onblur="return blank(\"modeOfPayment\")"/>
+						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+							<label class="control-label">Mode of Payment:</label>
+							<form:select path="modeOfPayment" items="${paymentMethod}" cssClass="form-control" />
+						</div>
 			      		<input onclick="return validate()" id="save" type="submit" value="Submit" />
 	</form:form>

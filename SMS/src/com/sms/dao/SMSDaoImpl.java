@@ -13,6 +13,7 @@ import com.sms.base.BaseDaoHibernate;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
 import com.sms.model.Report;
+import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 
@@ -169,5 +170,31 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 	    
 	    return results.get(0).longValue();
 	  }
+	
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Student> viewStudentsByStudentID(StudRetrieveInfo stud) {
+		//Zid
+		StringBuffer hqlQuery = new StringBuffer("from StudRetrieveInfo e where 1=1 ");
+		
+		StringBuffer dynamicSql = new StringBuffer();
+		if(StringUtils.isNotEmpty(stud.getSearch())) {
+			dynamicSql.append("and (  ");
+			dynamicSql.append(" lower(e.student_id) like lower(:search) ");
+		}
+		
+		final String sql =  hqlQuery.append(dynamicSql).toString();
+		Query query = getSession().createQuery(sql);
+		
+		if(StringUtils.isNotEmpty(stud.getSearch())) {
+			query.setParameter("search","%" + stud.getSearch() + "%");
+			
+		}
+		
+		List<Student> result = query.list();
+		
+		return result;
+	}
 }
 

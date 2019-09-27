@@ -88,8 +88,14 @@ public class BaseServiceImpl
   
   public List<?> getByStudentID(Class<?> paramClass, String string) {
   	// TODO Auto-generated method stub
-  	return this.baseDao.getByStudentId(paramClass, string);
+  		return this.baseDao.getByStudentId(paramClass, string);
   }
+  
+  public List<?> getAccountStudentID(Class<?> paramClass, String string) {
+	  	// TODO Auto-generated method stub
+	  		return this.baseDao.getAccountStudentID(paramClass, string);
+	  }
+  
   
   public List<?> getAll(Class<?> clazz, List<Integer> status)
   {

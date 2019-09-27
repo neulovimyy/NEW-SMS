@@ -48,4 +48,6 @@ public abstract interface BaseService
   public abstract <L> L getNative(Class<L> paramClass, Object paramObject);
 
   public abstract List<?> getByStudentID(Class<?> paramClass, String string);
+  
+  public List<?> getAccountStudentID(Class<?> paramClass, String string);
 }

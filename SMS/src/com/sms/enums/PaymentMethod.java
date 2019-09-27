@@ -2,8 +2,8 @@ package com.sms.enums;
 
 public enum PaymentMethod {
 	FULL_PAYMENT(1,"Full Payment"),
-	HALF_PAYMENT(2,"Half Payment"),
-	NOT_PAYED(3,"NOT PAYED");
+	HALF_PAYMENT(2,"Half Payment");
+
 	
 	private Integer id;
 	private String description;

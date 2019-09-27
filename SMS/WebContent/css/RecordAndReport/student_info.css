@@ -1,0 +1,15 @@
+
+body {
+		background-color: #D3D3D3;
+}
+
+.wrapper {
+	width: 95%;
+	height:300px;
+	margin: 18px auto;
+	background:white;
+}
+
+.backbutton {
+	text-align: right;
+}

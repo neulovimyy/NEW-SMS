@@ -25,7 +25,8 @@
 <div class="header">
   <div class="row">
     <div class="col-sm-1 col-md-1 col-lg-1">
-      <img src="../../assets/sms-logo.png" alt="smslogo">
+      	<spring:url value="/resources/images" var="images" />
+    	<img src="${images}/image2.png"/>
     </div>
     <div class="col-sm-11 col-md-11 col-lg-11">
       <br>

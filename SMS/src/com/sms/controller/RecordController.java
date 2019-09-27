@@ -28,6 +28,7 @@ public class RecordController extends BaseController{
 
 	@RequestMapping(value="report", method = RequestMethod.GET)
 	public String listReport(HttpServletRequest request, ModelMap model) {
+		model.put("report", studentService.getAll(Report.class));
 		return "index4";
 	}
 	
@@ -37,14 +38,14 @@ public class RecordController extends BaseController{
 		return "landing";
 	}
 	
-	@RequestMapping(value = "studentSubjects", method = RequestMethod.GET)
-	public String welcome1() {
-		return "studentSubjects";
-	}
-	
 	@RequestMapping(value = "generate", method = RequestMethod.GET)
 	public String generate() {
 		return "generate";
+	}
+	
+	@RequestMapping(value = "studentInfo", method = RequestMethod.GET)
+	public String welcome1() {
+		return "studentInfo";
 	}
 	
 	

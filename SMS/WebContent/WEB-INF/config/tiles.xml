@@ -89,6 +89,11 @@
         <put-attribute name="body" value="/WEB-INF/views/records/landing.jsp"></put-attribute>
    	 </definition>
 
+   	  <definition name="studentInfo" extends="xeone">
+        <put-attribute name="title" value="Student Record and Report"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/student_info.jsp"></put-attribute>
+   	 </definition>
+
  	 <definition name="index4" extends="xeone">
         <put-attribute name="title" value="Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/index4.jsp"></put-attribute>
@@ -96,9 +101,5 @@
    	  <definition name="generate" extends="xeone">
         <put-attribute name="title" value="Generate Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/generate.jsp"></put-attribute>
-   	 </definition>
-   	   <definition name="studentSubjects" extends="xeone">
-        <put-attribute name="title" value="Student's Subjects Record and Report"></put-attribute>
-        <put-attribute name="body" value="/WEB-INF/views/records/studentRecord.jsp"></put-attribute>
    	 </definition>
 </tiles-definitions>

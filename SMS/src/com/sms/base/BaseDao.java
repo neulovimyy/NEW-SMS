@@ -38,6 +38,8 @@ public abstract interface BaseDao
   
   public abstract List<?> getByStudentId(Class<?> paramClass, String paramString);
   
+  public abstract List<?> getAccountStudentID(Class<?> paramClass,String string);
+  
   public abstract List<?> getAll(Class<?> paramClass, List<Integer> paramList);
   
   public abstract List<?> getAll(Class<?> paramClass, Long paramLong);
@@ -65,4 +67,5 @@ public abstract interface BaseDao
   void deleteObjIn(Class<?> clazz, Long id, String condition, Boolean param);
   
   void deleteImage(Class<?> clazz, Long id);
+
 }

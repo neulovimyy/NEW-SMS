@@ -154,7 +154,6 @@ public class StudentController extends BaseController{
 		return "addSubject";
 	}
 	
-	
 	@RequestMapping(value= "search", method= RequestMethod.GET)
 	public String search() {
 		return "search";

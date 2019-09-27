@@ -81,89 +81,114 @@
       <div class="col-sm-12 col-md-12 col-lg-12">
         <b> Records and Report Management Quick Icons</b>
       </div>
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <button>
-          <i class="fas fa-users"></i> <br>
-          Students
-        </button>
-      </div>
-
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <button>
-          <i class="fas fa-list-ul"></i> <br>
-          Sections
-        </button>
-      </div>
-
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <a type="button" class="button" href="studentSubjects.html">
-          <i class="fas fa-book"></i> <br>
-          Subjects
+      
+       <div class="col-sm-2 col-md-2 col-lg-2">
+        <a href="#"> 
+          <button>
+            <i class="fas fa-users"></i> <br>
+            Students
+          </button>
         </a>
       </div>
 
       <div class="col-sm-2 col-md-2 col-lg-2">
-        <button>
-          <i class="fas fa-book"></i> <br>
-          wala malagay 1
-        </button>
+        <a href="#"> 
+          <button>
+            <i class="fas fa-list-ul"></i> <br>
+            Sections
+          </button>
+        </a>
+      </div>
+
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <a href="#">
+          <button>
+            <i class="fas fa-book"></i> <br>
+            Subjects
+          </button>
+        </a>
+      </div>
+
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <a href="#">
+          <button>
+            <i class="fas fa-book"></i> <br>
+            wala malagay 1
+          </button>
+        </a>
       </div>
       
       <div class="col-sm-2 col-md-2 col-lg-2">
-        <button>
-          <i class="fas fa-users"></i> <br>
-          wala malagay 2
-        </button>
-      </div>
-
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <button>
-          <i class="fas fa-list-ul"></i> <br>
-          wala malagay 3
-        </button>
-      </div>
-
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <button>
-          <i class="fas fa-book"></i> <br>
-          wala malagay 4
-        </button>
-      </div>
-
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <button>
-          <i class="fas fa-book"></i> <br>
-          wala malagay 5
-        </button>
-      </div>
-
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <button>
-          <i class="fas fa-book"></i> <br>
-          wala malagay 6
-        </button>
-      </div>
-
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <button>
-          <i class="fas fa-book"></i> <br>
-          wala malagay 7
-        </button>
-      </div>
-
-      <div class="col-sm-2 col-md-2 col-lg-2">
+        <a href="#">
           <button>
             <i class="fas fa-book"></i> <br>
-            wala malagay 8
+            wala malagay 2
           </button>
-        </div>
-    
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <button>
-          <i class="fas fa-book"></i> <br>
-          wala malagay 9
-        </button>
+        </a>
       </div>
+
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <a href="#">
+          <button>
+            <i class="fas fa-book"></i> <br>
+            wala malagay 3
+          </button>
+        </a>
+      </div>
+
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <a href="#">
+          <button>
+            <i class="fas fa-book"></i> <br>
+            wala malagay 4
+          </button>
+        </a>
+      </div>
+
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <a href="#">
+          <button>
+            <i class="fas fa-book"></i> <br>
+            wala malagay 5
+          </button>
+        </a>
+      </div>
+
+      <div class="col-sm-2 col-md-2 col-lg-2">
+          <a href="#">
+            <button>
+              <i class="fas fa-book"></i> <br>
+              wala malagay 6
+            </button>
+          </a>
+        </div>
+  
+        <div class="col-sm-2 col-md-2 col-lg-2">
+          <a href="#">
+            <button>
+              <i class="fas fa-book"></i> <br>
+              wala malagay 7
+            </button>
+          </a>
+        </div>
+  
+        <div class="col-sm-2 col-md-2 col-lg-2">
+          <a href="#">
+            <button>
+              <i class="fas fa-book"></i> <br>
+              wala malagay 8
+            </button>
+          </a>
+        </div>
+  
+        <div class="col-sm-2 col-md-2 col-lg-2">
+          <a href="#">
+            <button>
+              <i class="fas fa-book"></i> <br>
+              wala malagay 9
+            </button>
+          </a>
+        </div>
     </div>
   </div>
 </div>

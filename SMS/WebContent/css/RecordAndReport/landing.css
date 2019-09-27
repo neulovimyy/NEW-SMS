@@ -2,6 +2,7 @@
 body {
     -webkit-transition: background-color .5s;
     transition: background-color .5s;
+    background: #e9f1f8;
   }
   
   .row {
@@ -102,7 +103,7 @@ body {
     font-size: 1em;
   }
   
-  .icons [class*="col-"] .button {
+  .icons [class*="col-"] button {
     padding: 30px;
     border: none;
     border-radius: 10px;
@@ -114,11 +115,11 @@ body {
     cursor: pointer;
   }
   
-  .icons [class*="col-"] .button i {
+  .icons [class*="col-"] button i {
     font-size: 2em;
   }
   
-  .icons [class*="col-"] .button:hover {
+  .icons [class*="col-"] button:hover {
     border: none;
     background: #001C57;
   }

@@ -63,12 +63,6 @@ public class RecordController extends BaseController{
 		return "generate";
 	}
 	
-	@RequestMapping(value = "studentInfo", method = RequestMethod.GET)
-	public String welcome1() {
-		return "studentInfo";
-	}
-	
-	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "savesubjectreport", method = RequestMethod.POST)
 	public void saveReport(@ModelAttribute("command") 

@@ -52,6 +52,13 @@
 		<property name="username" value="${database.user}" />
 		<property name="password" value="${database.password}" />
 	</bean>
+	
+	 <!-- Configure the multipart resolver -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- one of the properties available; the maximum file size in bytes (less than 10MB) -->
+        <!-- <property name="maxUploadSize" value="10000000" /> -->
+        <property name="maxUploadSize" value="100000000" />
+    </bean>
 
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">

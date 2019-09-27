@@ -15,6 +15,8 @@
 		<%-- <link rel="stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
 		<link rel="stylesheet" href="<c:url value="/themes/css/custom.css"/>">
 		<link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>"> --%>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/font-awesome.min.css"/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/AdminLTE.min.css"/>">
 		<!-- Form Validation -->
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrapValidator.min.css"/>">
 		<!-- datePicker -->
@@ -79,6 +81,45 @@
 	<script src="<c:url value="/js/xeone/js/functions.js"/>"></script>
 	<script src="<c:url value="/js/adminlte/plugins/pagination/jquery.simplePagination.js"/>"></script>
 	<body>
+		<div id="confirmDeleteModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header bg-gray">
+						<h4 class="modal-title">
+							<i class="fa fa-warning fa-fw"></i><span class="title">Warning Message</span>
+						</h4>
+					</div>
+					<div class="modal-body">Do you want to delete <strong><span class="message"></span></strong>?</div>
+					<div class="modal-footer">
+						<button type="button" id="btn-cancel-modal" class="btn btn-sm btn-sm btn-default" data-dismiss="modal">
+							<i class="fa fa-times-circle"></i>&nbsp;&nbsp;CANCEL
+						</button>
+						<button type="button" data-dismiss="modal" id="btn-delete-modal" class="btn btn-sm btn-sm btn-danger">
+							<i class="fa fa-check"></i>&nbsp;&nbsp;SUBMIT
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel">Confirm Message</h4>
+		            </div>
+		            <div id="modal-confirm-message" class="modal-body reminder-modal">
+		                
+		            </div>
+		            <div class="modal-footer" align="right">
+		            	<button type="button" class="btn btn-default confirm-no" data-dismiss="modal" style="width: 20%;">Close</button>
+		            	<a class="btn btn-primary btn-ok" style="width: 20%;">Confirm</a>
+		            </div>
+		        </div>
+		        <!-- /.modal-content -->
+		    </div>
+		    <!-- /.modal-dialog -->
+		</div>
 		<tiles:insertAttribute name="header"/>
 		<div class="wrapper background-body">
 			<tiles:insertAttribute name="body" />

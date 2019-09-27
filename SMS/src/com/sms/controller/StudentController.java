@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,6 +26,7 @@ import com.sms.enums.BloodTypeEnum;
 import com.sms.enums.CivilStatusEnum;
 import com.sms.enums.Religion;
 import com.sms.enums.Gender;
+import com.sms.model.EducationalBackground;
 import com.sms.model.Student;
 import com.sms.model.Subject;
 import com.sms.service.StudentService;
@@ -43,11 +45,22 @@ public class StudentController extends BaseController{
 	private Map<Integer, String> civilStatusList;
 	private Map<Integer, String> educAttainment;
 	
-	@RequestMapping(value = "save", method = RequestMethod.GET)
-	public void saveEmployee(@ModelAttribute("command") Student cstudent, HttpServletResponse response) throws ServletException, IOException {
+	private static final String REDIRECT_EDIT = "/student/edit";
+	
+	@RequestMapping(value = "save", method = RequestMethod.POST)
+	public void saveEmployee(@ModelAttribute("command") Student cstudent,BindingResult result, HttpServletResponse response) throws ServletException, IOException {
 		if(InventoryUtility.isNull(cstudent.getId())){
 			cstudent.setId(studentService.generateStudentNumber() + 1);
 			cstudent.setStudentId(cstudent.getStudentNumberFull());
+		}
+		if(cstudent.getStudentImageFile().getSize() != 0){
+			cstudent.setStudentContentType(cstudent.getStudentImageFile().getContentType());
+			cstudent.setStudentImage(cstudent.getStudentImageFile().getBytes());
+		}
+		if(!InventoryUtility.isNull(cstudent.getEducationalBackground())){
+			for ( EducationalBackground e :cstudent.getEducationalBackground()) {
+				e.setStudent(cstudent);
+			}
 		}
 		studentService.save(cstudent);
 		response.sendRedirect("students");
@@ -80,6 +93,13 @@ public class StudentController extends BaseController{
 	public String apply (HttpServletRequest request,ModelMap model, @ModelAttribute("command") Student student , BindingResult result) {
 		model.addAttribute("acadAttainment", getAcadAttainment());
 		return "iapply";
+	}
+	
+	@RequestMapping(value = "delete/{id}", method = RequestMethod.GET)
+	public String deleteEducBg(@PathVariable("id") Long id,HttpServletRequest request,ModelMap model, @ModelAttribute("command") EducationalBackground educ, BindingResult result) {
+		studentService.delete(EducationalBackground.class, educ.getEducId());
+		
+		return "redirect:" + REDIRECT_EDIT + "?id=" + id;
 	}
 	
 	public Map<Integer, String> getAcadAttainment() {

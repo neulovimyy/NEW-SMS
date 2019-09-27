@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-	$
+	
 	$('#birthDate').datepicker();
 	$('#save-student').bootstrapValidator({
 		framework: 'bootstrap',
@@ -90,5 +90,91 @@ $(document).ready(function(){
          }
 	});
 	
+	//para malagyan ng name attributes ung initial data na na-fetch from database 
+	initEducBgTable();
+	
+	//jquery for adding a form dynamically
+	$('#add-educbg-template').on('click', function() {
+		var body = $('#educbg-table-body .scrollable');
+		body.append($('#educbg-table-template').html());
+		initEducBgTable();
+	});
+	
+	function initEducBgTable() {
+		$('#educbg-table-body .scrollable .educbg-table').each(function(i) {
+			$(this).find('.schoolLevel').attr('name','educationalBackground['+i+'].schoolLevel');
+			$(this).find('.schoolName').attr('name','educationalBackground['+i+'].schoolName');
+			$(this).find('.years').attr('name','educationalBackground['+i+'].years');
+			$(this).find('.inclusiveDates').attr('name','educationalBackground['+i+'].inclusiveDates');
+			$(this).find('.schoolAddress').attr('name','educationalBackground['+i+'].address');
+			$(this).find('.honors').attr('name','educationalBackground['+i+'].honor');
+			$(this).find('.educId').attr('name','educationalBackground['+i+'].educId');
+			//$(this).find('.sssFk').attr('name','sss['+i+'].sss');
+			
+			$('#save-student').bootstrapValidator('addField', $(this).find('.schoolLevel').attr('name'), {
+				
+				validators: {
+					notEmpty: {
+						message: 'Field is required.'
+					}
+				}
+			});
+			$('#save-student').bootstrapValidator('addField', $(this).find('.schoolName').attr('name'), {
+				
+				validators: {
+					notEmpty: {
+						message: 'Field is required.'
+					}
+				}
+			});
+			$('#save-student').bootstrapValidator('addField', $(this).find('.years').attr('name'), {
+				
+				validators: {
+					notEmpty: {
+						message: 'Field is required.'
+					}
+				}
+			});
+			$('#save-student').bootstrapValidator('addField', $(this).find('.inclusiveDates').attr('name'), {
+				
+				validators: {
+					notEmpty: {
+						message: 'Field is required.'
+					}
+				}
+			});
+			$('#save-student').bootstrapValidator('addField', $(this).find('.schoolAddress').attr('name'), {
+				
+				validators: {
+					notEmpty: {
+						message: 'Field is required.'
+					}
+				}
+			});
+			$('#save-student').bootstrapValidator('addField', $(this).find('.honors').attr('name'), {
+				
+				validators: {
+					notEmpty: {
+						message: 'Field is required.'
+					}
+				}
+			});
+			
+		});
+	}
+	
+	//this is for the delete button on each form rows
+	$('#educbg-table-body').on('click', '.delete-educbg-template', function() {
+		var row = $(this).parents('div.educbg-table');
+		row.remove();
+		
+		initEducbgTable();
+	});
+	
+	//this is the modal for the delete confirmation
+	$('#confirm').on('show.bs.modal', function(e) {
+		
+	    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+	});
 	
 });

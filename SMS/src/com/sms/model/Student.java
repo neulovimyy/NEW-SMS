@@ -21,6 +21,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.sms.base.BaseModel;
 import com.sms.util.InventoryUtility;
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 
 @SuppressWarnings("serial")
 @Entity
@@ -46,10 +47,13 @@ public class Student extends BaseModel implements Serializable{
 	private Integer bloodtype;
 	private String presentAddress;
 	private String permanentAddress;
-	private CommonsMultipartFile studentPicture; 
 	private String acad;
 	
+	private CommonsMultipartFile studentImageFile; 
+	private byte[] studentImage;
+	private String studentContentType;
 	//private List<EducBg> educBg;
+	private List<EducationalBackground> educationalBackground;
 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
@@ -155,13 +159,7 @@ public class Student extends BaseModel implements Serializable{
 		this.religion = religion;
 	}
 	
-	@Column(name = "student_picture")
-	public CommonsMultipartFile getStudentPicture() {
-		return studentPicture;
-	}
-	public void setStudentPicture(CommonsMultipartFile studentPicture) {
-		this.studentPicture = studentPicture;
-	}
+	
 	
 	@Column(name = "email_address")
 	public String getEmailAddress() {
@@ -186,11 +184,44 @@ public class Student extends BaseModel implements Serializable{
 	public void setEducBg(List<EducBg> educBg) {
 		this.educBg = educBg;
 	}*/
-	
+	@Transient
+	public CommonsMultipartFile getStudentImageFile() {
+		return studentImageFile;
+	}
+	public void setStudentImageFile(CommonsMultipartFile studentImageFile) {
+		this.studentImageFile = studentImageFile;
+	}
+	@Column(name = "student_image", columnDefinition = "longblob")
+	public byte[] getStudentImage() {
+		return studentImage;
+	}
+	public void setStudentImage(byte[] studentImage) {
+		this.studentImage = studentImage;
+	}
+	@Column(name = "student_content_type")
+	public String getStudentContentType() {
+		return studentContentType;
+	}
+	public void setStudentContentType(String studentContentType) {
+		this.studentContentType = studentContentType;
+	}
 	@Transient
 	public String getStudentNumberFull() {
 		int yearLevel = Calendar.getInstance().get(Calendar.YEAR);
 		String p = yearLevel+"-"+InventoryUtility.convertToFourDigit(this.getId())+"-"+acad;
 		return p;
+	}
+	
+	@Transient
+	public String getStudentPicture() {
+		return "data:" + getStudentContentType() + ";base64," + Base64.encode(getStudentImage());
+	}
+	
+	@OneToMany(fetch = FetchType.EAGER, targetEntity = EducationalBackground.class, mappedBy = "student",cascade= CascadeType.ALL)
+	public List<EducationalBackground> getEducationalBackground() {
+		return educationalBackground;
+	}
+	public void setEducationalBackground(List<EducationalBackground> educationalBackground) {
+		this.educationalBackground = educationalBackground;
 	}
 }

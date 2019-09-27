@@ -32,10 +32,9 @@
     <div class="col-sm-11 col-md-11 col-lg-11">
       <br>
       <p> School Management System <br></p>
-    </div>
-  </div>
-</div>
-
+      </div>
+      </div>
+      </div>
 <div class="subheading">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12">
@@ -44,8 +43,6 @@
     </div>
   </div>
 </div>
-
-
 	<div class="content">
 	  <div class="levels">
 	    <div class="row">
@@ -197,7 +194,6 @@
   </div>
   
 </div>
-
 	</body>
 
  </html>

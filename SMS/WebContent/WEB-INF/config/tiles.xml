@@ -155,9 +155,9 @@
         <put-attribute name="title" value="Generate jh Records Record"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/jhRecords.jsp"></put-attribute>
    	 </definition>
-   	 <definition name="elemRecords" extends="xeone">
+   	 <definition name="elementaryRecords" extends="xeone">
         <put-attribute name="title" value="Generate elem Records Record"></put-attribute>
-        <put-attribute name="body" value="/WEB-INF/views/records/elemRecords.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/elementaryRecords.jsp"></put-attribute>
    	 </definition>
    	   	   <definition name="list" extends="xeone">
         <put-attribute name="title" value="Student's Subjects List Record and Report"></put-attribute>

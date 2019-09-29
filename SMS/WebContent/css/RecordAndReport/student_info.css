@@ -1,0 +1,164 @@
+
+body {
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s;
+    background: #e9f1f8;
+  }
+  
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+  }
+  
+  .header {
+    background: white;
+  }
+  
+  .header [class*="col-"] {
+    padding: 20px;
+  }
+  
+  .header [class*="col-"] img {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .header [class*="col-"] p {
+    color: black;
+    font-size: 1.4em;
+  }
+  
+  .subheading {
+    padding: 10px;
+    background: #001C57;
+    color: white;
+    font-size: 1em;
+  }
+  
+  .subheading [class*="col-"] span {
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #0009;
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: center;
+  }
+  
+  .sidenav a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: black;
+    background: #e9f1f8;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    -webkit-transition: margin-left .5s;
+    transition: margin-left .5s;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+
+  .content{
+	background: #E6E6FA;
+	width: 70%;
+	margin: 0 auto;
+  }
+  
+  .content [class*="col-"] {
+  	padding: 20px;
+  }
+  
+  .content .box1 {
+  	background: linear-gradient(to right,#01a9ac,#E6E6FA);
+  	padding: 20px;
+  	border: 20px solid #E6E6FA;
+  	border-radius: 24px;
+  }
+  
+  .content .box1 [class*="col-"] {
+  	
+  	text-align: center;
+	padding: 10px;
+  }
+  
+  .content .box1 [class*="col-"] .studInfo {
+  	background:white;
+  	border-radius: 8px;
+  	padding: 10px;
+  }
+  
+  .content .box1 [class*="col-"] .studInfo [class*="col-"] {
+  	text-align: left;
+	padding: 10px;
+  }
+  
+  #studImg {
+  	border: 10px solid #008080;
+  	border-radius: 8px;
+  	width: 250px;
+  	height: 250px;
+  }
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

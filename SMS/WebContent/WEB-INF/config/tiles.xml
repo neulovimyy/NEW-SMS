@@ -125,6 +125,11 @@
         <put-attribute name="body" value="/WEB-INF/views/records/landing.jsp"></put-attribute>
    	 </definition>
 
+   	  <definition name="studentInfo" extends="xeone">
+        <put-attribute name="title" value="Student Record and Report"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/student_info.jsp"></put-attribute>
+   	 </definition>
+
  	 <definition name="index4" extends="xeone">
         <put-attribute name="title" value="Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/index4.jsp"></put-attribute>
@@ -133,9 +138,26 @@
         <put-attribute name="title" value="Generate Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/generate.jsp"></put-attribute>
    	 </definition>
-   	   <definition name="studentSubjects" extends="xeone">
+
+   	 <definition name="studentSubjects" extends="xeone">
         <put-attribute name="title" value="Student's Subjects Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/studentRecord.jsp"></put-attribute>
+	 </definition>
+   	 <definition name="allStudents" extends="xeone">
+        <put-attribute name="title" value="Generate all Student Record"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/allStudents.jsp"></put-attribute>
+   	 </definition>
+   	 <definition name="shsRecords" extends="xeone">
+        <put-attribute name="title" value="Generate shs Records Record"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/shsRecords.jsp"></put-attribute>
+   	 </definition>
+   	 <definition name="jhRecords" extends="xeone">
+        <put-attribute name="title" value="Generate jh Records Record"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/jhRecords.jsp"></put-attribute>
+   	 </definition>
+   	 <definition name="elemRecords" extends="xeone">
+        <put-attribute name="title" value="Generate elem Records Record"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/elemRecords.jsp"></put-attribute>
    	 </definition>
    	   	   <definition name="list" extends="xeone">
         <put-attribute name="title" value="Student's Subjects List Record and Report"></put-attribute>

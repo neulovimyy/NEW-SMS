@@ -137,4 +137,8 @@
         <put-attribute name="title" value="Student's Subjects Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/studentRecord.jsp"></put-attribute>
    	 </definition>
+   	   	   <definition name="list" extends="xeone">
+        <put-attribute name="title" value="Student's Subjects List Record and Report"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/studentSubject.jsp"></put-attribute>
+   	 </definition>
 </tiles-definitions>

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sms.base.BaseController;
+import com.sms.model.Faculty;
 import com.sms.model.Report;
 import com.sms.model.Subject;
 import com.sms.service.StudentService;
@@ -24,13 +25,6 @@ import com.sms.service.StudentService;
 public class RecordController extends BaseController{
 	@Autowired
 	private StudentService studentService;
-
-
-	@RequestMapping(value="report", method = RequestMethod.GET)
-	public String listReport(HttpServletRequest request, ModelMap model) {
-		return "index4";
-	}
-	
 
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String welcome() {
@@ -47,6 +41,13 @@ public class RecordController extends BaseController{
 		return "generate";
 	}
 	
+	
+	@RequestMapping(value = "list", method = RequestMethod.GET)
+	public String listReport(HttpServletRequest request, ModelMap model) {
+		List<Report> report = studentService.listReportss();
+		model.put("report", studentService.getAll(Report.class));
+		return "list";
+	}
 	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "savesubjectreport", method = RequestMethod.POST)

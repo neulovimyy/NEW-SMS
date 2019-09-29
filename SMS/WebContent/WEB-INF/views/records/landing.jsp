@@ -1,4 +1,4 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html; pageEncoding=UTF-8"%>
 <%@include file="../common/taglibs.jsp" %>
 
@@ -23,6 +23,7 @@
   <a href="#">Records</a>
 </div>
 <div id="main">
+
 <div class="header">
   <div class="row">
     <div class="col-sm-1 col-md-1 col-lg-1">
@@ -44,8 +45,7 @@
   </div>
 </div>
 
-
-	<div class="content">
+<div class="content">
 	  <div class="levels">
 	    <div class="row">
 	      <div class="col-sm-3 col-md-3 col-lg-3">
@@ -103,7 +103,7 @@
 	      </div>
 	
 	      <div class="col-sm-2 col-md-2 col-lg-2">
-	        <a href="#">
+	        <a href="list.html">
 	          <button>
 	            <i class="fas fa-book"></i> <br>
 	            Subjects

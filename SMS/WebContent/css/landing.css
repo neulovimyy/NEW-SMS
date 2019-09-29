@@ -197,13 +197,13 @@ transform: translateY(4px);
 
 
 
-@media screen and (max-width: 575.98px){
-.col-sm-1.s{
-    flex: 0 0 5%;
-    max-width: 5%;
-}
-.col-sm-5.sm{
-    flex: 0 0 45%;
-    max-width: 45%;
-}
+	@media screen and (max-width: 575.98px){
+	.col-sm-1.s{
+	    flex: 0 0 5%;
+	    max-width: 5%;
+	}
+	.col-sm-5.sm{
+	    flex: 0 0 45%;
+	    max-width: 45%;
+	}
 }

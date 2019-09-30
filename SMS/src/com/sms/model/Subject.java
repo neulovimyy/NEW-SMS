@@ -16,22 +16,12 @@ import org.directwebremoting.annotations.DataTransferObject;
 @Table(name = "subject")
 @DataTransferObject
 public class Subject implements Serializable{
-	private Long subjectId;
+	private Long id;
 	private String subjectName;
-	private String subjectCode;
-	private int subjectUnit;
+	private SubjectSchedule schedule;
+	private int subjectUnits;
 	
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Id
-	@Column(name = "subject_id")
-	public Long getSubjectId() {
-		return subjectId;
-	}
-	public void setSubjectId(Long subjectId) {
-		this.subjectId = subjectId;
-	}
-	
-	@Column(name = "subject_name")
+	@Column(name = "subject")
 	public String getSubjectName() {
 		return subjectName;
 	}
@@ -39,19 +29,19 @@ public class Subject implements Serializable{
 		this.subjectName = subjectName;
 	}
 	
-	@Column(name = "subject_code")
-	public String getSubjectCode() {
-		return subjectCode;
+	
+	public SubjectSchedule getSchedule() {
+		return schedule;
 	}
-	public void setSubjectCode(String subjectCode) {
-		this.subjectCode = subjectCode;
+	public void setSchedule(SubjectSchedule schedule) {
+		this.schedule = schedule;
+	}
+	public int getSubjectUnits() {
+		return subjectUnits;
+	}
+	public void setSubjectUnits(int subjectUnits) {
+		this.subjectUnits = subjectUnits;
 	}
 	
-	@Column(name = "subject_units", columnDefinition = "int(20)")
-	public int getSubjectUnit() {
-		return subjectUnit;
-	}
-	public void setSubjectUnit(int subjectUnit) {
-		this.subjectUnit = subjectUnit;
-	}
+	
 }

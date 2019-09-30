@@ -31,7 +31,7 @@ import com.sms.model.Student;
 import com.sms.model.Subject;
 import com.sms.service.StudentService;
 import com.sms.util.InventoryUtility;
-	
+
 @Controller
 @RequestMapping("student")
 public class StudentController extends BaseController{
@@ -49,6 +49,7 @@ public class StudentController extends BaseController{
 	
 	@RequestMapping(value = "save", method = RequestMethod.POST)
 	public void saveEmployee(@ModelAttribute("command") Student cstudent,BindingResult result, HttpServletResponse response) throws ServletException, IOException {
+
 		if(InventoryUtility.isNull(cstudent.getId())){
 			cstudent.setId(studentService.generateStudentNumber() + 1);
 			cstudent.setStudentId(cstudent.getStudentNumberFull());
@@ -66,7 +67,7 @@ public class StudentController extends BaseController{
 		response.sendRedirect("students");
 	}
 
-	@RequestMapping(value="students")
+	@RequestMapping(value="students", method = RequestMethod.GET)
 	public String listEmployees(HttpServletRequest request, ModelMap model, @ModelAttribute("studentCommand") Student student) {
 		model.addAttribute("students", studentService.viewStudents(student));
 		return "studentList";

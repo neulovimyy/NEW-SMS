@@ -67,6 +67,21 @@
 						<label class="control-label">First Name </label>
 						<form:input id="firstname" path="firstName" cssClass="form-control" placeholder="Enter first name..." />
 					</div>
+<<<<<<< Updated upstream
+=======
+					<div class="panel-body">
+						<c:choose>
+							<c:when test="${not empty command.id}">
+								<form:hidden path="id" />
+								<form:hidden path="studentId" />
+							</c:when>
+						</c:choose>
+
+						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+							<label class="control-label">First Name </label>
+							<form:input id="firstname" path="firstName" cssClass="form-control" placeholder="Enter first name..." />
+						</div>
+>>>>>>> Stashed changes
 
 					<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 						<label class="control-label">Middle Name </label>

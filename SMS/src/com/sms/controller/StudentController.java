@@ -69,7 +69,6 @@ public class StudentController extends BaseController{
 	@RequestMapping(value = "add", method = RequestMethod.POST)
 	public String addNewEmployee(HttpServletRequest request,@ModelAttribute("command")  Student cstudent, BindingResult result, ModelMap model) {
 		String acad = request.getParameter("acad");
-		cstudent.setAcad(acad);
 		model.addAttribute("acad", acad);
 		
 		initModel(model);

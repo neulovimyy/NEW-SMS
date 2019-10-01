@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.sms.base.BaseController;
 import com.sms.model.Faculty;
 import com.sms.model.Report;
+import com.sms.model.Student;
 import com.sms.model.Subject;
 import com.sms.service.StudentService;
 
@@ -25,9 +26,11 @@ import com.sms.service.StudentService;
 public class RecordController extends BaseController{
 	@Autowired
 	private StudentService studentService;
+	private List<Student> student;
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String welcome() {
 		return "landing";
+		
 	}
 	
 	@RequestMapping(value = "studentSubjects", method = RequestMethod.GET)
@@ -41,10 +44,12 @@ public class RecordController extends BaseController{
 	}
 	
 	@RequestMapping(value = "jhRec", method = RequestMethod.GET)
-	public String welcome3() {
+	public String listStudent(HttpServletRequest request, ModelMap model) {
+		student = studentService.listStudentss();
+		model.put("student", studentService.getAll(Student.class));
 		return "jhRecords";
 	}
-	
+		
 	@RequestMapping(value = "elemRec", method = RequestMethod.GET)
 	public String welcome4() {
 		return "elementaryRecords";
@@ -58,6 +63,11 @@ public class RecordController extends BaseController{
 	@RequestMapping(value = "studentInfo", method = RequestMethod.GET)
 	public String info() {
 		return "studentInfo";
+	}
+	
+	@RequestMapping(value = "enrollment", method = RequestMethod.GET)
+	public String enroll() {
+		return "enrollment";
 	}
 	
 	

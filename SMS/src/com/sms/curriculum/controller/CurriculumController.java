@@ -22,7 +22,8 @@ public class CurriculumController extends BaseController {
 	
 	@RequestMapping(value="view")
 	public String listEmployees(HttpServletRequest request, ModelMap model, @ModelAttribute("studentCommand") Curriculum curr) {
-		model.addAttribute("students", curriculumService.viewCurriculum(curr));
-		return "studentList";
+		model.addAttribute("curriculum", curriculumService.viewCurriculum(curr));
+		return "viewCurriculum";
 	}
+	
 }

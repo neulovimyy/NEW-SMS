@@ -21,6 +21,15 @@ public class Subject implements Serializable{
 	private SubjectSchedule schedule;
 	private int subjectUnits;
 	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@Column(name = "subject_id")
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	@Column(name = "subject")
 	public String getSubjectName() {
 		return subjectName;

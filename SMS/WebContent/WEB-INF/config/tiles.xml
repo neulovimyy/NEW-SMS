@@ -134,6 +134,6 @@
    	 <!-- Curriculum -->
    	 <definition name="viewCurriculum" extends="xeone">
         <put-attribute name="title" value="Curriculum"></put-attribute>
-        <put-attribute name="body" value="/WEB-INF/views/curriculum/subjectList.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/curriculum/viewCurriculum.jsp"></put-attribute>
     </definition>
 </tiles-definitions>

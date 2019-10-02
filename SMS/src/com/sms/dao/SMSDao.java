@@ -8,40 +8,45 @@ import com.sms.model.Faculty;
 import com.sms.model.Report;
 import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
-import com.sms.model.Subject;
 
-				
 public interface SMSDao extends BaseDao {
-	
-	//student
+
+	// student
 	public void addStudent(Student stud);
+
 	public List<Student> listStudent();
+
 	public Student getStudentInfo(Long id);
+
 	public void deleteStudent(Student stud);
+
 	public List<Student> viewStudents(Student student);
+
 	public Long generateStudentNumber();
-	
-	//accountings
+
+	// accountings
 	public void addTransactions(ElemAndHS stud);
+
 	public List<ElemAndHS> listTransactions();
+
 	public ElemAndHS getTransactions(Long id);
+
 	public void deleteTransactions(ElemAndHS stud);
-	
-	//faculty
+
+	// faculty
 	public void addFaculty(Faculty faculty);
+
 	public List<Faculty> listFaculty();
+
 	public Faculty getFaculty(Long id);
+
 	public void deleteFaculty(Faculty faculty);
-	
-	public List<Subject> listSubject();
-	public void addSubject(Subject subject);
-	public Subject getSubject(Long id);
-	public void deleteSubject(Subject subject);
-	
-	
-	//report
+
+	// report
 	public List<Report> reportList();
+
 	public Report getReportInfo(Long subjectId);
+
 	public List<Student> viewStudentsByStudentID(StudRetrieveInfo stud);
-	
+
 }

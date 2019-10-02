@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
+import javax.security.auth.Subject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,14 +24,13 @@ import com.sms.base.BaseController;
 import com.sms.enums.AcademicAttainment;
 import com.sms.enums.BloodTypeEnum;
 import com.sms.enums.CivilStatusEnum;
-import com.sms.enums.Religion;
 import com.sms.enums.Gender;
+import com.sms.enums.Religion;
 import com.sms.model.EducationalBackground;
 import com.sms.model.Student;
-import com.sms.model.Subject;
 import com.sms.service.StudentService;
 import com.sms.util.InventoryUtility;
-
+	
 @Controller
 @RequestMapping("student")
 public class StudentController extends BaseController{
@@ -164,16 +163,6 @@ public class StudentController extends BaseController{
 		return "subjectList";
 	}
 	
-	@RequestMapping(value = "editsubject", method = RequestMethod.GET)
-	public String editSubject(@ModelAttribute("command")  Subject subject, 
-			BindingResult result, ModelMap model) {
-		Subject obj = studentService.get(Subject.class, subject.getSubjectId());
-		model.addAttribute("subjects", studentService.get(Subject.class,subject.getSubjectId()));
-		model.addAttribute("subjects",  studentService.getAll(Subject.class));
-		model.addAttribute("command",obj);
-		
-		return "addSubject";
-	}
 	
 	@RequestMapping(value= "search", method= RequestMethod.GET)
 	public String search() {

@@ -8,36 +8,44 @@ import com.sms.model.Faculty;
 import com.sms.model.Report;
 import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
-import com.sms.model.Subject;
-
 
 public interface StudentService extends BaseService {
-	//student
+	// student
 	public void addStudent(Student employee);
+
 	public List<Student> listStudentss();
+
 	public Student getStudent(Long Id);
+
 	public void deleteStudent(Student employee);
+
 	public List<Student> viewStudents(Student student);
+
 	public Long generateStudentNumber();
-	//accounting
+
+	// accounting
 	public void addTransactions(ElemAndHS account);
+
 	public List<ElemAndHS> listTransactions();
+
 	public ElemAndHS getTransactions(Long studentNumber);
+
 	public void deleteTransactions(ElemAndHS account);
-	//faculty
+
+	// faculty
 	public void addFaculty(Faculty faculty);
+
 	public List<Faculty> listFaculty();
+
 	public Faculty getFaculty(Long id);
+
 	public void deleteFaculty(Faculty faculty);
-	
-	public List<Subject> listSubject();
-	public void addSubject(Subject subject);
-	public Subject getSubject(Long id);
-	public void deleteSubject(Subject subject);
-	
-	//report
+
+	// report
 	public List<Report> listReportss();
+
 	public Report getReport(String subjectId);
+
 	List<Student> viewStudentsByStudentID(StudRetrieveInfo stud);
-	
+
 }

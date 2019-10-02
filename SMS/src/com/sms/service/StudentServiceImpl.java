@@ -14,21 +14,19 @@ import com.sms.model.Faculty;
 import com.sms.model.Report;
 import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
-import com.sms.model.Subject;
-import com.sms.service.StudentService;
 
 @Service("studentService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class StudentServiceImpl extends BaseServiceImpl implements StudentService  {
+public class StudentServiceImpl extends BaseServiceImpl implements StudentService {
 
 	@Autowired
 	private SMSDao studentDao;
-	
+
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
 	public void addStudent(Student stud) {
 		studentDao.addStudent(stud);
 	}
-	
+
 	public List<Student> listStudentss() {
 		return studentDao.listStudent();
 	}
@@ -36,7 +34,7 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 	public Student getStudent(Long Id) {
 		return studentDao.getStudentInfo(Id);
 	}
-	
+
 	public void deleteStudent(Student student) {
 		studentDao.deleteStudent(student);
 	}
@@ -77,29 +75,14 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 		studentDao.deleteFaculty(faculty);
 	}
 
-	public List<Subject> listSubject() {
-		return studentDao.listSubject();
-	}
-
-	public void addSubject(Subject subject) {
-		studentDao.addSubject(subject);
-	}
-
-	public Subject getSubject(Long id) {
-		return studentDao.getSubject(id);
-	}
-
-	public void deleteSubject(Subject subject) {
-		studentDao.deleteSubject(subject);
-	}
-	
 	public List<Report> listsSubjects() {
 		return studentDao.reportList();
 	}
+
 	public Report getReport(Long subjectId) {
 		return studentDao.getReportInfo(subjectId);
 	}
-	
+
 	public List<Report> listReportss() {
 		// TODO Auto-generated method stub
 		return null;
@@ -119,11 +102,11 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 
 	@Override
 	public List<Student> viewStudents(Student student) {
-		
+
 		return studentDao.viewStudents(student);
 	}
-	
-	public Long generateStudentNumber(){
+
+	public Long generateStudentNumber() {
 		return studentDao.generateStudentNumber();
 	}
 
@@ -133,5 +116,4 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 		return studentDao.viewStudentsByStudentID(stud);
 	}
 
-	
 }

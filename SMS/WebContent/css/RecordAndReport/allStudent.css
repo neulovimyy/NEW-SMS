@@ -1,229 +1,246 @@
 body {
-    -webkit-transition: background-color .5s;
-    transition: background-color .5s;
-    background: #e9f1f8;
-  }
-  
-  .row {
-    margin-left: 0px;
-    margin-right: 0px;
-    padding: 0px;
-  }
-  
-  .header {
-    background: white;
-  }
-  
-  .header [class*="col-"] {
-    padding: 20px;
-  }
-  
-  .header [class*="col-"] img {
-    width: 75px;
-    height: 75px;
-  }
-  
-  .header [class*="col-"] p {
-    color: black;
-    font-size: 1.4em;
-  }
-  
-  .subheading {
-    padding: 10px;
-    background: #001C57;
-    color: white;
-    font-size: 1em;
-  }
-  
-  .subheading [class*="col-"] span {
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-  
-  
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #0009;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.sidenav a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: white;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+  background: #e9f1f8;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  -webkit-transition: margin-left .5s;
+  transition: margin-left .5s;
+}
+
+@media screen and (max-height: 450px) {
   .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #0009;
-    overflow-x: hidden;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    padding-top: 60px;
-    text-align: center;
+    padding-top: 15px;
   }
-  
   .sidenav a {
-    padding: 10px;
-    text-decoration: none;
-    font-size: 1.5em;
-    color: white;
-    display: block;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    font-size: 18px;
   }
-  
-  .sidenav a:hover {
-    color: black;
-    background: #e9f1f8;
-  }
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  #main {
-    -webkit-transition: margin-left .5s;
-    transition: margin-left .5s;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {
-      padding-top: 15px;
-    }
-    .sidenav a {
-      font-size: 18px;
-    }
-  }
-  
-	.content .cheader{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 18px;
-		display: block;
-		text-align: center;
-		width: 95%;
-		padding: 5px;
-		border-bottom:1px solid #D3D3D3;
-		background: #e9f1f8;
-	}
+}
 
-	
-	select .leveloption {
-		background-color: white;
-		width: 100%;
-		color: black;
-		padding: 12px;
-		font-size: 10px;
-		cursor: pointer;
-		border: solid 1px #D3D3D3;
-		padding-left: 15px;
-		padding-right: 5px;
-	}
-	
-	option {
-		font-size: 12px;
-		margin: 10px;
-		background-color: white;
-		color: black;
-		cursor: pointer;
-		padding: 5px 0;
-		
-	}
-	
-	.ccontent{
-		width: 100%;
-		height: 1000%;
-		margin: 18px auto;
-		background: #e9f1f8;
-		position: relative;
-		left: 0px;
-		overflow: scroll;
-	}
+.header {
+  background: white;
+}
 
-	.header1{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 18px;
-		display: block;
-		text-align: center;
-		width: 95%;
-		height: 120px;
-		padding: 5px;
-		background-color: white;
-		border-bottom:1px solid #D3D3D3; 
-			
-	}
-	
-	input[type=text] {
-	  height: 35%;
-	  width: 70%;
-	  padding: 6px;
-	  font-size: 12px;
-	  border: 1px solid black;
-	  
-	}
-	
-	.search-container button {
-	  width: 20%;
-	  height: 30%;
-	  background: #d3d3d3;
-	  font-size: 12px;
-	  border: 1px solid black;
-	  cursor: pointer;
-	  margin-left: -5px;
-	}
-	
-	.search-container button:hover {
-	  background: #ccc;
-	}
-	
-	.students {
-	  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	  border-collapse: collapse;
-	  width: 99%;
-	  margin: 0 auto;
-	  
-	}
-	
-	.students td{
-		padding: 5px;
-		
-	}
-	.students th {
-	  border-bottom: 1px solid #5AB190 ;
-	  padding: 8px;
-	}
-	
-	.students tr:nth-child(even){background-color: #f2f2f2;}
-	
-	.students tr:hover {background-color: #ddd;}
-	
-	.students th {
-	  padding-top: 12px;
-	  padding-bottom: 12px;
-	  text-align: left;
-	  color: #5AB190;
-	}
-  
- /*# sourceMappingURL=landing.component.css.map *
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+.header [class*="col-"] {
+  padding: 20px;
+}
+
+.header [class*="col-"] img {
+  width: 75px;
+  height: 75px;
+}
+
+.header [class*="col-"] p {
+  color: black;
+  font-size: 1.4em;
+}
+
+.subheading {
+  padding: 10px;
+  background: #001C57;
+  color: white;
+  font-size: 1em;
+}
+
+.subheading [class*="col-"] span {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.content .levels {
+  padding: 15px;
+  width: 95%;
+  margin: auto;
+}
+
+.content .levels [class*="col-"] {
+  padding: 10px;
+  text-align: center;
+}
+
+.content .levels [class*="col-"] .elem button {
+  padding: 25px;
+  width: 100%;
+  text-align: left;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: 15px solid #FA1E44;
+  background: white;
+  outline: none;
+}
+
+.content .levels [class*="col-"] .elem button b {
+  font-size: 1.4em;
+}
+
+.content .levels [class*="col-"] .elem button:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.content .levels [class*="col-"] .jhs button {
+  padding: 25px;
+  width: 100%;
+  text-align: left;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: 15px solid #FEC925;
+  background: white;
+  outline: none;
+}
+
+.content .levels [class*="col-"] .jhs button b {
+  font-size: 1.4em;
+}
+
+.content .levels [class*="col-"] .jhs button:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.content .levels [class*="col-"] .shs button {
+  padding: 25px;
+  width: 100%;
+  text-align: left;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: 15px solid #842BD7;
+  background: white;
+  outline: none;
+}
+
+.content .levels [class*="col-"] .shs button b {
+  font-size: 1.4em;
+}
+
+.content .levels [class*="col-"] .shs button:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.content .levels [class*="col-"] .college button {
+  padding: 25px;
+  width: 100%;
+  text-align: left;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: 15px solid #5AB190;
+  background: white;
+  outline: none;
+}
+
+.content .levels [class*="col-"] .college button b {
+  font-size: 1.4em;
+}
+
+.content .levels [class*="col-"] .college button:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.content .label {
+  text-align: center;
+  font-size: 1em;
+  padding: 0px 15px 15px 15px;
+}
+
+.content .options {
+  margin: auto;
+  width: 95%;
+  background: white;
+  font-size: 12px;
+  color: black;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.content .options [class*="col-"] select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.content .options [class*="col-"] select .leveloption {
+  color: black;
+  padding: 12px;
+  font-size: 10px;
+  cursor: pointer;
+  border: solid 1px #D3D3D3;
+  padding-left: 15px;
+  padding-right: 5px;
+}
+
+.content table {
+  margin: auto;
+  width: 95%;
+  font-size: 0.9em;
+}
+
+.content table tr:nth-child(even) {
+  background-color: #eee;
+}
+
+.content table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.content table tr th {
+  background: #001C57;
+  color: white;
+  padding: 15px;
+  text-align: left;
+}
+
+.content table tr td {
+  padding: 10px;
+  text-align: left;
+}
+/*# sourceMappingURL=tables.component.css.map */

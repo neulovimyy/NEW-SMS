@@ -62,6 +62,7 @@ public class StudentController extends BaseController{
 				e.setStudent(cstudent);
 			}
 		}
+
 		studentService.save(cstudent);
 		response.sendRedirect("students");
 	}
@@ -84,7 +85,7 @@ public class StudentController extends BaseController{
 		String acad = request.getParameter("acad");
 		cstudent.setAcad(acad);
 		model.addAttribute("acad", acad);
-		
+		System.out.println(acad);
 		initModel(model);
 		return "addStudent";
 	}

@@ -14,6 +14,8 @@
 		}
 	}
 
+	
+	
 	$(document).ready(function() {
 		/* $("#upload").change(function() {
 			//this.form.submit();
@@ -31,21 +33,29 @@
 				<div class="panel-heading text-center">
 					<h2>Add Student Data</h2>
 				</div>
-				<div class="col-lg-2 preview-doctor">
-					<c:choose>
-						<c:when test="${not empty command.studentContentType}">
-							<img id="image-profile" src="<c:url value="${command.studentPicture}"/>" alt="your image" width="140" height="140" class="" style="border-radius: 50%;" />
-						</c:when>
-						<c:otherwise>
-							<img id="image-profile" src="<c:url value="/image/default.jpeg"/>" alt="your image" width="140" height="140" class="" style="border-radius: 50%;" />
-						</c:otherwise>
-					</c:choose>
-					<label for="upload" style="cursor: pointer; display: inherit; margin-top: -25px; margin-left: 125px; color: #808080; opacity: 75%;" title="upload image"><i class="fa fa-camera"></i> </label> <input id="upload" type='file' name="studentImageFile" onchange="readURL(this);" class="file-upload_input" accept="image/*" />
-				</div>
+				
 				<div class="panel panel-inverted">
-					<div class="panel-heading">
-						<h3>I. Personal Information</h3>
+					<div class="col-lg-2 preview-doctor">
+						<c:choose>
+							<c:when test="${not empty command.studentContentType}">
+								<img id="image-profile" src="<c:url value="${command.studentPicture}"/>" alt="your image" width="140" height="140" class="" style="border-radius: 50%;" />
+							</c:when>
+							<c:otherwise>
+								<img id="image-profile" src="<c:url value="/image/default.jpeg"/>" alt="your image" width="140" height="140" class="" style="border-radius: 50%;" />
+							</c:otherwise>
+						</c:choose>
+						<label for="upload" style="cursor: pointer; display: inherit; margin-top: -25px; margin-left: 125px; color: #808080; opacity: 75%;" title="upload image"><i class="fa fa-camera"></i> </label> 
+						<div class="label text-center" >
+							<input id="upload" type='file' name="studentImageFile" onchange="readURL(this);" accept="image/*" />
+						</div>
 					</div>
+					<div class="clearfix"> </div>
+					
+					<div class="panel-heading">
+						<h3 id="text-blue">I. Personal Information</h3>
+					</div>
+					
+					
 				</div>
 				<div class="panel-body">
 					<c:choose>
@@ -55,24 +65,17 @@
 						</c:when>
 					</c:choose>
 					<c:if test="${not empty acad }">
-						<form:hidden path="acad" value="${acad}" />
+						<input type="hidden" path="acad" value="${acad}" />
 					</c:if>
 					<c:if test="${not empty command.studentContentType}">
 						<form:hidden path="studentImage" />
 						<form:hidden path="studentContentType" />
 					</c:if>
-					<div class="panel-body">
-						<c:choose>
-							<c:when test="${not empty command.id}">
-								<form:hidden path="id" />
-								<form:hidden path="studentId" />
-							</c:when>
-						</c:choose>
 
-						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
-							<label class="control-label">First Name </label>
-							<form:input id="firstname" path="firstName" cssClass="form-control" placeholder="Enter first name..." />
-						</div>
+					<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+						<label class="control-label" id="text-blue">First Name </label>
+						<form:input id="firstname" path="firstName" cssClass="form-control" placeholder="Enter first name..." />
+					</div>
 
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Middle Name </label>

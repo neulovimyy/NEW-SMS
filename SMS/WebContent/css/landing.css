@@ -39,7 +39,13 @@ img{
     background-color: white;
     color: black;
 }
-    
+
+.label{
+    padding: 10px;
+    background: red; 
+    display: table;
+    color: #fff;
+    }   
 
 .content{
     text-align: center;
@@ -195,8 +201,6 @@ background-color: #003B46;
 transform: translateY(4px);
 }
 
-
-
 @media screen and (max-width: 575.98px){
 .col-sm-1.s{
     flex: 0 0 5%;
@@ -206,4 +210,28 @@ transform: translateY(4px);
     flex: 0 0 45%;
     max-width: 45%;
 }
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }

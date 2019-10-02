@@ -17,6 +17,10 @@
 		<link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>"> --%>
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/font-awesome.min.css"/>">
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/AdminLTE.min.css"/>">
+		<!--  for padding purposes -->
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/padding.css"/>">
+		<!--  for custom and some classes -->
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/colors.css"/>">
 		<!-- Form Validation -->
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrapValidator.min.css"/>">
 		<!-- datePicker -->

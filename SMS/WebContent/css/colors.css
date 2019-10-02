@@ -1,0 +1,11 @@
+.text-blue{
+	color: #0000ff;
+}/*class*/
+
+#text-blue{
+	color: #00f0ff;
+}/*id*/
+
+.background-blue{
+	background-color: rgb(65,105,225);	
+}

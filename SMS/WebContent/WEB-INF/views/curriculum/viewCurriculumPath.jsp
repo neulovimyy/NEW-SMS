@@ -7,13 +7,13 @@
 	<section class="content">
 
 	<div class="col-md-12">
-		<form:form id="view_students" action="${pageContext.request.contextPath}/curriculum/view" method="post" commandName="curriculumCommand">
+		<form:form id="view_students" action="${pageContext.request.contextPath}/path/view" method="post" commandName="curriculumCommand">
 			<div class="page-header">
 				<div class="container-fluid"></div>
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3>Curriculum</h3>
+					<h3>Curriculum Path</h3>
 				</div>
 
 				<div class="panel-body">
@@ -22,6 +22,7 @@
 							<div class="row">
 								<div class="col-md-3 col-lg-3 col-xs-12 col-sm-12 pull-right">
 									<div class="input-group">
+										<form:hidden path="id"/>
 										<form:input class="form-control" path="search" placeholder="Search..." autocomplete="off" />
 										<span class="input-group-btn">
 											<button class="btn btn-danger" type="submit">
@@ -31,7 +32,7 @@
 									</div>
 								</div>
 								<div class="col-lg-1">
-										<a type="button" class="btn btn-primary " href="<c:url value="/curriculum/form"/>"><i class="fa fa-plus fa-fw"></i> Create</a>
+									<a type="button" class="btn btn-primary " href="<c:url value="/path/form?pathid=${pathid}"/>"><i class="fa fa-plus fa-fw"></i> Create</a>
 								</div>
 							</div>
 						</div>
@@ -49,8 +50,8 @@
 									</thead>
 									<tbody>
 									<c:choose>
-										<c:when test="${!empty curriculum}">
-											<c:forEach items="${curriculum}" var="obj" varStatus="index">
+										<c:when test="${!empty path}">
+											<c:forEach items="${path}" var="obj" varStatus="index">
 
 												<tr class="">
 													<td>${index.count}</td>

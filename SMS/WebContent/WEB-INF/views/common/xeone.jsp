@@ -30,6 +30,7 @@
 		
 		<script src="<c:url value="/js/bootstrap-datepicker.min.js"/>"></script>
 		<script type="text/javascript" src="<c:url value="/js/bootstrapValidator.min.js"/>"></script>
+		<script type="text/javascript" src="<c:url value="/js/common/common.js"/>"></script>
 	</head>	
 	
 	<!--to view items on reach-->

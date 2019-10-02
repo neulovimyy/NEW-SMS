@@ -66,7 +66,7 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 	public void deleteTransactions(ElemAndHS account) {
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM elemhs_account WHERE student_number = ?").setParameter(0, account.getStudentNumber()).executeUpdate();
-	}
+	}	
 
 	//faculties
 	

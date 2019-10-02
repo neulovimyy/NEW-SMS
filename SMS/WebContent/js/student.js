@@ -171,10 +171,6 @@ $(document).ready(function(){
 		initEducbgTable();
 	});
 	
-	//this is the modal for the delete confirmation
-	$('#confirm').on('show.bs.modal', function(e) {
-		
-	    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-	});
+	
 	
 });

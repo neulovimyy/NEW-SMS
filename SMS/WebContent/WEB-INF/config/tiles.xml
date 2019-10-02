@@ -136,4 +136,16 @@
         <put-attribute name="title" value="Curriculum"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/curriculum/viewCurriculum.jsp"></put-attribute>
     </definition>
+    <definition name="curriculumProfile" extends="xeone">
+        <put-attribute name="title" value="Curriculum"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/curriculum/curriculumProfile.jsp"></put-attribute>
+    </definition>
+    <definition name="viewCurriculumPath" extends="xeone">
+        <put-attribute name="title" value="Curriculum"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/curriculum/viewCurriculumPath.jsp"></put-attribute>
+    </definition>
+    <definition name="pathProfile" extends="xeone">
+        <put-attribute name="title" value="Curriculum"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/curriculum/pathProfile.jsp"></put-attribute>
+    </definition>
 </tiles-definitions>

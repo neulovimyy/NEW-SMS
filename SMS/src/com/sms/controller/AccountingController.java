@@ -153,16 +153,16 @@ public class AccountingController extends BaseController {
 
 	@RequestMapping(value = "transaction1", method = RequestMethod.GET)
 	public String listTransactions1GET(HttpServletRequest request, ModelMap model,
-			@ModelAttribute("studentAccount") StudRetrieveInfo stud) {
+			@ModelAttribute("account") StudRetrieveInfo stud) {
 		model.addAttribute("accounts", studentService.viewStudentsByStudentID(stud));
-		return "studentList";
+		return "accountingTable1";
 	}
 
 	@RequestMapping(value = "transaction1", method = RequestMethod.POST)
 	public String listTransactions1POST(HttpServletRequest request, ModelMap model,
-			@ModelAttribute("studentAccount") StudRetrieveInfo stud) {
+			@ModelAttribute("account") StudRetrieveInfo stud) {
 		model.addAttribute("accounts", studentService.viewStudentsByStudentID(stud));
-		return "studentList";
+		return "accountingTable1";
 	}
 
 	@SuppressWarnings("unchecked")
@@ -211,8 +211,8 @@ public class AccountingController extends BaseController {
 	}
 
 	@RequestMapping(value = "transaction2", method = RequestMethod.GET)
-	public String list2Transactions2GET(HttpServletRequest request, ModelMap model) {
-		model.put("accounts", studentService.getAll(SHSAndCollege.class));
+	public String list2Transactions2GET(HttpServletRequest request, ModelMap model, StudRetrieveInfo stud) {
+		model.put("accounts", studentService.viewStudentsByStudentID(stud));
 		return "accountingTable2";
 	}
 
@@ -226,7 +226,6 @@ public class AccountingController extends BaseController {
 	@RequestMapping(value = "add2", method = RequestMethod.GET)
 	public String addTransactions2(@ModelAttribute("account") SHSAndCollege account, ModelMap model) {
 		List<SHSAndCollege> accounts = (List<SHSAndCollege>) studentService.getAll(SHSAndCollege.class);
-
 		model.put("accounts", accounts);
 		return "shsAndCollege";
 	}

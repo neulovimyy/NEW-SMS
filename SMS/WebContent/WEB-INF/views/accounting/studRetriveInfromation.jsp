@@ -10,7 +10,7 @@
 	<section class="content">
 
 	<div class="col-md-12">
-		<form:form id="view_students" action="${pageContext.request.contextPath}/account/transaction1" method="POST" commandName="studentCommand">
+		<form:form id="view_students" action="${pageContext.request.contextPath}/account/transaction1" method="GET" commandName="account">
 		<div class="page-header">
 			<div class="container-fluid"></div>
 		</div>

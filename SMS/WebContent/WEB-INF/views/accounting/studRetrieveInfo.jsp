@@ -9,12 +9,12 @@
 		<c:if test="${!empty accounts}"> 
 				       
 			    	</c:if>
-			   			<div class="pt-50 redcolor">
+			   			<div class="">
 			        	<form:label for="student-number" path="studentNumber" class="redcolor">Entry Number:</form:label>
 			       		<form:input path="studentNumber" name="studentNumber" id="studentNumber" placeholder="2015-0000-MN-0" onblur="return blank(\"studentNumber\")"/>
 			      		</div>
 			      		<br>
-			      		<div class="pt-300">
+			      		<div class="">
 			        	<form:label for="school-year" path="schoolYear">School Year:</form:label>
 			       		<form:input path="schoolYear" name="schoolYear" id="schoolYear" onblur="return blank(\"schoolYear\")"/>
 			       		<br>

@@ -156,15 +156,14 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 		StringBuffer dynamicSql = new StringBuffer();
 		if(StringUtils.isNotEmpty(stud.getSearch())) {
 			dynamicSql.append("and (  ");
-			dynamicSql.append(" lower(e.student_id) like lower(:search) ");
+			dynamicSql.append(" lower(e.studentId) like lower(:search)) ");
 		}
 		
 		final String sql =  hqlQuery.append(dynamicSql).toString();
 		Query query = getSession().createQuery(sql);
 		
 		if(StringUtils.isNotEmpty(stud.getSearch())) {
-			query.setParameter("search","%" + stud.getSearch() + "%");
-			
+			query.setParameter("search","%" + stud.getSearch() + "%");	
 		}
 		
 		List<Student> result = query.list();

@@ -1,4 +1,4 @@
-package com.sms.model;
+package com.sms.accounting.model;
 
 import java.io.Serializable;
 
@@ -9,21 +9,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.directwebremoting.annotations.DataTransferObject;
 
-import com.sms.base.BaseModel;
+import com.sms.student.model.Student;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "retrieveinfo_account")
+@Table(name = "first_sem_partial")
 @DataTransferObject
-public class StudRetrieveInfo extends BaseModel implements Serializable {
-	
+
+public class FirstSemesterPartial implements Serializable {
+
+	private Long entryNumber;
 	private Long studentNumber;
-	private String studentId;
 	private String schoolYear;
 	private String semester;
 	private Long orNumber;
@@ -34,21 +35,22 @@ public class StudRetrieveInfo extends BaseModel implements Serializable {
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
-	@Column(name = "student_number")
+	@Column(name = "entry_number")
+	public Long getEntryNumber() {
+		return entryNumber;
+	}
+	public void setEntryNumber(Long entryNumber) {
+		this.entryNumber = entryNumber;
+	}
+	
+	@ManyToOne(fetch = FetchType.EAGER, targetEntity = Student.class)
+	@JoinColumn(name = "student_id")
+	
 	public Long getStudentNumber() {
 		return studentNumber;
 	}
 	public void setStudentNumber(Long studentNumber) {
 		this.studentNumber = studentNumber;
-	}
-	
-	@OneToOne(fetch = FetchType.EAGER, targetEntity = Student.class)
-	@JoinColumn(name = "student_id")
-	public String getStudentId() {
-		return studentId;
-	}
-	public void setStudentId(String studentId) {
-		this.studentId = studentId;
 	}
 	
 	public String getSchoolYear() {
@@ -99,6 +101,4 @@ public class StudRetrieveInfo extends BaseModel implements Serializable {
 	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
-	
-
 }

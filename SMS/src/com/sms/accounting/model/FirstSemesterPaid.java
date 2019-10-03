@@ -1,4 +1,4 @@
-package com.sms.model;
+package com.sms.accounting.model;
 
 import java.io.Serializable;
 
@@ -9,17 +9,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.directwebremoting.annotations.DataTransferObject;
 
+import com.sms.student.model.Student;
+
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "second_sem_partial")
+@Table(name = "first_sem_paid")
 @DataTransferObject
 
-public class SecondSemesterPartial implements Serializable {
+public class FirstSemesterPaid implements Serializable {
 
 	private Long entryNumber;
 	private Long studentNumber;
@@ -41,9 +43,8 @@ public class SecondSemesterPartial implements Serializable {
 		this.entryNumber = entryNumber;
 	}
 	
-	@ManyToOne(fetch = FetchType.EAGER, targetEntity = Student.class)
+	@OneToOne(fetch = FetchType.EAGER, targetEntity = Student.class)
 	@JoinColumn(name = "student_id")
-	
 	public Long getStudentNumber() {
 		return studentNumber;
 	}
@@ -99,4 +100,5 @@ public class SecondSemesterPartial implements Serializable {
 	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
+	
 }

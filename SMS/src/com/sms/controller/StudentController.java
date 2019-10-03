@@ -1,6 +1,7 @@
 package com.sms.controller;
 		
 import java.io.IOException;
+
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
@@ -26,9 +27,10 @@ import com.sms.enums.BloodTypeEnum;
 import com.sms.enums.CivilStatusEnum;
 import com.sms.enums.Gender;
 import com.sms.enums.Religion;
-import com.sms.model.EducationalBackground;
-import com.sms.model.Student;
 import com.sms.service.StudentService;
+import com.sms.student.model.EducationalBackground;
+import com.sms.student.model.Student;
+import com.sms.util.Users;
 import com.sms.util.InventoryUtility;
 	
 @Controller
@@ -47,11 +49,16 @@ public class StudentController extends BaseController{
 	private static final String REDIRECT_EDIT = "/student/edit";
 	
 	@RequestMapping(value = "save", method = RequestMethod.POST)
-	public void saveEmployee(@ModelAttribute("command") Student cstudent,BindingResult result, HttpServletResponse response) throws ServletException, IOException {
+	public void saveEmployee(@ModelAttribute("command") Student cstudent, Users user, BindingResult result, HttpServletResponse response) throws ServletException, IOException {
 
 		if(InventoryUtility.isNull(cstudent.getId())){
 			cstudent.setId(studentService.generateStudentNumber() + 1);
 			cstudent.setStudentId(cstudent.getStudentNumberFull());
+			
+			//setting user's credentials
+			user.setUsername(cstudent.getFullName());
+			user.setPassword(cstudent.getStudentNumberFull());
+			user.setStatus("0");
 		}
 		if(cstudent.getStudentImageFile().getSize() != 0){
 			cstudent.setStudentContentType(cstudent.getStudentImageFile().getContentType());
@@ -62,7 +69,7 @@ public class StudentController extends BaseController{
 				e.setStudent(cstudent);
 			}
 		}
-
+		
 		studentService.save(cstudent);
 		response.sendRedirect("students");
 	}

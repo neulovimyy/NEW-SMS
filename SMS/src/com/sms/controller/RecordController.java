@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sms.base.BaseController;
-import com.sms.model.Report;
 import com.sms.service.StudentService;
+import com.sms.student.model.Report;
 
 @Controller
 @RequestMapping("records")

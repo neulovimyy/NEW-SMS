@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.sms.base.BaseController;
 import com.sms.enums.AcademicAttainment;
 import com.sms.enums.PaymentMethod;
-import com.sms.model.ElemAndHS;
-import com.sms.model.SHSAndCollege;
-import com.sms.model.StudRetrieveInfo;
-import com.sms.model.Student;
+import com.sms.accounting.model.StudRetrieveInfo;
 import com.sms.service.StudentService;
+import com.sms.student.model.ElemAndHS;
+import com.sms.student.model.SHSAndCollege;
+import com.sms.student.model.Student;
 
 @Controller
 @RequestMapping("account")

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.sms.model.Student;
+import com.sms.student.model.Student;
 
 public abstract interface BaseService
 {

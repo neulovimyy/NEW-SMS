@@ -29,9 +29,9 @@
 			<div class="page-header">
 				<div class="container-fluid"></div>
 			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading text-center">
-					<h2>Add Student Data</h2>
+			<div class="panel">
+				<div class="panel-heading text-center bg-cornflowerblue">
+					<h2 class="font-bold text-black">REGISTRATION FORM</h2>
 				</div>
 				
 				<div class="panel panel-inverted">
@@ -74,44 +74,69 @@
 
 					<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 						<label class="control-label" id="text-blue">First Name </label>
-						<form:input id="firstname" path="firstName" cssClass="form-control" placeholder="Enter first name..." />
+						<form:input id="firstname" name="firstName" path="firstName" cssClass="form-control" placeholder=" " />
 					</div>
 
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Middle Name </label>
-							<form:input id="middleName" path="middleName" cssClass="form-control" placeholder="Enter first name..." />
+							<form:input id="middleName" path="middleName" cssClass="form-control" placeholder=" " />
 						</div>
 
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Last Name </label>
-							<form:input id="lastName" path="lastName" placeholder="Enter last name..." cssClass="form-control" />
+							<form:input id="lastName" path="lastName" placeholder=" " cssClass="form-control" />
 						</div>
 
 						<div class="clearfix"></div>
 
-						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+						<div class="form-group col-md-3 col-lg-3 col-sm-9 col-xs-9">
 							<label class="control-label">Birth Date</label>
 							<form:input id="birthDate" path="birthDate" placeholder="MM/DD/YY" cssClass="form-control" />
 						</div>
+						
+						<div class="form-group col-md-1 col-lg-1 col-sm-4 col-xs-4">
+							<label class="control-label">Age</label>
+							<form:input id="birthDate" path="age" placeholder=" " cssClass="form-control" />
+						</div>
 
+										
+
+						<div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12 dropdown-input">
+							<label class="control-label">Blood Type</label>
+							<form:select path="bloodtype" items="${bloodtypeList}" cssClass="form-control" />
+						</div>
+						
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Gender:</label>
 							<form:select path="gender" items="${genderList}" cssClass="form-control" />
 						</div>
 
+						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+							<label class="control-label">Place of Birth</label>
+							<form:input id="placeOfBirth" path="age" placeholder=" " cssClass="form-control" />
+						</div>
+
+						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+							<label class="control-label">Nationality</label>
+							<form:input id="nationality" path="age" placeholder=" " cssClass="form-control" />
+						</div>
+						
 						<div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12 dropdown-input">
 							<label class="control-label">Civil Status</label>
 							<form:select path="civilStatus" items="${civilStatusList}" cssClass="form-control" />
 						</div>
+						
+						
+						
 						<div class="clearfix"></div>
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Contact #:</label>
-							<form:input id="mobileNum" path="mobileNum" placeholder="Enter contact number..." cssClass="form-control" />
+							<form:input id="mobileNum" path="mobileNum" placeholder=" " cssClass="form-control" />
 						</div>
 
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Email Address:</label>
-							<form:input path="emailAddress" placeholder="Enter email address..." cssClass="form-control" />
+							<form:input path="emailAddress" placeholder=" " cssClass="form-control" />
 						</div>
 
 						<div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12 dropdown-input">
@@ -119,10 +144,7 @@
 							<form:select path="religion" items="${religionList}" cssClass="form-control" />
 						</div>
 
-						<div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12 dropdown-input">
-							<label class="control-label">Blood Type</label>
-							<form:select path="bloodtype" items="${bloodtypeList}" cssClass="form-control" />
-						</div>
+						
 
 						<div class="clearfix"></div>
 						<div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">
@@ -140,16 +162,6 @@
 									<div class="box-header with-border pull-right"></div>
 									<div class="box-body">
 										<h3>II. Education Background</h3>
-										<!-- <table width="100%" cellspacing="20%" border="1">
-								<th>Level</th>
-								<th>Name of School</th>
-								<th>Year Graduated</th>
-								<th>Inclusive Date<br> of Attendance</th>
-								<th>Scholarship Academic Records</th>
-
-
-
-							</table> -->
 										<div class="row">
 											<div class="col-lg-12" id="educbg-table-body">
 												<div class="form-group col-lg-2 col-md-2">
@@ -159,13 +171,13 @@
 													<label class="control-label">Name of School</label>
 												</div>
 												<div class="form-group col-lg-2 col-md-2">
-													<label class="control-label">Year graduateed</label>
+													<label class="control-label">Year graduated</label>
 												</div>
 												<div class="form-group col-lg-2 col-md-2">
-													<label class="control-label">Inlusive dates</label>
+													<label class="control-label">Inclusive dates</label>
 												</div>
 												<div class="form-group col-lg-2 col-md-2">
-													<label class="control-label">address</label>
+													<label class="control-label">Address</label>
 												</div>
 												<div class="form-group col-lg-1 col-md-1">
 													<label class="control-label">Honor</label>
@@ -218,9 +230,64 @@
 						</div>
 
 						<div class="panel panel-inverted">
-							<div class="panel-heading">
+							<div class="panel-heading box box-primary">
 								<h3 class="redcolor">III. Family Background</h3>
 							</div>
+							
+							
+							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+								<label class="control-label">Mother's Name:</label>
+								<form:input path="motherName" placeholder=" " cssClass="form-control" />
+							</div>
+							
+							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+								<label class="control-label">Father's Name:</label>
+								<form:input path="fatherName" placeholder=" " cssClass="form-control" />
+							</div>
+							
+
+							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+								<label class="control-label">Guardian's Name:</label>
+								<form:input path="guardianName" placeholder=" " cssClass="form-control" />
+							</div>
+
+							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+								<label class="control-label">Mother's Occupation:</label>
+								<form:input path="motherOccupation" placeholder=" " cssClass="form-control" />
+							</div>
+							
+							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+								<label class="control-label">Father's Occupation:</label>
+								<form:input path="fatherOccupation" placeholder=" " cssClass="form-control" />
+							</div>
+							
+							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+								<label class="control-label">Guardian's Occupation:</label>
+								<form:input path="motherAddress" placeholder=" " cssClass="form-control" />
+							</div>
+							
+							
+							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+								<label class="control-label">Mother's Contact#:</label>
+								<form:input path="motherPhone" placeholder=" " cssClass="form-control" />
+							</div>
+							
+							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+								<label class="control-label">Father's Contact#:</label>
+								<form:input path="fatherAddress" placeholder=" " cssClass="form-control" />
+							</div>
+							
+							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+								<label class="control-label">Guardian's Contact#:</label>
+								<form:input path="fatherPhone" placeholder=" " cssClass="form-control" />
+							</div>
+							
+							<div class="form-group col-md-12 col-lg-12 col-sm-12 col-xs-12">
+								<label class="control-label">Home Address:</label>
+								<form:input path="motherAddress" placeholder=" " cssClass="form-control" />
+							</div>
+							
+													
 						</div>
 
 						<div class="clearfix"></div>

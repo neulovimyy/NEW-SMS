@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import org.directwebremoting.annotations.DataTransferObject;
 
 import com.sms.base.BaseModel;
-import com.sms.model.Faculty;
+import com.sms.student.model.Faculty;
 
 @SuppressWarnings("serial")
 @Entity

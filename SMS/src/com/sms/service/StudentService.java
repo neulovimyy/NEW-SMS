@@ -3,11 +3,11 @@ package com.sms.service;
 import java.util.List;
 
 import com.sms.base.BaseService;
-import com.sms.model.ElemAndHS;
-import com.sms.model.Faculty;
-import com.sms.model.Report;
-import com.sms.model.StudRetrieveInfo;
-import com.sms.model.Student;
+import com.sms.student.model.ElemAndHS;
+import com.sms.student.model.Faculty;
+import com.sms.student.model.Report;
+import com.sms.student.model.Student;
+import com.sms.accounting.model.StudRetrieveInfo;
 
 public interface StudentService extends BaseService {
 	// student

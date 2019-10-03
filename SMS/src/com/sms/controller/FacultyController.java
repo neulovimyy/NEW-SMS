@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sms.base.BaseController;
-import com.sms.model.Faculty;
-import com.sms.model.Student;
 import com.sms.service.StudentService;
+import com.sms.student.model.Faculty;
+import com.sms.student.model.Student;
 
 @Controller
 @RequestMapping("faculty")

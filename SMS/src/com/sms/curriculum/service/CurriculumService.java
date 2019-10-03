@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.sms.base.BaseService;
 import com.sms.curriculum.model.Curriculum;
-import com.sms.model.Student;
+import com.sms.student.model.Student;
 
 public interface CurriculumService extends BaseService {
 	

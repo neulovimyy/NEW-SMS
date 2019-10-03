@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.sms.base.BaseDaoHibernate;
 import com.sms.curriculum.model.Curriculum;
-import com.sms.model.Student;
+import com.sms.student.model.Student;
 
 @Repository("curriculumDao")
 public class CurriculumDaoImpl extends BaseDaoHibernate implements CurriculumDao{

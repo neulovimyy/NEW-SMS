@@ -1,4 +1,4 @@
-package com.sms.model;
+package com.sms.student.model;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.sms.model;
+package com.sms.accounting.model;
 
 import java.io.Serializable;
 
@@ -14,12 +14,14 @@ import javax.persistence.Table;
 
 import org.directwebremoting.annotations.DataTransferObject;
 
+import com.sms.student.model.Student;
+
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "second_sem_table")
+@Table(name = "second_sem_paid")
 @DataTransferObject
 
-public class SecondSemester implements Serializable  {
+public class SecondSemesterPaid implements Serializable {
 
 	private Long entryNumber;
 	private Long studentNumber;

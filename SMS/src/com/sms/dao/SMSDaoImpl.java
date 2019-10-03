@@ -10,11 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sms.base.BaseDaoHibernate;
-import com.sms.model.ElemAndHS;
-import com.sms.model.Faculty;
-import com.sms.model.Report;
-import com.sms.model.StudRetrieveInfo;
-import com.sms.model.Student;
+import com.sms.student.model.ElemAndHS;
+import com.sms.student.model.Faculty;
+import com.sms.student.model.Report;
+import com.sms.student.model.Student;
+import com.sms.accounting.model.StudRetrieveInfo;
 
 			
 @Repository("studentDao")

@@ -15,8 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.sms.base.BaseModel;
-import com.sms.model.EducationalBackground;
-import com.sms.model.Student;
+import com.sms.student.model.EducationalBackground;
+import com.sms.student.model.Student;
 
 @SuppressWarnings("serial")
 @Entity

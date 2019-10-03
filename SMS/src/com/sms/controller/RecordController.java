@@ -60,6 +60,11 @@ public class RecordController extends BaseController{
 		return "generate";
 	}
 	
+	@RequestMapping(value = "generateexcel", method = RequestMethod.GET)
+	public String generateexcel() {
+		return "generateexcel";
+	}
+	
 	@RequestMapping(value = "studentInfo", method = RequestMethod.GET)
 	public String info() {
 		return "studentInfo";

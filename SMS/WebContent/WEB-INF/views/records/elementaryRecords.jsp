@@ -13,97 +13,152 @@
 	</head>
 
 	<body>
-		<div id="mySidenav" class="sidenav">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<br> <br>
-			<a href="#">Home</a>
-			<a href="#">Students</a>
-			<a href="#">Sections</a>
-			<a href="#">Subjects</a>
-			<a href="#">Records</a>
-		</div>
-		
-		<div id="main">
-			<div class="header">
-				<div class="row">
-					<div class="col-sm-1 col-md-1 col-lg-1">
-						<spring:url value="/image" var="images" />
-						<img src="${images}/logo.png"/>
-					</div>
-					<div class="col-sm-11 col-md-11 col-lg-11">
-					<br>
-					<p> School Management System <br></p>
-					</div>
-				</div>
-			</div>
-				
-			<div class="subheading">
-			<div class="row">
-				<div class="col-sm-12 col-md-12 col-lg-12">
-				<span onclick="openNav()"> &#9776; </span>
-				<b> &nbsp; &nbsp; Records and Report Management</b>
-				</div>
-			</div>
-			</div>
-			
-    <div class="content">
-      <div class="levels">
-        <div class="row">
-            <div class="col-sm-3 col-md-3 col-lg-3">
-              <div class="elem">
-                <button>
-                  <b> 150 </b> <br>
-                  <i class="fas fa-shapes"></i> Elementary Students
-                </button>
-              </div>
-            </div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <br> <br>
+  <a href="#">Home</a>
+  <a href="#">Students</a>
+  <a href="#">Sections</a>
+  <a href="#">Subjects</a>
+  <a href="#">Records</a>
+</div>
+  
+<div id="main">
+  <div class="header">
+    <div class="row">
+      <div class="col-sm-1 col-md-1 col-lg-1">
+        <img src="../../assets/sms-logo.png" alt="smslogo">
+      </div>
+      <div class="col-sm-11 col-md-11 col-lg-11">
+        <br>
+        <p> School Management System <br></p>
+      </div>
+    </div>
+  </div>
     
+  <div class="subheading">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <span onclick="openNav()"> &#9776; </span>
+        <b> &nbsp; &nbsp; Records and Report Management</b>
+      </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+  <div class="tabs">
+    <button> Student's Profile </button>
+    <button> List of Students </button>
+  </div>
+
+  <div class="content">
+    <div class="levels">
+      <div class="row">
           <div class="col-sm-3 col-md-3 col-lg-3">
-              <div class="jhs">
-                <button>
-                  <b> 253 </b> <br>
-                  <i class="fas fa-apple-alt"></i> Junior High School Students
-                </button>
-              </div>
-          </div>
-          
-          <div class="col-sm-3 col-md-3 col-lg-3">
-            <div class="shs">
+            <div class="elem">
               <button>
-                  <b> 392 </b> <br>
-                  <i class="fas fa-pencil-alt"></i> Senior High School Students
+                <b> 150 </b> <br>
+                <i class="fas fa-shapes"></i> Elementary Students
               </button>
             </div>
           </div>
-
-          <div class="col-sm-3 col-md-3 col-lg-3">
-            <div class="college">
+  
+        <div class="col-sm-3 col-md-3 col-lg-3">
+            <div class="jhs">
               <button>
-                <b> 579 </b> <br>
-                <i class="fas fa-graduation-cap"></i> College Students
+                <b> 253 </b> <br>
+                <i class="fas fa-apple-alt"></i> Junior High School Students
               </button>
+            </div>
+        </div>
+        
+        <div class="col-sm-3 col-md-3 col-lg-3">
+          <div class="shs">
+            <button>
+                <b> 392 </b> <br>
+                <i class="fas fa-pencil-alt"></i> Senior High School Students
+            </button>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-md-3 col-lg-3">
+          <div class="college">
+            <button>
+              <b> 579 </b> <br>
+              <i class="fas fa-graduation-cap"></i> College Students
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="label">
+      <b> Elementary Students </b>
+    </div>
+
+    <div id="info">
+      <div class="search">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <input type="text" placeholder="&#xf002; Enter Student's Name">
+          </div>
+        </div>
+      </div>
+
+      <div class="box1">
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+          <spring:url value="/image" var="images" />
+          <img id="studImg" src="${images}/charlon.png"/>        			
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-8">
+            <div class="studInfo">
+              <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">Name:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Charlon N. Cervas</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Sex:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">male</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Date of Birth:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">May 13, 1998</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Age:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">21</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Place of Birth:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Marikina City</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Address:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">103 P.Burgos St. Brgy. St. Niño Marikina City</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Religion:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Roman Catholic</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Contact Number:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">09198923571</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Email Address:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">charloncervas13@gmail.com</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Mothers name:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Ma. Cecilla Cervas</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Fathers name:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Charlie Cervas</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Fathers Occupation:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Administratve Staff</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="label">
-        <b> Elementary Students </b>
-      </div>
+    </div>
 
+    <div id="list">
       <div class="options">
-      <button onclick="pick()">WHAHA</button>
         <div class="row">
-          
           <div class="col-sm-2 col-md-2 col-lg-2">
-            <select class="levelOption" id="elemGradeLevel" onclick="pick()">
+            <select class="levelOption" id="elemGradeLevel">
               <option value="" > Student's List </option>
               <option value="" > Subject's List </option>
               <option value="" > Students in their Last Term </option>
               <option value="" > Students for graduation </option>
             </select>
           </div>
-
+  
           <div class="col-sm-2 col-md-2 col-lg-2">
             <select class= "levelOption" id="elemGradeLevel">
               <option value="null" >GRADE LEVEL</option>
@@ -151,8 +206,8 @@
           </div>
         </div>
       </div>
- <div id="utot">
-      <table class="students" id="content">
+    
+      <table class="students" id="collegeList">
         <tr>
         <th>Student id</th>
         <th>Name</th>
@@ -178,7 +233,7 @@
         <td>kahapon</td>
         <td>Male</td>
         </tr>
-
+  
         <tr>
         <td>00002</td>
         <td>Joanna Mae Odono</td>
@@ -265,8 +320,12 @@
             <td>Male</td>
             </tr>
       </table>
-      </div>
+
+      <br> <br> <br>
+
     </div>
+   
+  </div>
       <script src=<c:url value="/js/Report/allStudent.js"/>></script>
       <script>
         function pick(){
@@ -274,7 +333,7 @@
 	  if(x==0){
     document.getElementById("content").style.display="none";
 	  } 
-	  else if(x==1){ 	
+	  else if(x==1){
 		  document.getElementById("content").style.display="block";
 	  }
 	  

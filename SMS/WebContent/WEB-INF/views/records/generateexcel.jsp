@@ -88,7 +88,7 @@ try {
 		}
 	    //query_set.close();
 	    //stmt.close();
-		workbook.write(new FileOutputStream("C:\\Users\\Micha\\Desktop\\ClassList.xlsx"));
+		workbook.write(new FileOutputStream("C:\\Users\\cedrick sestoso\\Desktop\\ClassList.xlsx"));
 	    workbook.close();
 
 	} catch (InstantiationException e) {

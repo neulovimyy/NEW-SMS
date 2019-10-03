@@ -1,6 +1,7 @@
 body {
   -webkit-transition: background-color .5s;
   transition: background-color .5s;
+  background: #e9f1f8;
 }
 
 .row {
@@ -91,9 +92,31 @@ body {
   cursor: pointer;
 }
 
-.content .levels {
-  padding: 15px;
+.tabs {
   width: 95%;
+  margin: auto;
+}
+
+.tabs button {
+  padding: 25px;
+  background: lightgray;
+  border: none;
+  outline: none;
+}
+
+.tabs button:hover {
+  background: darkgray;
+}
+
+.content {
+  width: 95%;
+  margin: auto;
+  background: lightgray;
+}
+
+.content .levels {
+  padding: 10px;
+  width: 100%;
   margin: auto;
 }
 
@@ -243,4 +266,100 @@ body {
   padding: 10px;
   text-align: left;
 }
-/*# sourceMappingURL=tables.component.css.map */
+
+.content .search {
+  text-align: center;
+  margin: auto;
+}
+
+.content .search input {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  width: 85%;
+}
+
+.content .search input::-webkit-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+.content .search input:-ms-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+.content .search input::-ms-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+.content .search input::placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+.content .box1 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#01a9ac), to(#E6E6FA));
+  background: linear-gradient(to bottom, #01a9ac, #E6E6FA);
+  padding: 20px;
+  width: 85%;
+  margin: auto;
+}
+
+.content .box1 [class*="col-"] {
+  text-align: center;
+  padding: 10px;
+}
+
+.content .box1 [class*="col-"] .studInfo {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.content .box1 [class*="col-"] .studInfo [class*="col-"] {
+  text-align: left;
+  padding: 10px;
+}
+
+.content #studImg {
+  border: 10px solid #008080;
+  border-radius: 8px;
+  width: 250px;
+  height: 250px;
+}

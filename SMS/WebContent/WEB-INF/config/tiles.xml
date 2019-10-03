@@ -167,4 +167,8 @@
         <put-attribute name="title" value="Enrollment Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/Enrollment.jsp"></put-attribute>
    	 </definition>
+	    <definition name="generateexcel" extends="xeone">
+        <put-attribute name="title" value="Generate generateexcel Record"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/generateexcel.jsp"></put-attribute>
+   	 </definition>
 </tiles-definitions>

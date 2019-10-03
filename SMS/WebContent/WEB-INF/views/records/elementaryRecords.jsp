@@ -4,12 +4,29 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<spring:url value="/resources/js/res.js" var="resJs" /> 
+	<head></head>
 		<spring:url value="/css/RecordAndReport/allStudent.css" var="allStudentCss" />	
-		<link href="${pageContext.request.contextPath}/theme1/themejs/res.js" rel="stylesheet" >
 		<link href="${allStudentCss}" rel="stylesheet">
 		<script src=<c:url value="/js/Report/sample.js"/>></script>
+	<style>
+#btn1 {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background: lightgray;
+  cursor: pointer;
+}
+#btn2 {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background:#f1f1f1;
+  cursor: pointer;
+  }
+  #list{
+  display:none;
+  }
+	</style>	
 	</head>
 
 	<body>
@@ -27,7 +44,8 @@
   <div class="header">
     <div class="row">
       <div class="col-sm-1 col-md-1 col-lg-1">
-        <img src="../../assets/sms-logo.png" alt="smslogo">
+        <spring:url value="/image" var="images" />
+		    	<img src="${images}/logo.png"/>
       </div>
       <div class="col-sm-11 col-md-11 col-lg-11">
         <br>
@@ -48,8 +66,8 @@
   <br> <br>
 
   <div class="tabs">
-    <button> Student's Profile </button>
-    <button> List of Students </button>
+    <button id="btn1" onclick="choose_prof()"> Student's Profile </button>
+    <button id="btn2" onclick="choose_list()"> List of Students </button>
   </div>
 
   <div class="content">
@@ -105,7 +123,30 @@
           </div>
         </div>
       </div>
-
+<!-- 
+				 	<c:if test="${!empty student}">         
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th> First Name</th>
+        <th> Middle Name</th>
+        <th> Last Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <c:forEach items="${student}" var="student">						
+		<tr>
+			<td><c:out value="${student.studentId}"/></td>
+			<td><c:out value="${student.firstName}"/></td>
+			<td><c:out value="${student.middleName}"/></td>
+			<td><c:out value="${student.lastName}"/></td>		
+		</tr>
+	</c:forEach>
+    </tbody>	
+  </table>
+  </c:if>
+   -->
       <div class="box1">
         <div class="row">
           <div class="col-sm-4 col-md-4 col-lg-4">
@@ -116,7 +157,7 @@
             <div class="studInfo">
               <div class="row">
                 <div class="col-sm-3 col-md-3 col-lg-3">Name:</div>
-                <div class="col-sm-9 col-md-9 col-lg-9">Charlon N. Cervas</div>
+                <div class="col-sm-9 col-md-9 col-lg-9"><c:out value="${student.firstName}"/></div>
                 <div class="col-sm-3 col-md-3 col-lg-3">Sex:</div>
                 <div class="col-sm-9 col-md-9 col-lg-9">male</div>
                 <div class="col-sm-3 col-md-3 col-lg-3">Date of Birth:</div>
@@ -336,8 +377,26 @@
 	  else if(x==1){
 		  document.getElementById("content").style.display="block";
 	  }
-	  
-  }</script>
+        }
+	
+	  function choose_prof(){
+		 document.getElementById("info").style.display="block";
+		 document.getElementById("list").style.display="none";
+		 document.getElementById("btn1").style.background="lightgray"
+		 document.getElementById("btn1").style.color="white";
+		 document.getElementById("btn2").style.background=" #f1f1f1"
+	     document.getElementById("btn2").style.color="black";
+		 
+	  }
+	  function choose_list(){
+			 document.getElementById("info").style.display="none";
+			 document.getElementById("list").style.display="block";
+			 document.getElementById("btn2").style.background="lightgray"
+		     document.getElementById("btn2").style.color="white";
+	     	 document.getElementById("btn1").style.background=" #f1f1f1"
+	         document.getElementById("btn1").style.color="black";
+		  } 
+  </script>
 		</div>
 
 	</body>

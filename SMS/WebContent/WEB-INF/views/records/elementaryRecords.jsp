@@ -92,9 +92,11 @@
       </div>
 
       <div class="options">
+      <button onclick="pick()">WHAHA</button>
         <div class="row">
+          
           <div class="col-sm-2 col-md-2 col-lg-2">
-            <select class="levelOption" id="elemGradeLevel">
+            <select class="levelOption" id="elemGradeLevel" onclick="pick()">
               <option value="" > Student's List </option>
               <option value="" > Subject's List </option>
               <option value="" > Students in their Last Term </option>
@@ -149,8 +151,8 @@
           </div>
         </div>
       </div>
-
-      <table class="students" id="collegeList">
+ <div id="utot">
+      <table class="students" id="content">
         <tr>
         <th>Student id</th>
         <th>Name</th>
@@ -263,8 +265,20 @@
             <td>Male</td>
             </tr>
       </table>
+      </div>
     </div>
-			<script src=<c:url value="/js/allStudent.js"/>></script>
+      <script src=<c:url value="/js/Report/allStudent.js"/>></script>
+      <script>
+        function pick(){
+    var x = document.getElementById("elemGradeLevel").selectedIndex;
+	  if(x==0){
+    document.getElementById("content").style.display="none";
+	  } 
+	  else if(x==1){ 	
+		  document.getElementById("content").style.display="block";
+	  }
+	  
+  }</script>
 		</div>
 
 	</body>

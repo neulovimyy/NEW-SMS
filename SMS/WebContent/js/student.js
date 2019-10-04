@@ -1,11 +1,17 @@
 
 $(document).ready(function(){
 	
-	$('#birthDate').datepicker();
+	$('#birthDate').datepicker({
+		format: 'mm/dd/yyyy',
+		endDate: '-24h'
+		}).on('changeDate', function(e) {
+		$('#save-student').formValidation('revalidateField', 'birthDate');
+		
+		});
 	$('#save-student').bootstrapValidator({
 		framework: 'bootstrap',
     	message: 'This value is not valid.',
-    	icon: {
+    	feedbackIcons : {
             valid: 'glyphicon glyphicon-ok-sign',	
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -71,7 +77,20 @@ $(document).ready(function(){
                     }
                 }
         	},
-        	
+        	placeOfBirth:{
+        		validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	nationality:{
+        		validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
         	presentAddress: {
                 validators: {
                     notEmpty: {
@@ -80,7 +99,100 @@ $(document).ready(function(){
                 }
         	},
         	
-        	permanenttAddress: {
+        	permanentAddress: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	studentAcademicFile: {
+        		validators: {
+        			notEmpty: {
+                        message: 'Please fill out this field'
+                    },
+                    file: {
+                    	extension: 'pdf,docx',
+                        type: 'application/pdf,application/msword',
+                        maxSize: 1024 * 976,
+                        message: 'The selected file is not valid'
+                    }
+                }
+        	},
+        	emailAddress: {
+				validators : {
+					notEmpty : {
+						message : 'Email should not be empty'
+					},
+					emailAddress : {
+						message : 'This is not a valid email address'
+					}
+				}
+			},
+			motherName: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	fatherName: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	guardianName: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	motherOccupation: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	fatherOccupation: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	motherAddress: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	motherPhone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	fatherAddress: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	fatherPhone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please fill out this field'
+                    }
+                }
+        	},
+        	motherAddress: {
                 validators: {
                     notEmpty: {
                         message: 'Please fill out this field'

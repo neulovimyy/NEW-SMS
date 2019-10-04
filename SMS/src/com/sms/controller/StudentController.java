@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.security.auth.Subject;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -69,7 +70,10 @@ public class StudentController extends BaseController{
 				e.setStudent(cstudent);
 			}
 		}
-		
+		if(cstudent.getStudentAcademicFile().getSize() != 0){
+			cstudent.setStudentAcademic(cstudent.getStudentAcademicFile().getBytes());
+			cstudent.setStudentContentTypeAcademic(cstudent.getStudentAcademicFile().getContentType());
+		}
 		studentService.save(cstudent);
 		response.sendRedirect("students");
 	}
@@ -243,6 +247,51 @@ public class StudentController extends BaseController{
 			}
 		}
 		return civilStatusList;
+	}
+	
+	@RequestMapping(value = "document", method = RequestMethod.GET)
+	public void file(@ModelAttribute("command") Student cstudent,BindingResult result, HttpServletResponse response, HttpServletRequest request) throws ServletException, IOException {
+		Long id = Long.parseLong(request.getParameter("id"));
+		Student student = studentService.get(Student.class, id);
+		byte[] fileBytes = student.getStudentAcademic();
+        String filename = "academic-student.pdf";
+
+        String fileType = filename.substring(filename.indexOf(".")+1,filename.length());
+        System.out.println("FILETYPE IS :>>>>>>>>>>>>>>>"+fileType);
+
+        if (fileType.trim().equalsIgnoreCase("txt"))
+        {
+        response.setContentType( "text/plain" );
+        }
+        else if (fileType.trim().equalsIgnoreCase("doc"))
+        {
+        response.setContentType( "application/msword" );
+        }
+        else if (fileType.trim().equalsIgnoreCase("xls"))
+        {
+        response.setContentType( "application/vnd.ms-excel" );
+        }
+        else if (fileType.trim().equalsIgnoreCase("pdf"))
+        {
+        response.setContentType( "application/pdf" );
+        }
+        else if (fileType.trim().equalsIgnoreCase("ppt"))
+        {
+        response.setContentType( "application/ppt" );
+        }
+        else
+        {
+        response.setContentType( "application/octet-stream" );
+        }
+
+        response.setHeader("Content-Disposition","attachment; filename=\""+filename+"\"");
+        response.setHeader("cache-control", "no-cache");
+        response.setHeader("cache-control", "must-revalidate");
+
+        ServletOutputStream outs = response.getOutputStream();
+        outs.write(fileBytes);
+        outs.flush();
+        outs.close();
 	}
 	
 	

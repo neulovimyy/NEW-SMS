@@ -2,9 +2,7 @@ package com.sms.enums;
 
 public enum Gender {
 	MALE(1,"Male"), 
-	FEMALE(2,"Female"), 
-	LESBIAN(3,"Lesbian"), 
-	GAY(4,"Gay");
+	FEMALE(2,"Female");
 	
 	private Gender(Integer id, String description) {
 		this.id = id;

@@ -33,21 +33,25 @@
 				<div class="panel-heading text-center bg-cornflowerblue">
 					<h2 class="font-bold text-black">REGISTRATION FORM</h2>
 				</div>
+				<div class="col-lg-2 preview-doctor">
+					<c:choose>
+						<c:when test="${not empty command.studentContentType}">
+							<img id="image-profile" src="<c:url value="${command.studentPicture}"/>" alt="your image" width="140" height="140" class="" style="border-radius: 50%;" />
+						</c:when>
+						<c:otherwise>
+							<img id="image-profile" src="<c:url value="/image/default.jpeg"/>" alt="your image" width="140" height="140" class="" style="border-radius: 50%;" />
+						</c:otherwise>
+					</c:choose>
+					<label for="upload" style="cursor: pointer; display: inherit; margin-top: -25px; margin-left: 125px; color: #808080; opacity: 75%;" title="upload image"><i class="fa fa-camera"></i> </label> 
+					<input id="upload" type='file' name="studentImageFile" onchange="readURL(this);" class="file-upload_input" accept="image/*" style="display: none;" />
+					<!-- <input type="button" value="Upload" class="file-upload_input" onclick="document.getElementById('upload').click();" /> -->
+					
+				</div>
 				
 				<div class="panel panel-inverted">
 					<div class="col-lg-2 preview-doctor">
-						<c:choose>
-							<c:when test="${not empty command.studentContentType}">
-								<img id="image-profile" src="<c:url value="${command.studentPicture}"/>" alt="your image" width="140" height="140" class="" style="border-radius: 50%;" />
-							</c:when>
-							<c:otherwise>
-								<img id="image-profile" src="<c:url value="/image/default.jpeg"/>" alt="your image" width="140" height="140" class="" style="border-radius: 50%;" />
-							</c:otherwise>
-						</c:choose>
-						<label for="upload" style="cursor: pointer; display: inherit; margin-top: -25px; margin-left: 125px; color: #808080; opacity: 75%;" title="upload image"><i class="fa fa-camera"></i> </label> 
-						<div class="label text-center" >
-							<input id="upload" type='file' name="studentImageFile" onchange="readURL(this);" accept="image/*" />
-						</div>
+					
+						
 					</div>
 					<div class="clearfix"> </div>
 					
@@ -71,32 +75,36 @@
 						<form:hidden path="studentImage" />
 						<form:hidden path="studentContentType" />
 					</c:if>
-
-					<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
-						<label class="control-label" id="text-blue">First Name </label>
-						<form:input id="firstname" name="firstName" path="firstName" cssClass="form-control" placeholder=" " />
-					</div>
+					<c:if test="${not empty command.studentContentTypeAcademic}">
+						<form:hidden path="studentAcademic" />
+						<form:hidden path="studentContentTypeAcademic" />
+					</c:if>
+					<div class="panel-body">
+						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+							<label class="control-label">First Name </label>
+							<form:input id="firstname" path="firstName" cssClass="form-control" maxLength = "50" />
+						</div>
 
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Middle Name </label>
-							<form:input id="middleName" path="middleName" cssClass="form-control" placeholder=" " />
+							<form:input id="middleName" path="middleName" cssClass="form-control" maxLength = "50" />
 						</div>
 
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Last Name </label>
-							<form:input id="lastName" path="lastName" placeholder=" " cssClass="form-control" />
+							<form:input id="lastName" path="lastName" maxLength = "50" cssClass="form-control" />
 						</div>
 
 						<div class="clearfix"></div>
 
 						<div class="form-group col-md-3 col-lg-3 col-sm-9 col-xs-9">
 							<label class="control-label">Birth Date</label>
-							<form:input id="birthDate" path="birthDate" placeholder="MM/DD/YY" cssClass="form-control" />
+							<form:input id="birthDate" path="birthDate" cssClass="form-control" autocomplete="off"/>
 						</div>
 						
 						<div class="form-group col-md-1 col-lg-1 col-sm-4 col-xs-4">
 							<label class="control-label">Age</label>
-							<form:input id="birthDate" path="age" placeholder=" " cssClass="form-control" />
+							<form:input id="birthDate" path="age" placeholder=" " cssClass="form-control maskNumberLimit10 " />
 						</div>
 
 										
@@ -110,15 +118,17 @@
 							<label class="control-label">Gender:</label>
 							<form:select path="gender" items="${genderList}" cssClass="form-control" />
 						</div>
+						<div class="clearfix"></div>
+						
 
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Place of Birth</label>
-							<form:input id="placeOfBirth" path="age" placeholder=" " cssClass="form-control" />
+							<form:input id="placeOfBirth" path="placeOfBirth" cssClass="form-control" />
 						</div>
 
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Nationality</label>
-							<form:input id="nationality" path="age" placeholder=" " cssClass="form-control" />
+							<form:input id="nationality" path="nationality" cssClass="form-control" />
 						</div>
 						
 						<div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12 dropdown-input">
@@ -131,9 +141,9 @@
 						<div class="clearfix"></div>
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Contact #:</label>
-							<form:input id="mobileNum" path="mobileNum" placeholder=" " cssClass="form-control" />
+							<form:input id="mobileNum" path="mobileNum" cssClass="form-control maskWholeNumberOnLeft" />
 						</div>
-
+						
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">Email Address:</label>
 							<form:input path="emailAddress" placeholder=" " cssClass="form-control" />
@@ -153,9 +163,21 @@
 						</div>
 						<div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">
 							<label class="control-label">Permanent Address </label>
-							<form:textarea rows="2" id="presentAddress" path="permanentAddress" cssClass="form-control" maxLength="255" />
+							<form:textarea rows="2" id="permanentAddress" path="permanentAddress" cssClass="form-control" maxLength="255" />
 						</div>
-
+						<div class="clearfix"></div>
+						
+						<div class="form-group col-md-3 col-lg-3 col-sm-12 col-xs-12">
+								<label for="upload" title="upload image"><i class="fa fa-book"></i> Upload academic records</label> 
+								<input id="" type='file' name="studentAcademicFile" class="file-upload_input" accept="application/*" />
+							<c:if test="${not empty command.id}">
+								<c:if test="${not empty command.studentContentTypeAcademic}">
+									<a href="${pageContext.request.contextPath}/student/document?id=${command.id}">
+										Download
+									</a>
+								</c:if>
+							</c:if>
+						</div>
 						<div class="row">
 							<div class="col-lg-12">
 								<div class="box box-primary">
@@ -274,12 +296,12 @@
 							
 							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 								<label class="control-label">Father's Contact#:</label>
-								<form:input path="fatherAddress" placeholder=" " cssClass="form-control" />
+								<form:input path="fatherPhone" placeholder=" " cssClass="form-control" />
 							</div>
 							
 							<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 								<label class="control-label">Guardian's Contact#:</label>
-								<form:input path="fatherPhone" placeholder=" " cssClass="form-control" />
+								<form:input path="guardianPhone" placeholder=" " cssClass="form-control" />
 							</div>
 							
 							<div class="form-group col-md-12 col-lg-12 col-sm-12 col-xs-12">
@@ -296,7 +318,7 @@
 								<i class="fa fa-save fa-fw"></i> SAVE
 							</button>
 						</div>
-						<input type="text" id="demo" name="demo">
+						
 					</div>
 				</div>
 			</div>
@@ -336,11 +358,6 @@
 
 <script src=<c:url value="/js/student.js"/>></script>
 <script>
-	$(document).ready(function() {
-		var today = new Date();
-		var year = today.getFullYear();
-		$('#demo').val(year);
 
-	});
 </script>
 

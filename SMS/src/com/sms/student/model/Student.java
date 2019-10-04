@@ -20,6 +20,7 @@ import org.directwebremoting.annotations.DataTransferObject;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.sms.base.BaseModel;
+import com.sms.util.DateUtility;
 import com.sms.util.InventoryUtility;
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 
@@ -36,6 +37,8 @@ public class Student extends BaseModel implements Serializable {
 	private String studentId;
 	private String firstName;
 	private String middleName;
+	private String nationality;
+	
 	private String lastName;
 	private Date birthDate;
 	private String civilStatus;
@@ -48,7 +51,6 @@ public class Student extends BaseModel implements Serializable {
 	private String permanentAddress;
 	private Integer age;
 	private String acad;
-	private String nationality;
 	private String placeOfBirth;	
 
 	private String motherName;
@@ -68,10 +70,18 @@ public class Student extends BaseModel implements Serializable {
 	private String guardianName;
 	private String guardianPhone;
 	private String guardianAddress;
-
-	private CommonsMultipartFile studentImageFile;
+	
+	//image
+	private CommonsMultipartFile studentImageFile; 
 	private byte[] studentImage;
 	private String studentContentType;
+	
+	//academic records
+	private CommonsMultipartFile studentAcademicFile; 
+	private byte[] studentAcademic;
+	private String studentContentTypeAcademic;
+	
+	//private List<EducBg> educBg;
 	private List<EducationalBackground> educationalBackground;
 
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -111,7 +121,13 @@ public class Student extends BaseModel implements Serializable {
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
 	}
-
+	@Column(name = "nationality")
+	public String getNationality() {
+		return nationality;
+	}
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
 	@Column(name = "last_name")
 	public String getLastName() {
 		return lastName;
@@ -218,15 +234,6 @@ public class Student extends BaseModel implements Serializable {
 
 	public void setAcad(String acad) {
 		this.acad = acad;
-	}
-	
-	@Column(name = "nationality")
-	public String getNationality() {
-		return nationality;
-	}
-
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
 	}
 
 	@Column(name = "place_of_birth")
@@ -431,5 +438,27 @@ public class Student extends BaseModel implements Serializable {
 
 	public void setEducationalBackground(List<EducationalBackground> educationalBackground) {
 		this.educationalBackground = educationalBackground;
+	}
+	
+	@Transient
+	public CommonsMultipartFile getStudentAcademicFile() {
+		return studentAcademicFile;
+	}
+	public void setStudentAcademicFile(CommonsMultipartFile studentAcademicFile) {
+		this.studentAcademicFile = studentAcademicFile;
+	}
+	@Column(name = "academic_file", columnDefinition = "longblob")
+	public byte[] getStudentAcademic() {
+		return studentAcademic;
+	}
+	public void setStudentAcademic(byte[] studentAcademic) {
+		this.studentAcademic = studentAcademic;
+	}
+	@Column(name = "content_type_academic")
+	public String getStudentContentTypeAcademic() {
+		return studentContentTypeAcademic;
+	}
+	public void setStudentContentTypeAcademic(String studentContentTypeAcademic) {
+		this.studentContentTypeAcademic = studentContentTypeAcademic;
 	}
 }

@@ -31,7 +31,10 @@
 		<script src="<c:url value="/js/xeone/js/popper.min.js"/>"></script>
 		<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
 		<!-- Form Validation -->
-		
+		<script type="text/javascript" src="<c:url value="/js/common/jquery.maskMoney.js"/>"></script>
+		<script type="text/javascript" src="<c:url value="/js/common/maskingAndValidation.js"/>"></script>
+		<script type="text/javascript" src="<c:url value="/js/common/formValidation.js"/>"></script>
+		<script type="text/javascript" src="<c:url value="/js/common/bootstrap.js"/>"></script>
 		<script src="<c:url value="/js/bootstrap-datepicker.min.js"/>"></script>
 		<script type="text/javascript" src="<c:url value="/js/bootstrapValidator.min.js"/>"></script>
 		<script type="text/javascript" src="<c:url value="/js/common/common.js"/>"></script>
@@ -86,6 +89,12 @@
 	<script src="<c:url value="/js/xeone/js/functions.js"/>"></script>
 	<script src="<c:url value="/js/adminlte/plugins/pagination/jquery.simplePagination.js"/>"></script>
 	<body>
+		<style type="text/css">
+			.form-control-feedback {
+				width: 63px !important;
+				line-height: 32px !important;
+			}
+		</style>
 		<div id="confirmDeleteModal" class="modal fade" data-backdrop="static" data-keyboard="false">
 			<div class="modal-dialog">
 				<div class="modal-content">

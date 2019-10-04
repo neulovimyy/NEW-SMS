@@ -1,12 +1,14 @@
-	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html; pageEncoding=UTF-8"%>
 <%@include file="../common/taglibs.jsp" %>
 
 
-
 <html>
 	<head>
+	<spring:url value="/resources/js/res.js" var="resJs" /> 
 		<spring:url value="/css/RecordAndReport/landing.css" var="landingCss" />
+		
+		<link href="${pageContext.request.contextPath}/theme1/themejs/res.js" rel="stylesheet" >
 		<link href="${landingCss}" rel="stylesheet" >
 		<script src=<c:url value="/js/Report/sample.js"/>></script> 
 	</head>

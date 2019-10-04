@@ -5,7 +5,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	
+	<spring:url value="/resources/js/res.js" var="resJs" /> 
 		<spring:url value="/css/RecordAndReport/allStudent.css" var="allStudentCss" />	
+			<link href="${pageContext.request.contextPath}/theme1/themejs/res.js" rel="stylesheet" >
 		<link href="${allStudentCss}" rel="stylesheet">
 		<script src=<c:url value="/js/Report/sample.js"/>></script>
 	<style>

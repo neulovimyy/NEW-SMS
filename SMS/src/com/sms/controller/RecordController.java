@@ -39,7 +39,10 @@ public class RecordController extends BaseController{
 	}
 	
 	@RequestMapping(value = "shsRec", method = RequestMethod.GET)
-	public String welcome2() {
+	public String reportlist(HttpServletRequest request, ModelMap model) {
+		@SuppressWarnings("unused")
+		List<Report> report = studentService.listReportss();
+		model.put("report", studentService.getAll(Report.class));
 		return "shsRecords";
 	}
 	

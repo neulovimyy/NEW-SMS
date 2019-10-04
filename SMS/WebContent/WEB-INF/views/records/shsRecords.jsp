@@ -89,6 +89,7 @@ display:none;
             </button>
           </div>
         </div>
+<<<<<<< HEAD
 
         <div class="col-sm-3 col-md-3 col-lg-3">
           <div class="college">
@@ -136,6 +137,75 @@ display:none;
       </div>
 			</div>
 			
+=======
+
+        <div class="col-sm-3 col-md-3 col-lg-3">
+          <div class="college">
+            <button onclick="choose_college()">
+              <b> 579 </b> <br>
+              <i class="fas fa-graduation-cap"></i> College Students
+            </button>
+          </div>
+        </div>
+      </div>
+   <div id="elem">
+   <div id="list">
+      <div class="options">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2">
+              <b> Subjects's List </b>     
+          </div>
+  
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <select class= "levelOption" id="elemGradeLevel">
+              <option value="null" >GRADE LEVEL</option>
+              <option value="gradeOne" >GRADE 1</option>
+              <option value="gradeTwo">GRADE 2</option>
+              <option value="gradeThree" >GRADE 3</option>
+              <option value="gradeFour">GRADE 4</option>
+              <option value="gradeFive" >GRADE 5</option>
+              <option value="gradeSix">GRADE 6</option>
+            </select>
+          </div>
+          
+                            
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <select class= "levelOption" id="elemAcademicYear">
+              <option value="null">ACADEMIC YEAR</option>
+              <option value="allYears" >ALL</option>
+              <option value="1920" >SY 2019-2020</option>
+              <option value="2021">SY 2020-2021</option>
+              <option value="2122" >SY 2021-2022</option>
+              <option value="2223">SY 2022-2023</option>
+              <option value="2324">SY 2023-2024</option>
+            </select>
+          </div>	
+        </div>
+      </div>
+      </div>
+
+		  		<c:if test="${!empty report}">         
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Subject ID</th>
+        <th>Subject Code</th>
+        <th>Subject Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <c:forEach items="${report}" var="report">						
+		<tr>
+			<td><c:out value="${report.subjectId}"/></td>
+			<td><c:out value="${report.subjectCode}"/></td>
+			<td><c:out value="${report.subjectName}"/></td>		
+		</tr>
+	</c:forEach>
+    </tbody>	
+  </table>
+  </c:if>
+  </div>
+>>>>>>> cd72d18d78be89432936e3a7fc43feb3dbbbce2d
 	
 	  <div id="jhs">
    <div id="list">
@@ -193,8 +263,32 @@ display:none;
         </div>
       </div>
       </div>
+<<<<<<< HEAD
 			</div>
 			
+=======
+      	<c:if test="${!empty report}">         
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Subject ID</th>
+        <th>Subject Code</th>
+        <th>Subject Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <c:forEach items="${report}" var="report">						
+		<tr>
+			<td><c:out value="${report.subjectId}"/></td>
+			<td><c:out value="${report.subjectCode}"/></td>
+			<td><c:out value="${report.subjectName}"/></td>		
+		</tr>
+	</c:forEach>
+    </tbody>	
+  </table>
+  </c:if>
+			</div>
+>>>>>>> cd72d18d78be89432936e3a7fc43feb3dbbbce2d
 			<div id="shs">
    <div id="list">
       <div class="options">
@@ -238,6 +332,29 @@ display:none;
         </div>
       </div>
       </div>
+<<<<<<< HEAD
+=======
+      	<c:if test="${!empty report}">         
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Subject ID</th>
+        <th>Subject Code</th>
+        <th>Subject Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <c:forEach items="${report}" var="report">						
+		<tr>
+			<td><c:out value="${report.subjectId}"/></td>
+			<td><c:out value="${report.subjectCode}"/></td>
+			<td><c:out value="${report.subjectName}"/></td>		
+		</tr>
+	</c:forEach>
+    </tbody>	
+  </table>
+  </c:if>
+>>>>>>> cd72d18d78be89432936e3a7fc43feb3dbbbce2d
 			</div>
 			
 			<div id="college">
@@ -283,6 +400,29 @@ display:none;
         </div>
       </div>
       </div>
+<<<<<<< HEAD
+=======
+      	<c:if test="${!empty report}">         
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Subject ID</th>
+        <th>Subject Code</th>
+        <th>Subject Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <c:forEach items="${report}" var="report">						
+		<tr>
+			<td><c:out value="${report.subjectId}"/></td>
+			<td><c:out value="${report.subjectCode}"/></td>
+			<td><c:out value="${report.subjectName}"/></td>		
+		</tr>
+	</c:forEach>
+    </tbody>	
+  </table>
+  </c:if>
+>>>>>>> cd72d18d78be89432936e3a7fc43feb3dbbbce2d
 			</div>
 			
  			<script src=<c:url value="/js/allStudent.js"/>></script>

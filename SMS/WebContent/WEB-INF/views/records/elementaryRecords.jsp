@@ -5,7 +5,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
+<<<<<<< HEAD
+=======
+	
+	<spring:url value="/resources/js/res.js" var="resJs" /> 
+>>>>>>> cd72d18d78be89432936e3a7fc43feb3dbbbce2d
 		<spring:url value="/css/RecordAndReport/allStudent.css" var="allStudentCss" />	
+			<link href="${pageContext.request.contextPath}/theme1/themejs/res.js" rel="stylesheet" >
 		<link href="${allStudentCss}" rel="stylesheet">
 		<script src=<c:url value="/js/Report/sample.js"/>></script>
 	<style>
@@ -191,6 +197,8 @@ display:none;
           </div>
         </div>
       </div>	
+<<<<<<< HEAD
+=======
       <div class="box1">
         <div class="row">
           <div class="col-sm-4 col-md-4 col-lg-4">
@@ -246,6 +254,7 @@ display:none;
           </div>
         </div>
       </div>	
+>>>>>>> cd72d18d78be89432936e3a7fc43feb3dbbbce2d
       <div class="box1">
         <div class="row">
           <div class="col-sm-4 col-md-4 col-lg-4">
@@ -288,6 +297,68 @@ display:none;
     </div>
 </div>
 
+<<<<<<< HEAD
+<div id="shs">
+    <div class="label">
+      <b> Senior High School Students </b>
+=======
+   <div id="college">
+    <div class="label">
+      <b> College Students </b>
+>>>>>>> cd72d18d78be89432936e3a7fc43feb3dbbbce2d
+    </div>
+
+    <div id="info">
+      <div class="search">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <input type="text" placeholder="&#xf002; Enter Student's Name">
+          </div>
+        </div>
+      </div>	
+      <div class="box1">
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+          <spring:url value="/image" var="images" />
+          <img id="studImg" src="${images}/charlon.png"/>        			
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-8">
+            <div class="studInfo">
+              <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">Name:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">sfdasfds</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Sex:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">male</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Date of Birth:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">May 13, 1998</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Age:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">21</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Place of Birth:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Marikina City</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Address:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">103 P.Burgos St. Brgy. St. Niño Marikina City</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Religion:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Roman Catholic</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Contact Number:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">09198923571</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Email Address:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">charloncervas13@gmail.com</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Mothers name:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Ma. Cecilla Cervas</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Fathers name:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Charlie Cervas</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">Fathers Occupation:</div>
+                <div class="col-sm-9 col-md-9 col-lg-9">Administratve Staff</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+<<<<<<< HEAD
    <div id="college">
     <div class="label">
       <b> College Students </b>
@@ -343,6 +414,8 @@ display:none;
     </div>
 </div>
 
+=======
+>>>>>>> cd72d18d78be89432936e3a7fc43feb3dbbbce2d
 
  <div class="levels" id="listLevel">
       <div class="row">

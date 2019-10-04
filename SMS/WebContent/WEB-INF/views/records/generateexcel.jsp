@@ -4,9 +4,10 @@
 <%@
 page import="java.io.*, com.itextpdf.text.*, com.itextpdf.text.pdf.*, java.sql.*, java.time.LocalDateTime, java.time.format.DateTimeFormatter,
 org.apache.poi.xssf.usermodel.XSSFCell, org.apache.poi.xssf.usermodel.XSSFFont, org.apache.poi.xssf.usermodel.XSSFRow, org.apache.poi.xssf.usermodel.XSSFSheet, org.apache.poi.xssf.usermodel.XSSFWorkbook,
-org.apache.poi.ss.usermodel.CellStyle, org.apache.poi.ss.usermodel.HorizontalAlignment"
+org.apache.poi.ss.usermodel.CellStyle, org.apache.poi.ss.usermodel.HorizontalAlignment, org.apache.commons.collections4.*"
 %>
 <%
+@SuppressWarnings({ "resource", "unused" })
 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm a");
 LocalDateTime now = LocalDateTime.now();
 XSSFWorkbook workbook = new XSSFWorkbook();
@@ -24,14 +25,14 @@ font.setBold(true);
 cellStyle.setFont(font);
 
 //TITLE
-sheet.addMergedRegion(new CellRangeAddress(0,0,0,6));
+//sheet.addMergedRegion(new CellRangeAddress(0,0,0,6));
 XSSFRow rowTitle = sheet.createRow(0);
 XSSFCell cellTitle = rowTitle.createCell(0);
 cellTitle.setCellValue("Generated List");
 cellTitle.setCellStyle(center);
 
 //TIME, DATE GENERATED
-sheet.addMergedRegion(new CellRangeAddress(1,1,0,6));
+//sheet.addMergedRegion(new CellRangeAddress(1,1,0,6));
 XSSFRow rowDetails = sheet.createRow(1);
 XSSFCell cellDetails = rowDetails.createCell(0);
 cellDetails.setCellValue("Student List (as of " + dtf.format(now) + ")");
@@ -88,7 +89,7 @@ try {
 		}
 	    //query_set.close();
 	    //stmt.close();
-		workbook.write(new FileOutputStream("C:\\Users\\cedrick sestoso\\Desktop\\ClassList.xlsx"));
+		workbook.write(new FileOutputStream("C:\\Users\\Micha\\Desktop\\ClassList.xlsx"));
 	    workbook.close();
 
 	} catch (InstantiationException e) {
@@ -118,6 +119,8 @@ try {
 <title>Generate Excel File Here</title>
 </head>
 <body>
-
+<div class="container-fluid">
+  The file is being generated. Check it out on the Desktop.
+</div> 
 </body>
 </html>

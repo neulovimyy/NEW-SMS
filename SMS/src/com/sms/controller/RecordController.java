@@ -43,15 +43,17 @@ public class RecordController extends BaseController{
 		return "shsRecords";
 	}
 	
-	@RequestMapping(value = "jhRec", method = RequestMethod.GET)
+	/*@RequestMapping(value = "jhRec", method = RequestMethod.GET)
 	public String listStudent(HttpServletRequest request, ModelMap model) {
 		student = studentService.listStudentss();
 		model.put("student", studentService.getAll(Student.class));
 		return "jhRecords";
-	}
+	} */
 		
 	@RequestMapping(value = "elemRec", method = RequestMethod.GET)
-	public String welcome4() {
+	public String listStudent(HttpServletRequest request, ModelMap model) {
+		student = studentService.listStudentss();
+		model.put("student", studentService.getAll(Student.class));
 		return "elementaryRecords";
 	}
 	

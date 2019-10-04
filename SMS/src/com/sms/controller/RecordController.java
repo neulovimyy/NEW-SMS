@@ -39,19 +39,24 @@ public class RecordController extends BaseController{
 	}
 	
 	@RequestMapping(value = "shsRec", method = RequestMethod.GET)
-	public String welcome2() {
+	public String reportlist(HttpServletRequest request, ModelMap model) {
+		@SuppressWarnings("unused")
+		List<Report> report = studentService.listReportss();
+		model.put("report", studentService.getAll(Report.class));
 		return "shsRecords";
 	}
 	
-	@RequestMapping(value = "jhRec", method = RequestMethod.GET)
+	/*@RequestMapping(value = "jhRec", method = RequestMethod.GET)
 	public String listStudent(HttpServletRequest request, ModelMap model) {
 		student = studentService.listStudentss();
 		model.put("student", studentService.getAll(Student.class));
 		return "jhRecords";
-	}
+	} */
 		
 	@RequestMapping(value = "elemRec", method = RequestMethod.GET)
-	public String welcome4() {
+	public String listStudent(HttpServletRequest request, ModelMap model) {
+		student = studentService.listStudentss();
+		model.put("student", studentService.getAll(Student.class));
 		return "elementaryRecords";
 	}
 	

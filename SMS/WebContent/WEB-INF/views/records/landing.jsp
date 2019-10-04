@@ -16,11 +16,10 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <br> <br>
-  <a href="#">Home</a>
-  <a href="#">Students</a>
-  <a href="#">Sections</a>
-  <a href="#">Subjects</a>
-  <a href="#">Records</a>
+  <a href="home.html">Home </a>
+  <a href="elemRec.html">Students Record </a>
+  <a href="shsRec.html">Subjects </a>
+  <a href="enrollment.html">Enrollment </a>
 </div>
 <div id="main">
 

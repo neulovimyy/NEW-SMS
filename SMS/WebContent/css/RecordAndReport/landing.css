@@ -1,4 +1,4 @@
-body, html {
+body{
   font-family: Helvetica;
   color: black;
   margin: 0px;
@@ -7,30 +7,11 @@ body, html {
   background: #e9f1f8;
 }
 
-body ::-webkit-scrollbar, html ::-webkit-scrollbar {
-  width: 10px;
-}
-
-body ::-webkit-scrollbar-thumb, html ::-webkit-scrollbar-thumb {
-  background: #666;
-  border-radius: 20px;
-}
-
-body ::-webkit-scrollbar-track, html ::-webkit-scrollbar-track {
-  background: #ddd;
-  border-radius: 20px;
-}
-
 .row {
   width: 100%;
   margin-left: 0px;
   margin-right: 0px;
   padding: 0px;
-}
-
-.container-fluid {
-  margin: 0;
-  padding: 0;
 }
 
 input::-webkit-input-placeholder {

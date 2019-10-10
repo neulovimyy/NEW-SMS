@@ -7,7 +7,7 @@ page import="java.io.*, com.itextpdf.text.*, com.itextpdf.text.pdf.*, java.sql.*
 <%
 	
     Document document=new Document(); 
-    PdfWriter.getInstance(document,new FileOutputStream("C:\\Users\\cedrick sestoso\\Desktop\\ClassList.pdf"));
+    PdfWriter.getInstance(document,new FileOutputStream("C:\\Users\\Micha\\Desktop\\ClassList.pdf"));
     document.open();
     document.add(new Paragraph("TAENAAAAAAAAAAAAAAAAAAAA GUMANA KAAAAAAAAAA"));
     document.add(new Paragraph("NAIISTRESS NAKO MAMI HELP"));

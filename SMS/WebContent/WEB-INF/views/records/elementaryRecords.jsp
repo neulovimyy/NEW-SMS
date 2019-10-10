@@ -11,7 +11,7 @@
 		<link href="${allStudentCss}" rel="stylesheet">
 		<spring:url value="/css/RecordAndReport/fontawesome.css" var="allFontCss" />
 		<link href="${allFontCss}" rel="stylesheet">
-		<script src=<c:url value="/js/Report/sample.js"/>></script>
+	
 	</head>
 
 	<body>

@@ -1,4 +1,4 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html; pageEncoding=UTF-8"%>
 <%@include file="../common/taglibs.jsp" %>
 
@@ -9,7 +9,7 @@
 		<spring:url value="/css/RecordAndReport/allStudent.css" var="allStudentCss" />	
 		<link href="${pageContext.request.contextPath}/theme1/themejs/res.js" rel="stylesheet" >
 		<link href="${allStudentCss}" rel="stylesheet">
-		<script src=<c:url value="/js/Report/sample.js"/>></script>
+		
 	</head>
 	<body>
 		<!-- Subject Page -->
@@ -36,11 +36,11 @@
 		</div>
 		
 		<div class="sidenav">
-		  <a href=""><i class="fas fa-home"></i> &nbsp; Home</a>
-		  <a href="/stud_rec"><i class="fas fa-user"></i> &nbsp; Student's Record </a>
+		  <a href="home.html"><i class="fas fa-home"></i> &nbsp; Home</a>
+		  <a href="elemRec.html"><i class="fas fa-user"></i> &nbsp; Student's Record </a>
 		  <a href="/stud_info"><i class="fas fa-id-badge"></i> &nbsp; Student's Profile </a>
-		  <a href="/stud_subj"><i class="fas fa-book"></i> &nbsp; Subject List </a>
-		  <a href="/stud_enroll"><i class="fas fa-scroll"></i> &nbsp; Enrollment</a>
+		  <a href="shsRec.html"><i class="fas fa-book"></i> &nbsp; Subject List </a>
+		  <a href="enrollment.html"><i class="fas fa-scroll"></i> &nbsp; Enrollment</a>
 		  <a href="#"><i class="fas fa-print"></i> &nbsp; Generate & Print</a>
 		</div>
 		   

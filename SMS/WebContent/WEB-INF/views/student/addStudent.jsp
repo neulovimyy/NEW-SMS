@@ -49,7 +49,7 @@
 				</div>
 				
 				<div class="panel panel-inverted">
-					<div class="col-lg-2 preview-doctor">
+					<div class="col-lg-2">
 					
 						
 					</div>
@@ -68,9 +68,9 @@
 							<form:hidden path="studentId" />
 						</c:when>
 					</c:choose>
-					<c:if test="${not empty acad }">
+					<%-- <c:if test="${not empty acad }">
 						<input type="hidden" path="acad" value="${acad}" />
-					</c:if>
+					</c:if> --%>
 					<c:if test="${not empty command.studentContentType}">
 						<form:hidden path="studentImage" />
 						<form:hidden path="studentContentType" />
@@ -80,6 +80,33 @@
 						<form:hidden path="studentContentTypeAcademic" />
 					</c:if>
 					<div class="panel-body">
+						<c:choose>
+							<c:when test="${not empty command.id}">
+								<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+									<form:select path="acad" name="acad" class="form-control" disabled="true">
+										<option value="EL">Elementary</option>
+										<option value="HS">High School</option>
+										<option value="JS">Junior High</option>
+										<option value="SH">Senior High</option>
+										<option value="CO">College</option>
+
+									</form:select>
+								</div>
+							</c:when>
+							<c:otherwise>
+								<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+									<form:select path="acad" name="acad" class="form-control">
+										<option value="EL">Elementary</option>
+										<option value="HS">High School</option>
+										<option value="JS">Junior High</option>
+										<option value="SH">Senior High</option>
+										<option value="CO">College</option>
+
+									</form:select>
+								</div>
+							</c:otherwise>
+						</c:choose>
+						<div class="clearfix"></div>
 						<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
 							<label class="control-label">First Name </label>
 							<form:input id="firstname" path="firstName" cssClass="form-control" maxLength = "50" />

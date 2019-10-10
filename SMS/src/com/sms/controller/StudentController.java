@@ -78,7 +78,7 @@ public class StudentController extends BaseController{
 		response.sendRedirect("students");
 	}
 
-	@RequestMapping(value="students", method = RequestMethod.GET)
+	@RequestMapping(value="students")
 	public String listEmployees(HttpServletRequest request, ModelMap model, @ModelAttribute("studentCommand") Student student) {
 		model.addAttribute("students", studentService.viewStudents(student));
 		return "studentList";

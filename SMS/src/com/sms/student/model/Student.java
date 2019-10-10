@@ -20,6 +20,9 @@ import org.directwebremoting.annotations.DataTransferObject;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.sms.base.BaseModel;
+import com.sms.enums.BloodTypeEnum;
+import com.sms.enums.Gender;
+import com.sms.enums.Religion;
 import com.sms.util.DateUtility;
 import com.sms.util.InventoryUtility;
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
@@ -460,5 +463,18 @@ public class Student extends BaseModel implements Serializable {
 	}
 	public void setStudentContentTypeAcademic(String studentContentTypeAcademic) {
 		this.studentContentTypeAcademic = studentContentTypeAcademic;
+	}
+	
+	@Transient
+	public String getBloodTypeDesc() {
+		return BloodTypeEnum.getInstance(bloodtype).getDescription();
+	}
+	@Transient
+	public String getReligionDesc() {
+		return Religion.getInstance(religion).getDescription();
+	}
+	@Transient
+	public String getGenderDesc() {
+		return Gender.getInstance(gender).getDescription();
 	}
 }

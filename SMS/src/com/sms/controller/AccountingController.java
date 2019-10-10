@@ -56,7 +56,7 @@ public class AccountingController extends BaseController {
 		String page = null;
 		String level = request.getParameter("acad");
 		System.out.println(level);
-		switch (level) {
+		/*switch (level) {
 		case "elem":
 			model.put("accounts", studentService.getAll(ElemAndHS.class));
 			page = "accountingTable";
@@ -73,7 +73,7 @@ public class AccountingController extends BaseController {
 			model.put("accounts", studentService.getAll(SHSAndCollege.class));
 			page = "accountingTable2";
 			break;
-		}
+		}*/
 
 		return page;
 	}

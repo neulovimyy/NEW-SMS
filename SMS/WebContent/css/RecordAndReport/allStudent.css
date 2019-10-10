@@ -1,55 +1,330 @@
-body {
-  -webkit-transition: background-color .5s;
-  transition: background-color .5s;
+body{
+  font-family: Helvetica;
+  color: black;
+  margin: 0px;
+  border: 0;
+  outline: none;
   background: #e9f1f8;
 }
+
 .row {
+  width: 100%;
   margin-left: 0px;
   margin-right: 0px;
   padding: 0px;
 }
 
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+input::-webkit-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+input:-ms-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+input::-ms-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+input::placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+.header {
+  background: white;
+  margin-left: 180px;
+  /* Same as the width of the sidenav */
+}
+
+.header [class*="col-"] {
+  padding: 10px;
+}
+
+.header [class*="col-"] .logo {
+  text-align: center;
+}
+
+.header [class*="col-"] .logo img {
+  width: 60px;
+  height: 60px;
+}
+
+.header [class*="col-"] p {
+  color: black;
+  font-size: 1em;
+}
+
+.subheading {
+  padding: 10px;
+  background: #001C57;
+  color: white;
+  font-size: 0.9em;
+  margin-left: 180px;
+  /* Same as the width of the sidenav */
+}
+
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 180px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #0009;
+  background: #111;
   overflow-x: hidden;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  padding-top: 60px;
-  text-align: center;
+  padding-top: 20px;
+  text-align: left;
+  color: white;
 }
 
 .sidenav a {
-  padding: 10px;
+  padding: 20px;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 0.8em;
   color: white;
   display: block;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: black;
+  background: #0009;
+}
+
+.sidenav i {
+  color: #FFD014;
+}
+
+.main {
+  margin-left: 180px;
+  /* Same as the width of the sidenav */
   background: #e9f1f8;
 }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.main .content .levels {
+  margin: auto;
+  text-align: center;
+  padding: 25px 10px 25px 10px;
 }
 
-#main {
-  -webkit-transition: margin-left .5s;
-  transition: margin-left .5s;
+.main .content .levels [class*="col-"] button {
+  width: 95%;
+  padding: 15px 5px;
+  background: white;
+  outline: none;
+  border: none;
+  font-size: 0.8em;
+}
+
+.main .content .levels [class*="col-"] button b {
+  font-size: 1.2em;
+}
+
+.main .content .levels [class*="col-"] button .elem {
+  padding: 15px;
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: white;
+  background: #F5D3CE;
+}
+
+.main .content .levels [class*="col-"] button .elem i {
+  font-size: 1.5em;
+  color: #FA1E44;
+}
+
+.main .content .levels [class*="col-"] button .jhs {
+  padding: 15px;
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: white;
+  background: #FFE9A2;
+}
+
+.main .content .levels [class*="col-"] button .jhs i {
+  font-size: 1.5em;
+  color: orange;
+}
+
+.main .content .levels [class*="col-"] button .shs {
+  padding: 15px;
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: white;
+  background: #E5BDFF;
+}
+
+.main .content .levels [class*="col-"] button .shs i {
+  font-size: 1.5em;
+  color: #842BD7;
+}
+
+.main .content .levels [class*="col-"] button .college {
+  padding: 15px;
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: white;
+  background: #BFE0B5;
+}
+
+.main .content .levels [class*="col-"] button .college i {
+  font-size: 1.4em;
+  color: #5AB190;
+}
+
+.main .content .levels [class*="col-"] button:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.main .content .result {
+  background: #FAFAFA;
+}
+
+.main .content .result .label {
+  text-align: center;
+  font-size: 1em;
+  padding: 20px;
+}
+
+.main .content .result .options {
+  margin: auto;
+  width: 95%;
+  background: #E6E6FA;
+  color: black;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.main .content .result .options [class*="col-"] {
+  padding: 5px;
+}
+
+.main .content .result .options [class*="col-"] select {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.8em;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.main .content .result .options [class*="col-"] button {
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  background: white;
+  outline: none;
+  border: none;
+  font-size: 0.8em;
+}
+
+.main .content .result .options [class*="col-"] button a {
+  text-decoration: none;
+}
+
+.main .content .result .options [class*="col-"] button a .pdf i {
+  color: #FA1E44;
+}
+
+.main .content .result .options [class*="col-"] button a .excel i {
+  color: #5AB190;
+}
+
+.main .content .result .options [class*="col-"] button:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.main .content .result table {
+  margin: auto;
+  width: 95%;
+  font-size: 0.9em;
+}
+
+.main .content .result table tr:nth-child(even) {
+  background-color: #eee;
+}
+
+.main .content .result table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.main .content .result table tr th {
+  background: #001C57;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #fff;
+}
+
+.main .content .result table tr td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #fff;
+}
+
+.main .content .footer {
+  padding: 10px;
+  font-size: 0.9em;
+  text-align: center;
+  margin: auto;
+}
+
+.main .content .footer hr {
+  width: 40%;
+}
+
+.main .content .footer p {
+  padding: 10px;
 }
 
 @media screen and (max-height: 450px) {
@@ -60,305 +335,4 @@ body {
     font-size: 18px;
   }
 }
-
-.header {
-  background: white;
-}
-
-.header [class*="col-"] {
-  padding: 20px;
-}
-
-.header [class*="col-"] img {
-  width: 75px;
-  height: 75px;
-}
-
-.header [class*="col-"] p {
-  color: black;
-  font-size: 1.4em;
-}
-
-.subheading {
-  padding: 10px;
-  background: #001C57;
-  color: white;
-  font-size: 1em;
-}
-
-.subheading [class*="col-"] span {
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-.tabs {
-  width: 95%;
-  margin: auto;
-}
-
-.tabs button {
-  padding: 25px;
-  background: lightgray;
-  border: none;
-  outline: none;
-}
-
-.tabs button:hover {
-  background: darkgray;
-}
-
-.content {
-  width: 95%;
-  margin: auto;
-  background: lightgray;
-}
-
-.content .levels {
-  padding: 10px;
-  width: 100%;
-  margin: auto;
-}
-
-.content .levels [class*="col-"] {
-  padding: 10px;
-  text-align: center;
-}
-
-.content .levels [class*="col-"] .elem button {
-  padding: 25px;
-  width: 100%;
-  text-align: left;
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
-  border-left: 15px solid #FA1E44;
-  background: white;
-  outline: none;
-}
-
-.content .levels [class*="col-"] .elem button b {
-  font-size: 1.4em;
-}
-
-.content .levels [class*="col-"] .elem button:active {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
-}
-
-.content .levels [class*="col-"] .jhs button {
-  padding: 25px;
-  width: 100%;
-  text-align: left;
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
-  border-left: 15px solid #FEC925;
-  background: white;
-  outline: none;
-}
-
-.content .levels [class*="col-"] .jhs button b {
-  font-size: 1.4em;
-}
-
-.content .levels [class*="col-"] .jhs button:active {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
-}
-
-.content .levels [class*="col-"] .shs button {
-  padding: 25px;
-  width: 100%;
-  text-align: left;
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
-  border-left: 15px solid #842BD7;
-  background: white;
-  outline: none;
-}
-
-.content .levels [class*="col-"] .shs button b {
-  font-size: 1.4em;
-}
-
-.content .levels [class*="col-"] .shs button:active {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
-}
-
-.content .levels [class*="col-"] .college button {
-  padding: 25px;
-  width: 100%;
-  text-align: left;
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
-  border-left: 15px solid #5AB190;
-  background: white;
-  outline: none;
-}
-
-.content .levels [class*="col-"] .college button b {
-  font-size: 1.4em;
-}
-
-.content .levels [class*="col-"] .college button:active {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
-}
-
-.content .label {
-  text-align: center;
-  font-size: 1em;
-  padding: 0px 15px 15px 15px;
-}
-
-.content .options {
-  margin: auto;
-  width: 95%;
-  background: white;
-  font-size: 12px;
-  color: black;
-  cursor: pointer;
-  padding: 15px;
-}
-
-.content .options [class*="col-"] select {
-  width: 100%;
-  padding: 10px;
-  font-size: 1.2em;
-}
-
-.content .options [class*="col-"] select .leveloption {
-  color: black;
-  padding: 12px;
-  font-size: 10px;
-  cursor: pointer;
-  border: solid 1px #D3D3D3;
-  padding-left: 15px;
-  padding-right: 5px;
-}
-
-.content table {
-  margin: auto;
-  width: 95%;
-  font-size: 0.9em;
-}
-
-.content table tr:nth-child(even) {
-  background-color: #eee;
-}
-
-.content table tr:nth-child(odd) {
-  background-color: #fff;
-}
-
-.content table tr th {
-  background: #001C57;
-  color: white;
-  padding: 15px;
-  text-align: left;
-}
-
-.content table tr td {
-  padding: 10px;
-  text-align: left;
-}
-
-.content .search {
-  text-align: center;
-  margin: auto;
-}
-
-.content .search input {
-  padding: 10px;
-  margin: 10px;
-  border: none;
-  border-radius: 15px;
-  outline: none;
-  width: 85%;
-}
-
-.content .search input::-webkit-input-placeholder {
-  font-family: "Font Awesome 5 Free", Helvetica;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 2;
-  font-weight: 600;
-  font-size: .9em;
-}
-
-.content .search input:-ms-input-placeholder {
-  font-family: "Font Awesome 5 Free", Helvetica;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 2;
-  font-weight: 600;
-  font-size: .9em;
-}
-
-.content .search input::-ms-input-placeholder {
-  font-family: "Font Awesome 5 Free", Helvetica;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 2;
-  font-weight: 600;
-  font-size: .9em;
-}
-
-.content .search input::placeholder {
-  font-family: "Font Awesome 5 Free", Helvetica;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 2;
-  font-weight: 600;
-  font-size: .9em;
-}
-
-.content .box1 {
-  background: -webkit-gradient(linear, left top, left bottom, from(#01a9ac), to(#E6E6FA));
-  background: linear-gradient(to bottom, #01a9ac, #E6E6FA);
-  padding: 20px;
-  width: 85%;
-  margin: auto;
-}
-
-.content .box1 [class*="col-"] {
-  text-align: center;
-  padding: 10px;
-}
-
-.content .box1 [class*="col-"] .studInfo {
-  background: white;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.content .box1 [class*="col-"] .studInfo [class*="col-"] {
-  text-align: left;
-  padding: 10px;
-}
-
-.content #studImg {
-  border: 10px solid #008080;
-  border-radius: 8px;
-  width: 250px;
-  height: 250px;
-}
+/*# sourceMappingURL=record.component.css.map */

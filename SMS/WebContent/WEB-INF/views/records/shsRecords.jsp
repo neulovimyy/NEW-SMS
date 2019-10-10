@@ -104,7 +104,8 @@ display:none;
       <div class="options">
         <div class="row">
           <div class="col-sm-2 col-md-2 col-lg-2">
-              <b> Subjects's List </b>     
+              <b> Subjects's List <br>
+              Elementary Subjects </b>     
           </div>
   
           <div class="col-sm-2 col-md-2 col-lg-2">
@@ -162,18 +163,17 @@ display:none;
       <div class="options">
         <div class="row">
           <div class="col-sm-2 col-md-2 col-lg-2">
-              <b> Subjects's List </b>     
+              <b> Subjects's List <br>
+              JHS Subjects </b>        
           </div>
   
           <div class="col-sm-2 col-md-2 col-lg-2">
             <select class= "levelOption" id="elemGradeLevel">
               <option value="null" >GRADE LEVEL</option>
-              <option value="gradeOne" >GRADE 1</option>
-              <option value="gradeTwo">GRADE 2</option>
-              <option value="gradeThree" >GRADE 3</option>
-              <option value="gradeFour">GRADE 4</option>
-              <option value="gradeFive" >GRADE 5</option>
-              <option value="gradeSix">GRADE 6</option>
+              <option value="gradeOne" >GRADE 7</option>
+              <option value="gradeTwo">GRADE 8</option>
+              <option value="gradeThree" >GRADE 9</option>
+              <option value="gradeFour">GRADE 10</option>
             </select>
           </div>
           
@@ -234,23 +234,21 @@ display:none;
   </table>
   </c:if>
 			</div>
+			
 			<div id="shs">
    <div id="list">
       <div class="options">
         <div class="row">
           <div class="col-sm-2 col-md-2 col-lg-2">
-              <b> Subjects's List </b>     
+              <b> Subjects's List <br>
+              SHS Subjects </b>         
           </div>
   
           <div class="col-sm-2 col-md-2 col-lg-2">
             <select class= "levelOption" id="elemGradeLevel">
               <option value="null" >GRADE LEVEL</option>
-              <option value="gradeOne" >GRADE 1</option>
-              <option value="gradeTwo">GRADE 2</option>
-              <option value="gradeThree" >GRADE 3</option>
-              <option value="gradeFour">GRADE 4</option>
-              <option value="gradeFive" >GRADE 5</option>
-              <option value="gradeSix">GRADE 6</option>
+              <option value="gradeOne" >GRADE 11</option>
+              <option value="gradeTwo">GRADE 12</option>
             </select>
           </div>
                             
@@ -304,18 +302,18 @@ display:none;
       <div class="options">
         <div class="row">
           <div class="col-sm-2 col-md-2 col-lg-2">
-              <b> Subjects's List </b>     
+              <b> Subjects's List <br>
+              College Subjects </b>        
           </div>
   
           <div class="col-sm-2 col-md-2 col-lg-2">
             <select class= "levelOption" id="elemGradeLevel">
               <option value="null" >Year LEVEL</option>
-              <option value="gradeOne" >GRADE 1</option>
-              <option value="gradeTwo">GRADE 2</option>
-              <option value="gradeThree" >GRADE 3</option>
-              <option value="gradeFour">GRADE 4</option>
-              <option value="gradeFive" >GRADE 5</option>
-              <option value="gradeSix">GRADE 6</option>
+              <option value="gradeOne" >First Year</option>
+              <option value="gradeTwo">Second Year </option>
+              <option value="gradeThree"> Third Year</option>
+              <option value="gradeFour">Fourth Year</option>
+              <option value="gradeFive" >Fifth Year</option>
             </select>
           </div>
                             

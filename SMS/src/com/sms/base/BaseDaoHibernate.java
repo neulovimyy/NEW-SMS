@@ -100,6 +100,11 @@ public class BaseDaoHibernate extends HibernateDaoSupport implements BaseDao {
 		List<?> result = (List<?>) ((Session) getHibernateTemplate()).createQuery("from " + paramClass.getSimpleName() + " where student_number LIKE '%"+studentNumber+"' order by student_id");
 		return result;
 	}
+
+	public List<?> getBySubjectId(Class<?> paramClass, String subjectNumber) {
+		List<?> result = (List<?>) ((Session) getHibernateTemplate()).createQuery("from " + paramClass.getSimpleName() + " where subject_id LIKE '%"+subjectNumber+"' order by subject_id");
+		return result;
+	}
 	
 	public List<?> getAccountStudentID(Class<?> paramClass, String string) {
 		List<?> result = (List<?>) ((Session) getHibernateTemplate()).createQuery("from " + paramClass.getSimpleName() + " where student_id LIKE '%"+string+"' order by entry_number ASC");

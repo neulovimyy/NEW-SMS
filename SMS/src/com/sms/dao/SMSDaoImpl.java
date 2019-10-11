@@ -196,5 +196,46 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 		
 		return result;
 	}
+	
+	
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Report> viewSubjects(Report subject) {
+		StringBuffer hqlQuery = new StringBuffer("from Report e where 1=1 ");
+		
+		StringBuffer dynamicSql = new StringBuffer();
+		if(StringUtils.isNotEmpty(subject.getSearch())) {
+			dynamicSql.append("and (  ");
+			dynamicSql.append(" lower(e.subjectName) like lower(:search) ");
+			dynamicSql.append("or lower(e.subjectId) like lower(:search) ");
+			dynamicSql.append("or lower(e.subjectCode) like lower(:search)) ");
+			
+		}
+		
+		final String sql =  hqlQuery.append(dynamicSql).toString();
+		Query query = getSession().createQuery(sql);
+		
+		if(StringUtils.isNotEmpty(subject.getSearch())) {
+			query.setParameter("search","%" + subject.getSearch() + "%");
+			
+		}
+		
+		List<Report> result = query.list();
+		
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 

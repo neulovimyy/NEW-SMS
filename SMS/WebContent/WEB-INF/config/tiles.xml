@@ -125,7 +125,7 @@
         <put-attribute name="body" value="/WEB-INF/views/records/landing.jsp"></put-attribute>
    	 </definition>
 
-   	  <definition name="studentInfo" extends="xeone">
+   	  <definition name="studInfo" extends="xeone">
         <put-attribute name="title" value="Student Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/student_info.jsp"></put-attribute>
    	 </definition>
@@ -151,10 +151,6 @@
         <put-attribute name="title" value="Generate shs Records Record"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/shsRecords.jsp"></put-attribute>
    	 </definition>
-   	 <definition name="jhRecords" extends="xeone">
-        <put-attribute name="title" value="Generate jh Records Record"></put-attribute>
-        <put-attribute name="body" value="/WEB-INF/views/records/jhRecords.jsp"></put-attribute>
-   	 </definition>
    	 <definition name="elementaryRecords" extends="xeone">
         <put-attribute name="title" value="Generate elem Records Record"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/elementaryRecords.jsp"></put-attribute>
@@ -170,5 +166,9 @@
 	    <definition name="generateexcel" extends="xeone">
         <put-attribute name="title" value="Generate generateexcel Record"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/generateexcel.jsp"></put-attribute>
+   	 </definition>
+   	  	 <definition name="result" extends="xeone">
+        <put-attribute name="title" value="Student's Subjects List Record and Report"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/subjectResult.jsp"></put-attribute>
    	 </definition>
 </tiles-definitions>

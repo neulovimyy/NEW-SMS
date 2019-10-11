@@ -1,10 +1,9 @@
+<%@include file="../common/taglibs.jsp"%>
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html; pageEncoding=UTF-8"%>
-<%@include file="../common/taglibs.jsp" %>
-
 <!DOCTYPE html>
 <html>
-	<head>
+  	<head>
 		<spring:url value="/resources/js/res.js" var="resJs" /> 
 		<spring:url value="/css/RecordAndReport/allStudent.css" var="allStudentCss" />	
 		<link href="${pageContext.request.contextPath}/theme1/themejs/res.js" rel="stylesheet" >
@@ -12,7 +11,6 @@
 		
 	</head>
 	<body>
-		<!-- Subject Page -->
 		<div class="header">
 		  <div class="row">
 		    <div class="col-sm-1 col-md-1 col-lg-1">
@@ -146,45 +144,36 @@
 		          </div>
 		        </div>
 		        
-		        <table class="table">
-		          <thead>
-		            <tr>
-		              <th> Subject ID </th>
-		              <th> Subject Code </th>
-		              <th> Subject Name </th>
-		              <th> # of units </th>
-		            </tr>
-		          </thead>
-		          <tbody>
-		            <tr>
-		              <td> 1</td>
-		              <td> 101 </td>
-		              <td> Analytic Geometry </td>
-		              <td> 3 </td>		
-		            </tr>
-		            <tr>
-		              <td> 2</td>
-		              <td> 102 </td>
-		              <td> Trigonometry </td>
-		              <td> 4 </td>		
-		            </tr>
-		            <tr>
-		              <td> 3</td>
-		              <td> 103 </td>
-		              <td> Algebra </td>
-		              <td> 3 </td>		
-		            </tr>
-		            <tr>
-		              <td> 4</td>
-		              <td> 104 </td>
-		              <td> Calculus </td>
-		              <td> 5 </td>		
-		            </tr>
-		          </tbody>
-		        </table>
-		      </div>
-		    </div>
-		
+		        <div>
+					<form:form  action="${pageContext.request.contextPath}/records/shsRec" method="post" commandName="subjectCommand">
+					<form:input class="form-control" path="search" placeholder="Search..." autocomplete="off" />
+						<span class="input-group-btn">
+							<button class="btn btn-danger" type="submit">
+								<i class="fa fa-search fa-fw"></i> Search
+							</button>
+						</span>
+							  		<c:if test="${!empty report}">         
+					  <table class="table">
+					    <thead>
+					      <tr>
+					        <th>Subject ID</th>
+					        <th>Subject Code</th>
+					        <th>Subject Name</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <c:forEach items="${report}" var="report">						
+							<tr>
+								<td><c:out value="${report.subjectId}"/></td>
+								<td><c:out value="${report.subjectCode}"/></td>
+								<td><c:out value="${report.subjectName}"/></td>		
+							</tr>
+						</c:forEach>
+					    </tbody>	
+					  </table>
+					  </c:if>
+						</form:form>
+					</div>
 		    <div class="footer">
 		      <hr>
 		      <p> � 2019 Peregrinus School | All Rights Reserved. </p>
@@ -192,5 +181,7 @@
 		
 		  </div>
 		</div>
+
+		
 	</body>
 </html>

@@ -31,27 +31,25 @@ public class RecordController extends BaseController{
 	public String welcome() {
 		return "landing";
 		
+	}/*
+	@RequestMapping(value = "studInfo", method = RequestMethod.GET)
+	public String studInfo(HttpServletRequest request, ModelMap model, @ModelAttribute("studentCommand") Student student) {
+		model.addAttribute("students", studentService.viewStudents(student));
+		return "studInfo";
+		
+	} */
+	@RequestMapping(value = "studInfo")
+	public String listEmployees(HttpServletRequest request, ModelMap model, @ModelAttribute("studentCommand") Student student) {
+		model.addAttribute("student", studentService.viewStudents(student));
+		return "studInfo";
+		
 	}
 	
 	@RequestMapping(value = "studentSubjects", method = RequestMethod.GET)
 	public String welcome1() {
 		return "studentSubjects";
 	}
-	
-	@RequestMapping(value = "shsRec", method = RequestMethod.GET)
-	public String reportlist(HttpServletRequest request, ModelMap model) {
-		@SuppressWarnings("unused")
-		List<Report> report = studentService.listReportss();
-		model.put("report", studentService.getAll(Report.class));
-		return "shsRecords";
-	}
-	
-	/*@RequestMapping(value = "jhRec", method = RequestMethod.GET)
-	public String listStudent(HttpServletRequest request, ModelMap model) {
-		student = studentService.listStudentss();
-		model.put("student", studentService.getAll(Student.class));
-		return "jhRecords";
-	} */
+
 		
 	@RequestMapping(value = "elemRec", method = RequestMethod.GET)
 	public String listStudent(HttpServletRequest request, ModelMap model) {
@@ -70,11 +68,7 @@ public class RecordController extends BaseController{
 		return "generateexcel";
 	}
 	
-	@RequestMapping(value = "studentInfo", method = RequestMethod.GET)
-	public String info() {
-		return "studentInfo";
-	}
-	
+
 	@RequestMapping(value = "enrollment", method = RequestMethod.GET)
 	public String enroll() {
 		return "enrollment";
@@ -116,4 +110,10 @@ public class RecordController extends BaseController{
 		model.put("subject",  studentService.getAll(Report.class));
 		response.sendRedirect("students");
 	}
+	
+	@RequestMapping(value="shsRec")
+	public String listSubject(HttpServletRequest request, ModelMap model, @ModelAttribute("subjectCommand") Report subject) {
+		model.addAttribute("report", studentService.viewSubjects(subject));
+		return "shsRecords";
+	} 
 }

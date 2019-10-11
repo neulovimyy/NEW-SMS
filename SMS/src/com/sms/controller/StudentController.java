@@ -59,6 +59,7 @@ public class StudentController extends BaseController{
 		return "studentList";
 	}
 	
+	
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public String addEmployee(HttpServletRequest request,@ModelAttribute("command")  Student cstudent, ModelMap model) {
 		
@@ -161,7 +162,7 @@ public class StudentController extends BaseController{
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "searchresult", method = RequestMethod.GET)
 	public String searchResult(@ModelAttribute("command") Student student, HttpServletRequest request, ModelMap model) {
-		List<Student> students = (List<Student>) studentService.getByStudentID(Student.class,request.getParameter("search"));
+		List<Student> students = (List<Student>) studentService.getByStudentID(Student.class,request.getParameter("searcher"));
 		model.put("student", students);
 		return "searchResult";
 	}

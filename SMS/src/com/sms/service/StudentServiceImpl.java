@@ -123,7 +123,10 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 	public List<?> getByStudentID(Class<?> paramClass, String string) {
 		return (List<?>) studentDao.getByStudentId(paramClass, string);
 	}
-
+	@Override
+	public List<?> getBySubjectID(Class<?> paramClass, String string) {
+		return (List<?>) studentDao.getBySubjectId(paramClass, string);
+	}
 	@Override
 	public List<Student> viewStudents(Student student) {
 		
@@ -140,5 +143,10 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 		return studentDao.viewStudentsByStudentID(stud);
 	}
 
+	@Override
+	public List<Report> viewSubjects(Report subject) {
+		
+		return studentDao.viewSubjects(subject);
+	}
 	
 }

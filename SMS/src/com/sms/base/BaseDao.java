@@ -38,6 +38,8 @@ public abstract interface BaseDao
   
   public abstract List<?> getByStudentId(Class<?> paramClass, String paramString);
   
+  public abstract List<?> getBySubjectId(Class<?> paramClass, String paramString);
+  
   public abstract List<?> getAccountStudentID(Class<?> paramClass,String string);
   
   public abstract List<?> getAll(Class<?> paramClass, List<Integer> paramList);

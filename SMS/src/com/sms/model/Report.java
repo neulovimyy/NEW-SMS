@@ -10,11 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.directwebremoting.annotations.DataTransferObject;
+
+import com.sms.base.BaseModel;
 @Table(name = "subjectdb")
 @SuppressWarnings("serial")
 @Entity
 @DataTransferObject
-public class Report  implements Serializable {
+public class Report extends BaseModel  implements Serializable  {
 	private Long subjectId;
 	private String subjectCode;
 	private String subjectName;

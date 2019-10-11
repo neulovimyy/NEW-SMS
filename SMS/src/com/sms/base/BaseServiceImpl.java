@@ -90,7 +90,10 @@ public class BaseServiceImpl
   	// TODO Auto-generated method stub
   		return this.baseDao.getByStudentId(paramClass, string);
   }
-  
+  public List<?> getBySubjectID(Class<?> paramClass, String string) {
+	  	// TODO Auto-generated method stub
+	  		return this.baseDao.getBySubjectId(paramClass, string);
+	  }
   public List<?> getAccountStudentID(Class<?> paramClass, String string) {
 	  	// TODO Auto-generated method stub
 	  		return this.baseDao.getAccountStudentID(paramClass, string);

@@ -40,6 +40,8 @@ public interface StudentService extends BaseService {
 	public Report getReport(String subjectId);
 	public void deleteReport(Report subject);
 	public void addReport(Report subject);
+	public List<Report> viewSubjects(Report subject);
+	
 	List<Student> viewStudentsByStudentID(StudRetrieveInfo stud);
 	
 }

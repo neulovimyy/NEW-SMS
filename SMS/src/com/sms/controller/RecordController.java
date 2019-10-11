@@ -31,13 +31,32 @@ public class RecordController extends BaseController{
 	public String welcome() {
 		return "landing";
 		
-	}/*
+	}
+	@RequestMapping(value = "index", method = RequestMethod.GET)
+	public String welcome2() {
+		return "index4";
+		
+	}
+	/*
 	@RequestMapping(value = "studInfo", method = RequestMethod.GET)
 	public String studInfo(HttpServletRequest request, ModelMap model, @ModelAttribute("studentCommand") Student student) {
 		model.addAttribute("students", studentService.viewStudents(student));
 		return "studInfo";
 		
 	} */
+	
+	@RequestMapping(value="index4",params="action1",method=RequestMethod.POST)
+    public void action1(){
+        System.out.println("Action1 block called");
+        return;
+    }
+	
+	@RequestMapping(params="index4",method=RequestMethod.POST)
+    public void action2()
+    {
+        System.out.println("Action2 block called");
+    }
+	
 	@RequestMapping(value = "studInfo")
 	public String listEmployees(HttpServletRequest request, ModelMap model, @ModelAttribute("studentCommand") Student student) {
 		model.addAttribute("student", studentService.viewStudents(student));
@@ -91,15 +110,6 @@ public class RecordController extends BaseController{
 		map.put("subjectsdb", subjects);
 		studentService.addReport(subject);
 		response.sendRedirect("subjectsdb");
-	}
-	
-	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "addsubjectreport", method = RequestMethod.GET)
-	public String addReport(@ModelAttribute("command")  Report subject, ModelMap model, HttpServletResponse response) throws IOException {
-		List<Report> subjects =  (List<Report>) studentService.getAll(Report.class);
-		
-		model.put("subjectsdb", subjects);
-		return "index4";
 	}
 	
 	@RequestMapping(value = "deletesubjectreport", method = RequestMethod.GET)

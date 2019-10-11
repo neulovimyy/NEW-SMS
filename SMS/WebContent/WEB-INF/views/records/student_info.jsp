@@ -97,13 +97,27 @@
             <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-12">
                   <form:form id="view_students" action="${pageContext.request.contextPath}/records/studInfo" method="post" commandName="studentCommand">
-        <form:input class="form-control" path="search" placeholder="Search..." autocomplete="off" />
+        <form:input class="form-control" path="search" placeholder="Search..." autocomplete="off" value="charlon" />
 	           	<span class="input-group-btn">
 			<button class="btn btn-danger" type="submit">
 				<i class="fa fa-search fa-fw"></i> Search
 			</button>
 		</span>
               </div>
+              		<h2>Select Number Of Rows</h2>
+				<div class="form-group"> 	<!--		Show Numbers Of Rows 		-->
+			 		<select class  ="form-control" name="state" id="maxRows">
+						 <option value="5000">Show ALL Rows</option>
+						 <option value="5">5</option>
+						 <option value="10">10</option>
+						 <option value="15">15</option>
+						 <option value="20">20</option>
+						 <option value="50">50</option>
+						 <option value="70">70</option>
+						 <option value="100">100</option>
+						</select>
+			 		
+			  	</div>
             </div>
           </div>
        
@@ -119,7 +133,7 @@
               </div> 
               <div class="col-sm-8 col-md-8 col-lg-8">
                 <div class="studInfo">
-                  <div class="row">
+                  <div class="row" >
                     <div class="col-sm-3 col-md-3 col-lg-3">Name:</div>
                     <div class="col-sm-9 col-md-9 col-lg-9">${student.firstName} ${student.middleName} ${student.lastName} &nbsp;</div>
                     <div class="col-sm-3 col-md-3 col-lg-3">Sex:</div>

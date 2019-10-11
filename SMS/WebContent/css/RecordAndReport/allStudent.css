@@ -3,6 +3,13 @@
   margin-left: 180px;
   /* Same as the width of the sidenav */
 }
+table tr:nth-child(even){
+    background-color: #BEF2F5
+}
+
+.pagination li:hover{
+    cursor: pointer;
+}
 
 .header [class*="col-"] {
   padding: 10px;

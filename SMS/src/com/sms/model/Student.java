@@ -49,6 +49,11 @@ public class Student extends BaseModel implements Serializable{
 	private CommonsMultipartFile studentPicture; 
 	private String acad;
 	
+	
+
+
+	private Integer gradeLevel;
+	private Integer section;
 	//private List<EducBg> educBg;
 
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -59,6 +64,20 @@ public class Student extends BaseModel implements Serializable{
 	}
 	public void setId(Long id) {
 		this.Id = id;
+	}
+	@Column(name = "gradeLevel")
+	public Integer getGradeLevel() {
+		return gradeLevel;
+	}
+	public void setGradeLevel(Integer gradeLevel) {
+		this.gradeLevel = gradeLevel;
+	}
+	@Column(name = "section")
+	public Integer getSection() {
+		return section;
+	}
+	public void setSection(Integer section) {
+		this.section = section;
 	}
 	
 	@Column(name = "student_id")

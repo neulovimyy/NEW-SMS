@@ -108,7 +108,6 @@
                     <div class="box1">
                       <div class="row">
                         <div class="col-sm-4 col-md-4 col-lg-4">
-                        <img id="studImg" src="../../assets/sms-logo.png" alt="">
                         <spring:url value="/image" var="images" />
                         <img id="studImg" src="${images}/charlon.png"/>
                         </div> 

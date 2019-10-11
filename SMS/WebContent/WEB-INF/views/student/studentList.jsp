@@ -6,11 +6,11 @@
 
 	<section class="content">
 	<h3 align="center">
-		<a href="${pageContext.request.contextPath}/student/add">Apply</a>
+		<a href="${pageContext.request.contextPath}/institute/dashboard/student/apply">Apply</a>
 	</h3>
 
 	<div class="col-md-12">
-		<form:form id="view_students" action="${pageContext.request.contextPath}/student/students" method="post" commandName="studentCommand">
+		<form:form id="view_students" action="${pageContext.request.contextPath}/institute/dashboard/student/students" method="post" commandName="studentCommand">
 			<div class="page-header">
 				<div class="container-fluid"></div>
 			</div>

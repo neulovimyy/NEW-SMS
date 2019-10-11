@@ -1,16 +1,16 @@
 <%@include file="../common/taglibs.jsp" %>
 
-<div class="container">
+<!--<div class="container">
 	  	<h1 align="center">
 			<font face="Palatino Linotype" color="#34495E">
 			Welcome to the Student Database
 			</font>
 		</h1>
-	</div>
+	</div>-->
 
 	<div class="jumbotron">
-	    <h2 align="center"><a class="btn btn-lg btn-success" href="${pageContext.request.contextPath}/student/students"><i class="glyphicon glyphicon-cloud"></i> Show Students</a></h2>
-	    <h2 align="center"><a class="btn btn-lg btn-success" href="${pageContext.request.contextPath}/student/add"><i class="glyphicon glyphicon-cloud"></i> Add Students</a></h2>
+	    <h2 align="center"><a class="btn btn-lg btn-success" href="${pageContext.request.contextPath}/institute/dashboard/student/students"><i class="glyphicon glyphicon-cloud"></i> Show Students</a></h2>
+	    <h2 align="center"><a class="btn btn-lg btn-success" href="${pageContext.request.contextPath}/institute/dashboard/student/apply"><i class="glyphicon glyphicon-cloud"></i> Add Students</a></h2>
 	</div>
 	 
 	<!-- <form method="post" action="students.html">

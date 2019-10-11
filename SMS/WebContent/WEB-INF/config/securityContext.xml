@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:sec="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans 
+				        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				        http://www.springframework.org/schema/security 
+				        http://www.springframework.org/schema/security/spring-security-3.0.xsd" default-autowire="byType"
+	default-lazy-init="true">
+
+	<description>
+		This is the config file for the Security configuration of
+		SMS - Zid 9/3/2019
+	</description>
+
+	<sec:global-method-security secured-annotations="enabled" pre-post-annotations="enabled" />
+
+	<bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		<property name="loginFormUrl" value="/institute/login" />
+	</bean>
+
+	<sec:http auto-config="true" entry-point-ref="authenticationEntryPoint" access-decision-manager-ref="accessDecisionManager">
+
+		<sec:intercept-url pattern="/institute/dashboard/*" access="ADMIN,ACCOUNTANT,STUDENT,FACULTY,REGISTRAR,DEAN"/>
+		<sec:logout invalidate-session="true" logout-success-url="/institute/login"/>
+		<sec:access-denied-handler error-page="/institute/accessDenied"/>
+		<sec:form-login authentication-failure-url="/institute/login?error=true" default-target-url="/institute/dashboard" login-page="/institute/login" />
+
+		<sec:intercept-url pattern="/institute/dashboard/student/*" access="ADMIN"/>
+		<sec:logout invalidate-session="true" logout-success-url="/institute/login"/>
+		<sec:access-denied-handler error-page="/institute/accessDenied"/>
+		<sec:form-login authentication-failure-url="/institute/login?error=true" default-target-url="/institute/dashboard/student/" login-page="/institute/login" />
+		
+	</sec:http>
+	<!-- Authentication Manager -->
+	<sec:authentication-manager>
+		<sec:authentication-provider user-service-ref="authorizedUsers" />
+	</sec:authentication-manager>
+
+	<sec:jdbc-user-service id="authorizedUsers" data-source-ref="dataSource" users-by-username-query="select USERNAME, PASSWORD, ACTIVE from users where USERNAME = ?" authorities-by-username-query="select us.USERNAME, ur.AUTHORITY from users us, user_roles ur 
+	      where us.USER_ID = ur.USER_ID and us.USERNAME = ?" />
+
+	<bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+		<property name="decisionVoters">
+			<bean class="org.springframework.security.access.vote.RoleVoter">
+
+				<!-- SPRING SECURITY ROLES DEFAULTS TO ROLE_*, SINCE WE ONLY HAVE RECEIVER, MANAGER, AND NORMAL WE HAVE TO REMOVE THE PREFIX ROLE_. INSTEAD OF USING ROLE_RECEIVER, ROLE_MANAGER, ROLE_NORMAL, USE RECIEVER, MANAGER AND NORMAL INSTEAD, REMOVE 'ROLE_' -->
+
+				<property name="rolePrefix" value="" />
+			</bean>
+		</property>
+		<!-- <bean class="org.springframework.security.web.access.expression.WebExpressionVoter"></bean> -->
+	</bean>
+	
+</beans>

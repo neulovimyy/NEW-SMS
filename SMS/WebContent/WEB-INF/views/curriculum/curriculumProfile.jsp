@@ -3,7 +3,7 @@
 
 <div class="content-wrapper">
 	<section class="content"> 
-		<form:form id="save-student" enctype="multipart/form-data" action="${pageContext.request.contextPath}/curriculum/save" commandName="curriculumCommand">
+		<form:form id="save-student" enctype="multipart/form-data" action="${pageContext.request.contextPath}/institute/dashboard/curriculum/save" commandName="curriculumCommand">
 			<div class="col-md-12">
 				<div class="page-header">
 					<div class="container-fluid"></div>

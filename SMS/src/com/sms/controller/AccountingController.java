@@ -26,7 +26,7 @@ import com.sms.student.model.SHSAndCollege;
 import com.sms.student.model.Student;
 
 @Controller
-@RequestMapping("account")
+@RequestMapping("dashboard/account")
 public class AccountingController extends BaseController {
 
 	@Autowired

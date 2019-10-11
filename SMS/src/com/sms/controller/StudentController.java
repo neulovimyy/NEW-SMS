@@ -35,7 +35,7 @@ import com.sms.util.Users;
 import com.sms.util.InventoryUtility;
 	
 @Controller
-@RequestMapping("student")
+@RequestMapping("dashboard/student")
 public class StudentController extends BaseController{
 	static DecimalFormat dc = new DecimalFormat("#####");
 	@Autowired
@@ -127,6 +127,11 @@ public class StudentController extends BaseController{
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String welcome() {
 		return "index";
+	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public void redirectToHome(HttpServletResponse response, HttpServletRequest request) throws IOException {
+		response.sendRedirect(request.getContextPath()+"/institute/dashboard/student/home");
 	}
 	
 	@RequestMapping(value = "delete", method = RequestMethod.GET)
@@ -293,9 +298,4 @@ public class StudentController extends BaseController{
         outs.flush();
         outs.close();
 	}
-	
-	
-	
-	
-	
 }

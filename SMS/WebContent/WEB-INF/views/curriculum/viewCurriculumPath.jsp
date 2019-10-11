@@ -7,7 +7,7 @@
 	<section class="content">
 
 	<div class="col-md-12">
-		<form:form id="view_students" action="${pageContext.request.contextPath}/path/view" method="post" commandName="curriculumCommand">
+		<form:form id="view_students" action="${pageContext.request.contextPath}/institute/dashboard/path/view" method="post" commandName="curriculumCommand">
 			<div class="page-header">
 				<div class="container-fluid"></div>
 			</div>
@@ -32,7 +32,7 @@
 									</div>
 								</div>
 								<div class="col-lg-1">
-									<a type="button" class="btn btn-primary " href="<c:url value="/path/form?pathid=${pathid}"/>"><i class="fa fa-plus fa-fw"></i> Create</a>
+									<a type="button" class="btn btn-primary " href="<c:url value="/institute/dashboard/path/form?pathid=${pathid}"/>"><i class="fa fa-plus fa-fw"></i> Create</a>
 								</div>
 							</div>
 						</div>
@@ -63,9 +63,9 @@
 																	<span class="fa fa-gear"> <i class="filesIcon fa fa-caret-down icon"></i></span>
 																</button>
 																<ul class="dropdown-menu">
-																	<li><a href="${pageContext.request.contextPath}/curriculum/form?id=${obj.id}"><i class="filesIcon fa fa-edit icon"></i> Edit</a></li>
-																	<li><a href="#" data-href="${pageContext.request.contextPath}/curriculum/delete?id=${obj.id}" data-toggle="modal" data-target="#confirm"><i class="filesIcon fa fa-eye icon"></i> Delete</a></li>
-																	<li><a href="${pageContext.request.contextPath}/path/view?id=${obj.id}"><i class="filesIcon fa fa-eye icon"></i> View</a></li>
+																	<li><a href="${pageContext.request.contextPath}/institute/dashboard/curriculum/form?id=${obj.id}"><i class="filesIcon fa fa-edit icon"></i> Edit</a></li>
+																	<li><a href="#" data-href="${pageContext.request.contextPath}/institute/dashboard/curriculum/delete?id=${obj.id}" data-toggle="modal" data-target="#confirm"><i class="filesIcon fa fa-eye icon"></i> Delete</a></li>
+																	<li><a href="${pageContext.request.contextPath}/institute/dashboard/path/view?id=${obj.id}"><i class="filesIcon fa fa-eye icon"></i> View</a></li>
 																</ul>
 															</div>
 															<!-- /btn-group -->

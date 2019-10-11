@@ -19,7 +19,7 @@ import com.sms.curriculum.service.CurriculumService;
 import com.sms.util.InventoryUtility;
 
 @Controller
-@RequestMapping("curriculum")
+@RequestMapping("dashboard/curriculum")
 public class CurriculumController extends BaseController {
 	
 	@Autowired
@@ -43,7 +43,7 @@ public class CurriculumController extends BaseController {
 	@RequestMapping(value = "/save")
 	public void saveUser(HttpServletRequest request,HttpServletResponse response,ModelMap model,@ModelAttribute("curriculumCommand") Curriculum curr) throws IOException {
 		curriculumService.save(curr);
-		response.sendRedirect(request.getContextPath() + "/curriculum/view");
+		response.sendRedirect(request.getContextPath() + "/institute/dashboard/curriculum/view");
 	}
 	
 	@RequestMapping(value="/delete", method= {RequestMethod.GET})

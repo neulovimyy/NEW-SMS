@@ -1,10 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@include file="../common/taglibs.jsp"%>
-<form:form method="POST" action="../student/add" commandName="command">
+<form:form method="POST" action="${pageContext.request.contextPath }/institute/dashboard/student/add" commandName="command">
 	<div class="col-md-12">
 		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h2>Acad</h2>
+			<div class="panel-heading text-center">
+				<h3>Select Academic Level</h3>
 			</div>
 			<div class="panel-body">
 				<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">

@@ -11,6 +11,11 @@
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"></put-attribute>
     </definition>
+    
+    <definition name="loginLayout" template="/WEB-INF/views/common/loginLayout.jsp">
+        <put-attribute name="title" value="Login SMS" />
+        <put-attribute name="body" value="" />
+    </definition>
  
  	<definition name="welcome" extends="xeone">
  		<put-attribute name="title" value="Database Menu"></put-attribute>
@@ -31,6 +36,16 @@
     <definition name="addSubject" extends="xeone">
         <put-attribute name="title" value="Student Data Form" />
         <put-attribute name="body" value="/WEB-INF/views/student/addSubject.jsp" />
+    </definition>
+    
+    <definition name="loginPage" extends="loginLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/WEB-INF/views/common/login.jsp"/>
+    </definition>
+    
+    <definition name="deniedPage" extends="loginLayout">
+    	<put-attribute name="title" value="Access Denied"/>
+    	<put-attribute name="body" value="/WEB-INF/views/common/403.jsp"/>
     </definition>
     
     <definition name="iapply" extends="xeone">

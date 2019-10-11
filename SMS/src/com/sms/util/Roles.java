@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import org.directwebremoting.annotations.DataTransferObject;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "user_roles")
 @DataTransferObject
 public class Roles implements Serializable {
 

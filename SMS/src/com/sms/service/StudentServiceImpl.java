@@ -9,9 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sms.base.BaseServiceImpl;
 import com.sms.dao.SMSDao;
+import com.sms.model.College;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
+import com.sms.model.JHS;
 import com.sms.model.Report;
+import com.sms.model.SHS;
 import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
 import com.sms.model.Subject;
@@ -31,6 +34,9 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 	
 	public List<Student> listStudentss() {
 		return studentDao.listStudent();
+	}
+	public List<JHS> listsJHS() {
+		return studentDao.listJHS();
 	}
 
 	public Student getStudent(Long Id) {
@@ -129,7 +135,6 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 	}
 	@Override
 	public List<Student> viewStudents(Student student) {
-		
 		return studentDao.viewStudents(student);
 	}
 	
@@ -147,6 +152,53 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 	public List<Report> viewSubjects(Report subject) {
 		
 		return studentDao.viewSubjects(subject);
+	}
+	@Override
+	public long listCount(Student count) {
+		// TODO Auto-generated method stub
+		return studentDao.listCount(count);
+	}
+
+	
+
+	@Override
+	public long listCountJHS(JHS count) {
+	  return studentDao.listCountJHS(count);
+	}
+
+	@Override
+	public List<SHS> listSHS() {
+		return studentDao.listSHS();
+	}
+
+	@Override
+	public long listCountSHS(SHS count) {
+		  return studentDao.listCountSHS(count);
+	}
+
+	@Override
+	public List<College> listCollege() {
+		return studentDao.listCollege();
+	}
+
+	@Override
+	public long listCountCollege(College count) {
+		return studentDao.listCountCollege(count);
+	}
+
+	@Override
+	public List<JHS> viewJHSStudents(JHS jhsstudent) {
+		return studentDao.viewJHSStudents(jhsstudent);
+	}
+
+	@Override
+	public List<SHS> viewSHSStudents(SHS shsstudent) {
+		return studentDao.viewSHSStudents(shsstudent);
+	}
+
+	@Override
+	public List<College> viewCollegeStudents(College jhsstudent) {
+		return studentDao.viewCollegeStudents(jhsstudent);
 	}
 	
 }

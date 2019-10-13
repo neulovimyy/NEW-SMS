@@ -3,9 +3,12 @@ package com.sms.dao;
 import java.util.List;
 
 import com.sms.base.BaseDao;
+import com.sms.model.College;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
+import com.sms.model.JHS;
 import com.sms.model.Report;
+import com.sms.model.SHS;
 import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
 import com.sms.model.Subject;
@@ -16,6 +19,7 @@ public interface SMSDao extends BaseDao {
 	//student
 	public void addStudent(Student stud);
 	public List<Student> listStudent();
+	public long listCount( Student count);
 	public Student getStudentInfo(Long id);
 	public void deleteStudent(Student stud);
 	public List<Student> viewStudents(Student student);
@@ -47,6 +51,17 @@ public interface SMSDao extends BaseDao {
 	public List<Report> viewSubjects(Report subject);
 	
 	public List<Student> viewStudentsByStudentID(StudRetrieveInfo stud);
-
 	
+    //JHS
+	public List<JHS> listJHS();
+	public long listCountJHS( JHS count);
+	public List<JHS> viewJHSStudents(JHS jhsstudent);
+	//SHS
+	public List<SHS> listSHS();
+	public long listCountSHS( SHS count);
+	public List<SHS> viewSHSStudents(SHS shsstudent);
+	//college
+	public List<College> listCollege();
+	public long listCountCollege( College count);
+	public List<College> viewCollegeStudents(College colstudent);
 }

@@ -155,6 +155,18 @@
         <put-attribute name="title" value="Generate elem Records Record"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/elementaryRecords.jsp"></put-attribute>
    	 </definition>
+   	 <definition name="jhsRec" extends="xeone">
+        <put-attribute name="title" value="Generate elem Records Record"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/jhsRecords.jsp"></put-attribute>
+   	 </definition>
+     <definition name="shsRecords" extends="xeone">
+        <put-attribute name="title" value="Generate elem Records Record"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/shsRec.jsp"></put-attribute>
+   	 </definition>
+   	  <definition name="colRec" extends="xeone">
+        <put-attribute name="title" value="Generate elem Records Record"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/collegeRecords.jsp"></put-attribute>
+   	 </definition>
    	 <definition name="list" extends="xeone">
         <put-attribute name="title" value="Student's Subjects List Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/studentSubject.jsp"></put-attribute>
@@ -167,8 +179,21 @@
         <put-attribute name="title" value="Generate generateexcel Record"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/generateexcel.jsp"></put-attribute>
    	 </definition>
-   	  	 <definition name="result" extends="xeone">
+   	  <definition name="result" extends="xeone">
         <put-attribute name="title" value="Student's Subjects List Record and Report"></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/records/subjectResult.jsp"></put-attribute>
+   	 </definition>
+   	 
+   	  <definition name="studInfoJHS" extends="xeone">
+        <put-attribute name="title" value="Student Record and Report"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/JHS_student_info.jsp"></put-attribute>
+   	 </definition>
+   	 <definition name="studInfoSHS" extends="xeone">
+        <put-attribute name="title" value="Student Record and Report"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/SHS_student_info.jsp"></put-attribute>
+   	 </definition>
+   	  <definition name="studInfoCollege" extends="xeone">
+        <put-attribute name="title" value="Student Record and Report"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/records/College_student_info.jsp"></put-attribute>
    	 </definition>
 </tiles-definitions>

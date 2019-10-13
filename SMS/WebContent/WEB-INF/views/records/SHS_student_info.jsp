@@ -48,7 +48,7 @@
 
     <div class="main">
       <div class="content">
-        <div class="levels">
+         <div class="levels">
           <div class="row">
             <div class="col-sm-3 col-md-3 col-lg-3">
              <form action="studInfo.html" method="get">
@@ -95,24 +95,23 @@
             </div>
           </div>
         </div>
-        <div class="profile" id="elem">
+        <div class="profile">
           <div class="label">
-            <b> Elementary Students </b>
+            <b> Senior High School Students </b>
           </div>
 
           <div class="search">
-            <form:form id="view_students" action="${pageContext.request.contextPath}/records/studInfo" method="post" commandName="studentCommand">
+            <form:form id="view_students" action="${pageContext.request.contextPath}/records/studInfoJHS" method="post" commandName="shsstudentCommand">
               <form:input class="form-control" path="search" placeholder="Search..." autocomplete="off" />
               <span class="input-group-btn">
                 <button class="btn btn-danger" type="submit">
                   <i class="fa fa-search fa-fw"></i> Search
                 </button>
-               
               </span>
 
               <c:choose>
-                <c:when test="${!empty student}"> 
-                  <c:forEach items="${student}" var="student">
+                <c:when test="${!empty shsstudent}"> 
+                  <c:forEach items="${shsstudent}" var="shsstudent">
                     <div class="box1">
                       <div class="row">
                         <div class="col-sm-4 col-md-4 col-lg-4">
@@ -123,23 +122,23 @@
                           <div class="studInfo">
                             <div class="row">
                               <div class="col-sm-3 col-md-3 col-lg-3">Name:</div>
-                              <div class="col-sm-9 col-md-9 col-lg-9">${student.firstName} ${student.middleName} ${student.lastName} &nbsp;</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9">${shsstudent.firstName} ${shsstudent.middleName} ${shsstudent.lastName} &nbsp;</div>
                               <div class="col-sm-3 col-md-3 col-lg-3">Sex:</div>
-                              <div class="col-sm-9 col-md-9 col-lg-9">${student.gender}&nbsp;</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9">${shsstudent.gender}&nbsp;</div>
                               <div class="col-sm-3 col-md-3 col-lg-3">Date of Birth:</div>
-                              <div class="col-sm-9 col-md-9 col-lg-9">${student.birthDate} &nbsp;</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9">${shsstudent.birthDate} &nbsp;</div>
                               <div class="col-sm-3 col-md-3 col-lg-3">Age:</div>
                               <div class="col-sm-9 col-md-9 col-lg-9">21&nbsp;</div>
                               <div class="col-sm-3 col-md-3 col-lg-3">Permanent Address:</div>
-                              <div class="col-sm-9 col-md-9 col-lg-9">${student.permanentAddress}&nbsp;</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9">${shsstudent.permanentAddress}&nbsp;</div>
                               <div class="col-sm-3 col-md-3 col-lg-3">Present Address:</div>
-                              <div class="col-sm-9 col-md-9 col-lg-9">${student.presentAddress}&nbsp;</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9">${shsstudent.presentAddress}&nbsp;</div>
                               <div class="col-sm-3 col-md-3 col-lg-3">Religion:</div>
-                              <div class="col-sm-9 col-md-9 col-lg-9">${student.religion}&nbsp;</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9">${shsstudent.religion}&nbsp;</div>
                               <div class="col-sm-3 col-md-3 col-lg-3">Contact Number:</div>
-                              <div class="col-sm-9 col-md-9 col-lg-9">${student.mobileNum}</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9">${shsstudent.mobileNum}</div>
                               <div class="col-sm-3 col-md-3 col-lg-3">Email Address:</div>
-                              <div class="col-sm-9 col-md-9 col-lg-9">${student.emailAddress}&nbsp;</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9">${shsstudent.emailAddress}&nbsp;</div>
                               <div class="col-sm-3 col-md-3 col-lg-3">Mothers name:</div>
                               <div class="col-sm-9 col-md-9 col-lg-9">Ma. Cecilla Cervas</div>
                               <div class="col-sm-3 col-md-3 col-lg-3">Fathers name:</div>
@@ -160,7 +159,6 @@
             </form:form>
           </div>
         </div>
-    
         <div class="footer">
           <hr>
           <p> © 2019 Peregrinus School | All Rights Reserved. </p>

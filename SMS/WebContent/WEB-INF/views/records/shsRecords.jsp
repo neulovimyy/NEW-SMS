@@ -52,16 +52,18 @@
 		            <div class="elem">
 		              <i class="fas fa-pencil-alt"></i>
 		            </div>
-		            <b> 150 </b> <br> Elementary Students
+		            <b> ${count}</b> <br> Elementary Students
 		          </button>
 		        </div>
 		
 		        <div class="col-sm-3 col-md-3 col-lg-3">
+		        
 		          <button>
 		            <div class="jhs">
 		              <i class="fas fa-apple-alt"></i>
 		            </div>
-		            <b> 253</b> <br> Junior High School Students
+		            	
+		            <b> ${countJHS}</b> <br> Junior High School Students
 		          </button>
 		        </div>
 		
@@ -70,7 +72,7 @@
 		            <div class="shs">
 		                <i class="fas fa-lightbulb"></i>
 		            </div>
-		            <b> 392 </b> <br> Senior High School Students
+		            <b> ${countSHS} </b> <br> Senior High School Students
 		          </button>
 		        </div>
 		
@@ -79,7 +81,7 @@
 		            <div class="college">
 		              <i class="fas fa-graduation-cap"></i>
 		            </div>
-		            <b> 589 </b> <br> College Students
+		            <b> ${countCollege}</b> <br> College Students
 		          </button>
 		        </div>
 		      </div>
@@ -146,33 +148,50 @@
 		        
 		        <div class="search">
 					<form:form  action="${pageContext.request.contextPath}/records/shsRec" method="post" commandName="subjectCommand">
-						<form:input class="form-control" path="search" placeholder="Search... " autocomplete="off" />
+						<form:input id="count" class="form-control" path="search" placeholder="Search... " autocomplete="off" />
 						<span class="input-group-btn">
-							<button class="btn btn-danger" type="submit">
+							<button class="btn-search" type="submit">
 								<i class="fa fa-search fa-fw"></i> Search
 							</button>
+								<!-- <button class="btn btn-danger" type="submit" id="button1" onclick="myFunction()">
+								<i class="fa fa-search fa-fw"></i> charlon
+							</button>-->
 						</span>
-						<c:if test="${!empty report}">         
+						      
 							<table class="table">
-							<thead>
-								<tr>
-								<th>Subject ID</th>
-								<th>Subject Code</th>
-								<th>Subject Name</th>
-								</tr>
-							</thead>
+								<thead>
+									<tr>
+									<th>Subject ID</th>
+									<th>Subject Code</th>
+									<th>Subject Name</th>
+									</tr>
+								</thead>
 							<tbody>
-								<c:forEach items="${report}" var="report">						
-								<tr>
-									<td><c:out value="${report.subjectId}"/></td>
-									<td><c:out value="${report.subjectCode}"/></td>
-									<td><c:out value="${report.subjectName}"/></td>		
-								</tr>
-							</c:forEach>
+							<c:choose>
+								<c:when test="${!empty report}"> 
+									<c:forEach items="${report}" var="report">						
+									<tr>
+										<td><c:out value="${report.subjectId}"/></td>
+										<td><c:out value="${report.subjectCode}"/></td>
+										<td><c:out value="${report.subjectName}"/></td>
+										<td><c:out value="${students.firstName}"/></td>	
+									</tr>
+										</c:forEach>	
+			            		</c:when>
+								<c:otherwise>
+									<tr>
+										<td class="text-center" colspan="4">No records found</td>
+									</tr>
+								</c:otherwise>
+			            	  </c:choose>
 							</tbody>	
-							</table>
-						</c:if>
+					  	</table>
 					</form:form>
+					<script>
+					function myFunction() {
+						  document.getElementById("count").value = "";
+						}
+					</script>
 				</div>
 			</div>
 		</div>

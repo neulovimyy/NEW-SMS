@@ -10,9 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sms.base.BaseDaoHibernate;
+import com.sms.model.College;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
+import com.sms.model.JHS;
 import com.sms.model.Report;
+import com.sms.model.SHS;
 import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
 import com.sms.model.Subject;
@@ -197,7 +200,15 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 		return result;
 	}
 	
-	
+	@SuppressWarnings("unchecked")
+	public long listCount(Student count){
+		StringBuffer sql = new StringBuffer();
+	    sql.append("SELECT COUNT(*) ");
+	    sql.append("FROM Student");
+	    Query query = getSession().createQuery(sql.toString());
+	    long results = (long)query.uniqueResult();
+	    return results;
+	}
 	
 	@SuppressWarnings("unchecked")
 	@Override
@@ -225,9 +236,167 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 		
 		return result;
 	}
+
+	//JHS
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<JHS> listJHS() {
+		// TODO Auto-generated method stub
+		return (List<JHS>) sessionFactory.getCurrentSession().createCriteria(JHS.class).list();
+	}
+
+	@Override
+	public long listCountJHS(JHS count) {
+			StringBuffer sql = new StringBuffer();
+		    sql.append("SELECT COUNT(*) ");
+		    sql.append("FROM JHS");
+		    Query query = getSession().createQuery(sql.toString());
+		    long results = (long)query.uniqueResult();
+		    return results;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<JHS> viewJHSStudents(JHS jhsstudent) {
+		StringBuffer hqlQuery = new StringBuffer("from JHS e where 1=1 ");
+		
+		StringBuffer dynamicSql = new StringBuffer();
+		if(StringUtils.isNotEmpty(jhsstudent.getSearch())) {
+			dynamicSql.append("and (  ");
+			dynamicSql.append(" lower(e.firstName) like lower(:search) ");
+			dynamicSql.append("or lower(e.middleName) like lower(:search) ");
+			dynamicSql.append("or lower(e.lastName) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.firstName,' ', e.lastName, ' ', e.middleName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.firstName,' ', e.middleName, ' ', e.lastName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.lastName,' ', e.firstName, ' ', e.middleName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.lastName,' ', e.middleName, ' ', e.firstName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.middleName,' ', e.lastName, ' ', e.firstName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.middleName,' ', e.firstName, ' ', e.lastName)) like lower(:search) ");
+			dynamicSql.append("or lower(e.studentId) like lower(:search) ");
+			dynamicSql.append("or lower(e.emailAddress) like lower(:search)) ");
+			
+		}
+		
+		final String sql =  hqlQuery.append(dynamicSql).toString();
+		Query query = getSession().createQuery(sql);
+		
+		if(StringUtils.isNotEmpty(jhsstudent.getSearch())) {
+			query.setParameter("search","%" + jhsstudent.getSearch() + "%");
+			
+		}
+		
+		List<JHS> result = query.list();
+		
+		return result;
+	}
+
+	//SHS
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<SHS> listSHS() {
+		// TODO Auto-generated method stub
+		return (List<SHS>) sessionFactory.getCurrentSession().createCriteria(SHS.class).list();
+	}
+
+	@Override
+	public long listCountSHS(SHS count) {
+		StringBuffer sql = new StringBuffer();
+	    sql.append("SELECT COUNT(*) ");
+	    sql.append("FROM SHS");
+	    Query query = getSession().createQuery(sql.toString());
+	    long results = (long)query.uniqueResult();
+	    return results;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<SHS> viewSHSStudents(SHS shsstudent) {
+		StringBuffer hqlQuery = new StringBuffer("from SHS e where 1=1 ");
+		
+		StringBuffer dynamicSql = new StringBuffer();
+		if(StringUtils.isNotEmpty(shsstudent.getSearch())) {
+			dynamicSql.append("and (  ");
+			dynamicSql.append(" lower(e.firstName) like lower(:search) ");
+			dynamicSql.append("or lower(e.middleName) like lower(:search) ");
+			dynamicSql.append("or lower(e.lastName) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.firstName,' ', e.lastName, ' ', e.middleName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.firstName,' ', e.middleName, ' ', e.lastName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.lastName,' ', e.firstName, ' ', e.middleName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.lastName,' ', e.middleName, ' ', e.firstName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.middleName,' ', e.lastName, ' ', e.firstName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.middleName,' ', e.firstName, ' ', e.lastName)) like lower(:search) ");
+			dynamicSql.append("or lower(e.studentId) like lower(:search) ");
+			dynamicSql.append("or lower(e.emailAddress) like lower(:search)) ");
+			
+		}
+		
+		final String sql =  hqlQuery.append(dynamicSql).toString();
+		Query query = getSession().createQuery(sql);
+		
+		if(StringUtils.isNotEmpty(shsstudent.getSearch())) {
+			query.setParameter("search","%" + shsstudent.getSearch() + "%");
+			
+		}
+		
+		List<SHS> result = query.list();
+		
+		return result;
+	}
 	
 	
+	//COLLEGE
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<College> listCollege() {
+		// TODO Auto-generated method stub
+		return (List<College>) sessionFactory.getCurrentSession().createCriteria(College.class).list();
+	}
+
+	@Override
+	public long listCountCollege(College count) {
+		StringBuffer sql = new StringBuffer();
+	    sql.append("SELECT COUNT(*) ");
+	    sql.append("FROM College");
+	    Query query = getSession().createQuery(sql.toString());
+	    long results = (long)query.uniqueResult();
+	    return results;
+	}
 	
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<College> viewCollegeStudents(College colstudent) {
+		StringBuffer hqlQuery = new StringBuffer("from College e where 1=1 ");
+		
+		StringBuffer dynamicSql = new StringBuffer();
+		if(StringUtils.isNotEmpty(colstudent.getSearch())) {
+			dynamicSql.append("and (  ");
+			dynamicSql.append(" lower(e.firstName) like lower(:search) ");
+			dynamicSql.append("or lower(e.middleName) like lower(:search) ");
+			dynamicSql.append("or lower(e.lastName) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.firstName,' ', e.lastName, ' ', e.middleName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.firstName,' ', e.middleName, ' ', e.lastName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.lastName,' ', e.firstName, ' ', e.middleName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.lastName,' ', e.middleName, ' ', e.firstName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.middleName,' ', e.lastName, ' ', e.firstName)) like lower(:search) ");
+			dynamicSql.append("or lower( CONCAT(e.middleName,' ', e.firstName, ' ', e.lastName)) like lower(:search) ");
+			dynamicSql.append("or lower(e.studentId) like lower(:search) ");
+			dynamicSql.append("or lower(e.emailAddress) like lower(:search)) ");
+			
+		}
+		
+		final String sql =  hqlQuery.append(dynamicSql).toString();
+		Query query = getSession().createQuery(sql);
+		
+		if(StringUtils.isNotEmpty(colstudent.getSearch())) {
+			query.setParameter("search","%" + colstudent.getSearch() + "%");
+			
+		}
+		
+		List<College> result = query.list();
+		
+		return result;
+	}
 	
 	
 	

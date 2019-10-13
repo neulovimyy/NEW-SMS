@@ -3,9 +3,12 @@ package com.sms.service;
 import java.util.List;
 
 import com.sms.base.BaseService;
+import com.sms.model.College;
 import com.sms.model.ElemAndHS;
 import com.sms.model.Faculty;
+import com.sms.model.JHS;
 import com.sms.model.Report;
+import com.sms.model.SHS;
 import com.sms.model.StudRetrieveInfo;
 import com.sms.model.Student;
 import com.sms.model.Subject;
@@ -17,6 +20,7 @@ public interface StudentService extends BaseService {
 	public List<Student> listStudentss();
 	public Student getStudent(Long Id);
 	public void deleteStudent(Student employee);
+	public long listCount( Student count);
 	public List<Student> viewStudents(Student student);
 	public Long generateStudentNumber();
 	//accounting
@@ -44,4 +48,16 @@ public interface StudentService extends BaseService {
 	
 	List<Student> viewStudentsByStudentID(StudRetrieveInfo stud);
 	
+	   //JHS
+		public List<JHS> listsJHS();
+		public long listCountJHS( JHS count);
+		public List<JHS> viewJHSStudents(JHS jhsstudent);
+		//SHS
+		public List<SHS> listSHS();
+		public long listCountSHS( SHS count);
+		public List<SHS> viewSHSStudents(SHS shsstudent);
+		//college
+		public List<College> listCollege();
+		public long listCountCollege( College count);
+		public List<College> viewCollegeStudents(College colstudent);
 }

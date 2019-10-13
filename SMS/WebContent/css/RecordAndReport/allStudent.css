@@ -178,7 +178,8 @@ table tr:nth-child(even){
 }
 
 .main .content .result .options [class*="col-"] {
-  padding: 5px;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
 }
 
 .main .content .result .options [class*="col-"] .title {
@@ -224,12 +225,53 @@ table tr:nth-child(even){
           transform: translateY(2px);
 }
 
-.main .content .result .search {
-
+.main .content .result .options [class*="col-"] .sort {
+	padding: 5px;
+	margin: auto;
 }
+
+.main .content .result .options [class*="col-"] .sort b {
+  font-size: 1em;
+}
+
+.main .content .result .search{
+	margin: auto;
+	width: 95%;
+	background: #E6E6FA;
+}
+
+.main .content .result .search input[type=text]{
+	width: 70%;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 10px;
+	box-sizing: border-box;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border: 2px solid #ccc;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+}
+
+.main .content .result .search input[type=text]:focus{
+	border: 2px solid #555;
+}
+
+
+.main .content .result .search .btn-search{
+	width: 15%;
+	background: #001C57;
+	color: white;
+	border: none;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding: 13px;
+}
+
 .main .content .result table {
   margin: auto;
-  width: 95%;
+  width: 100%;
   font-size: 0.9em;
 }
 
@@ -262,11 +304,17 @@ table tr:nth-child(even){
   margin: auto;
 }
 
-.main .content .footer hr {
+.main .content .result .page {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main .content .result .footer hr {
   width: 40%;
 }
 
-.main .content .footer p {
+.main .content .result .footer p {
   padding: 10px;
 }
 

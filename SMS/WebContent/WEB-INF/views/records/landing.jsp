@@ -7,6 +7,7 @@
 		<spring:url value="/resources/js/res.js" var="resJs" /> 
 		<spring:url value="/css/RecordAndReport/landing.css" var="landingCss" />
 		<link href="${pageContext.request.contextPath}/theme1/themejs/res.js" rel="stylesheet">
+		
 		<link href="${landingCss}" rel="stylesheet">
 		<script src=<c:url value="/js/Report/sample.js"/>></script> 
 	</head>
@@ -54,7 +55,7 @@
 	            <div class="elem">
 	              <i class="fas fa-pencil-alt"></i>
 	            </div>
-	            <b> 150 </b> <br> Elementary Students
+	            <b>${count}</b> <br> Elementary Students
 	          </button>
 	        </div>
 	
@@ -63,7 +64,7 @@
 	            <div class="jhs">
 	              <i class="fas fa-apple-alt"></i>
 	            </div>
-	            <b> 253</b> <br> Junior High School Students
+	            <b> ${countJHS}</b> <br> Junior High School Students
 	          </button>
 	        </div>
 	
@@ -72,7 +73,7 @@
 	            <div class="shs">
 	                <i class="fas fa-lightbulb"></i>
 	            </div>
-	            <b> 392 </b> <br> Senior High School Students
+	            <b> ${countSHS} </b> <br> Senior High School Students
 	          </button>
 	        </div>
 	
@@ -81,7 +82,7 @@
 	            <div class="college">
 	              <i class="fas fa-graduation-cap"></i>
 	            </div>
-	            <b> 589 </b> <br> College Students
+	            <b> ${countCollege} </b> <br> College Students
 	          </button>
 	        </div>
 	      </div>

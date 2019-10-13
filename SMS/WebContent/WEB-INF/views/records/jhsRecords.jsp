@@ -50,7 +50,7 @@
 			  
 		<div class="main">
 		  <div class="content">
-		    <div class="levels">
+		     <div class="levels">
 		      <div class="row">
 		        <div class="col-sm-3 col-md-3 col-lg-3">
 		        <form action="elemRec.html" method="get">
@@ -100,7 +100,7 @@
 		
 		    <div class="result">
 				<div class="label">
-				  <b> Elementary Students </b>
+				  <b> JHS Students </b>
 				</div>
 
 		      <div class="options">
@@ -210,8 +210,7 @@
 		                <td><c:out value="${student.middleName}"/></td>
 		                <td><c:out value="${student.lastName}"/></td>		
 		              </tr>
-		             
-		            </c:forEach>
+		              </c:forEach>
 		              </tbody>
 		            </table>
 		          </c:if>

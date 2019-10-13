@@ -12,6 +12,7 @@
 		<link rel="icon" type="icon/ico "href="<c:url value="/image/image.ico"/>">
 		<%-- <link rel="stylesheet" href="<c:url value="/css/xeone/css/plugins.css"/>"> --%>
 		<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
+		<link rel="stylesheet" href="<c:url value="/css/RecordAndReport/all.min.css"/>">
 		<%-- <link rel="stylesheet" href="<c:url value="/css/xeone/css/style.css"/>">
 		<link rel="stylesheet" href="<c:url value="/themes/css/custom.css"/>">
 		<link rel="stylesheet" href="<c:url value="/themes/css/default.css"/>"> --%>

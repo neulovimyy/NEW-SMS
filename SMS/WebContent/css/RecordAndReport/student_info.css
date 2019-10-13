@@ -21,6 +21,7 @@ body ::-webkit-scrollbar-track, html ::-webkit-scrollbar-track {
   border-radius: 20px;
 }
 
+
 .row {
   width: 100%;
   margin-left: 0px;
@@ -160,7 +161,7 @@ input::placeholder {
   padding: 25px 10px 25px 10px;
 }
 
-.main .content .levels [class*="col-"] button {
+.main .content .levels [class*="col-"] form button {
   width: 95%;
   padding: 15px 5px;
   background: white;
@@ -169,11 +170,11 @@ input::placeholder {
   font-size: 0.8em;
 }
 
-.main .content .levels [class*="col-"] button b {
+.main .content .levels [class*="col-"] form button b {
   font-size: 1.2em;
 }
 
-.main .content .levels [class*="col-"] button .elem {
+.main .content .levels [class*="col-"] form button .elem {
   padding: 15px;
   margin: auto;
   height: 50px;
@@ -183,12 +184,12 @@ input::placeholder {
   background: #F5D3CE;
 }
 
-.main .content .levels [class*="col-"] button .elem i {
+.main .content .levels [class*="col-"] form button .elem i {
   font-size: 1.5em;
   color: #FA1E44;
 }
 
-.main .content .levels [class*="col-"] button .jhs {
+.main .content .levels [class*="col-"] form button .jhs {
   padding: 15px;
   margin: auto;
   height: 50px;
@@ -198,12 +199,12 @@ input::placeholder {
   background: #FFE9A2;
 }
 
-.main .content .levels [class*="col-"] button .jhs i {
+.main .content .levels [class*="col-"] form button .jhs i {
   font-size: 1.5em;
   color: orange;
 }
 
-.main .content .levels [class*="col-"] button .shs {
+.main .content .levels [class*="col-"] form button .shs {
   padding: 15px;
   margin: auto;
   height: 50px;
@@ -213,12 +214,12 @@ input::placeholder {
   background: #E5BDFF;
 }
 
-.main .content .levels [class*="col-"] button .shs i {
+.main .content .levels [class*="col-"] form button .shs i {
   font-size: 1.5em;
   color: #842BD7;
 }
 
-.main .content .levels [class*="col-"] button .college {
+.main .content .levels [class*="col-"] form button .college {
   padding: 15px;
   margin: auto;
   height: 50px;
@@ -228,12 +229,12 @@ input::placeholder {
   background: #BFE0B5;
 }
 
-.main .content .levels [class*="col-"] button .college i {
+.main .content .levels [class*="col-"] form button .college i {
   font-size: 1.4em;
   color: #5AB190;
 }
 
-.main .content .levels [class*="col-"] button:active {
+.main .content .levels [class*="col-"] form button:active {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
 }

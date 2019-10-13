@@ -157,8 +157,12 @@ public class RecordController extends BaseController{
 	}
 	
 
-	@RequestMapping(value = "enrollment", method = RequestMethod.GET)
-	public String enroll() {
+	@RequestMapping(value = "enrollment")
+	public String enroll(HttpServletRequest request, ModelMap model, Student s, JHS j, SHS h, College c)  {
+		model.addAttribute("count",studentService.listCount(s));
+		model.addAttribute("countJHS",studentService.listCountJHS(j));
+		model.addAttribute("countSHS",studentService.listCountSHS(h));
+		model.addAttribute("countCollege",studentService.listCountCollege(c));
 		return "enrollment";
 	}
 	

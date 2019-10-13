@@ -1,4 +1,4 @@
-package com.sms.model;
+	package com.sms.model;
 
 public class CollegeReport {
 

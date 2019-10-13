@@ -43,7 +43,7 @@
 		  <a href="home.html"><i class="fas fa-home"></i> &nbsp; Home</a>
 		  <a href="elemRec.html"><i class="fas fa-user"></i> &nbsp; Student's Record </a>
 		  <a href="studInfo.html"><i class="fas fa-id-badge"></i> &nbsp; Student's Profile </a>
-		  <a href="searchResult.html"><i class="fas fa-book"></i> &nbsp; Subject List </a>
+		  <a href="shsRec.html"><i class="fas fa-book"></i> &nbsp; Subject List </a>
 		  <a href="enrollment.html"><i class="fas fa-scroll"></i> &nbsp; Enrollment</a>
 		  <a href="#"><i class="fas fa-print"></i> &nbsp; Generate & Print</a>
 		</div>

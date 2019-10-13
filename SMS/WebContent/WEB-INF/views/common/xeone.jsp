@@ -89,6 +89,7 @@
 	<script src="<c:url value="/js/xeone/js/functions.js"/>"></script>
 	<script src="<c:url value="/js/adminlte/plugins/pagination/jquery.simplePagination.js"/>"></script>
 	<body>
+
 		<style type="text/css">
 			.form-control-feedback {
 				width: 63px !important;

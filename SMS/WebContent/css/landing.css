@@ -50,6 +50,18 @@ img{
 .content{
     text-align: center;
     font-size: 1em;
+  }
+  
+.subheading {
+    padding: 10px;
+    background: red; 
+    display: table;
+    color: #fff;
+    }   
+
+.content{
+    text-align: center;
+    font-size: 1em;
     background: #e9f1f8;
     padding-top: 50px;
     }
@@ -122,11 +134,6 @@ img{
             color: #003B46;
         }
 
-
-
-
-
-
 OOP LANDING PAGE
 .container-fluid{
     padding: 0px;
@@ -190,6 +197,34 @@ OOP LANDING PAGE
     background-color: #003B46;
     color: white;
     padding: 10px;
+    background: #001C57;
+  }
+  
+  .main .content .footer {
+    padding: 10px;
+    font-size: 0.9em;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .main .content .footer hr {
+    width: 40%;
+  }
+  
+  .main .content .footer p {
+    padding: 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+  
+  /*# sourceMappingURL=sample.component.css.map */
 }
 
 .button:hover {

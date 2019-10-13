@@ -40,14 +40,13 @@
 	<servlet>
 		<servlet-name>spring</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>spring</servlet-name>
 		<url-pattern>/institute/*</url-pattern>
 	</servlet-mapping>
-
 	<session-config>
 		<session-timeout>45</session-timeout>
 	</session-config>
@@ -70,7 +69,5 @@
 	<welcome-file-list>
 		<welcome-file>/account/index2.html</welcome-file>
 		<welcome-file>/grades/index.html</welcome-file>
-		
 	</welcome-file-list>
-
 </web-app>

@@ -116,4 +116,16 @@ public class StudentServiceImpl extends BaseServiceImpl implements StudentServic
 		return studentDao.viewStudentsByStudentID(stud);
 	}
 
+	@Override
+	public void deleteReport(Report subject) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addReport(Report subject) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -170,5 +170,17 @@ public class SMSDaoImpl extends BaseDaoHibernate implements SMSDao  {
 		
 		return result;
 	}
+
+	@Override
+	public void deleteReport(Report subject) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addReport(Report subject) {
+		// TODO Auto-generated method stub
+		
+	}
 }
 
